@@ -1,1 +1,3 @@
 # codex
+
+## [FAQ](/FAQ.md)
