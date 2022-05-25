@@ -41,4 +41,4 @@ A search box for the symbol. Enter the full name (`GROUP:SYMBOLNAME`) to see it 
 
 Built-in TradingView [language](https://www.tradingview.com/pine-script-docs/en/v5/Introduction.html). A couple lines of code are enough to access the data. This is a flexible and convenient tool for displaying data on the __Chart__.
 
-![Pine Editor](/images/guide_pine_script.png "Pine Editor")
+![Pine Editor](/images/guide_pine_editor.png "Pine Editor")
