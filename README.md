@@ -1,3 +1,9 @@
+[ui_chart]: /images/ui_chart.png
+[ui_details]: /images/ui_details.png
+[ui_search]: /images/ui_search.png
+[ui_pine]: /images/ui_pine.png
+[pine_script_docs]: https://www.tradingview.com/pine-script-docs/en/v5/Introduction.html
+
 # EOF feed documentation
 
 ## Overview
@@ -23,26 +29,26 @@ There are several tools for working with your data here.
 
 This is the main data visualization tool. There are 12 types of charts, a lot of additional indicators, viewing historical data for any period.
 
-![Chart](/images/guide_chart.png "Chart")
+![Chart][ui_chart]
 
 ### Details
 
 Additional information about the symbol: name, source, current value, change per day.
 
-![Details](/images/guide_details.png "Details")
+![Details][ui_details]
 
 ### Symbol Search
 
 A search box for the symbol. Enter the full name (`GROUP:SYMBOLNAME`) to see it on __Chart__.
 
-![Symbol Search](/images/guide_symbol_search.png "Symbol Search")
+![Symbol Search][ui_search]
 
 ### Pine Editor
 
-Built-in TradingView [language](https://www.tradingview.com/pine-script-docs/en/v5/Introduction.html). 
+Built-in TradingView [language][pine_script_docs]. 
 A couple lines of code are enough to access the data. This is a flexible and convenient tool for displaying data on the __Chart__.
 
-![Pine Editor](/images/guide_pine_editor.png "Pine Editor")
+![Pine Editor][ui_pine]
 
 ## GitHub repository
 
