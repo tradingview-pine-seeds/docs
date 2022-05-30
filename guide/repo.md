@@ -5,7 +5,7 @@
 [gh_docs_actions]: https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#allowing-select-actions-and-reusable-workflows-to-run
 [gh_docs_logs]: https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs
 [env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
-[_data]: data.md
+[_data]: /guide/data.md
 
 # GitHub repository
 
