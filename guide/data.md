@@ -103,4 +103,4 @@ We like opensource. Our tools help a lot of people because of it.
 But if you want to connect private data - that's completely fine.
 
 For public repositories it is convenient to store access keys in [environment variables][env_var] of the repository itself.
-These variables can be safely used in the action code.
+These variables can be safely used in the Action's code.
