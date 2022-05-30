@@ -1,3 +1,8 @@
+[iso_4217]: https://en.wikipedia.org/wiki/ISO_4217
+[rest_feed]: https://www.tradingview.com/brokerage-integration/
+[env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
+[tradingview_chart]: [https://tradingview.com/chart]
+
 # Data structure
 
 ## Data requirements
@@ -22,16 +27,16 @@ All data must be placed as CSV files. One symbol - one file. The files must meet
 - No blank lines or spaces
 - File names must be URL encoded
 
-| Field  | Description                   | Sample    |
-|--------|-------------------------------|-----------|
-| Date   | Date in YYYYMMDDT format      | 20210101T |
-| Open   | First tick price              | 0.1       |
-| High   | Maximum tick price            | 0.1       |
-| Low    | Minimum tick price            | 0.1       |
-| Close  | Last tick price               | 0.1       |
-| Volume | Total number of shares traded | 0         |
+| Field      | Description                   | Sample      |
+|------------|-------------------------------|-------------|
+| __date__   | Date in YYYYMMDDT format      | `20210101T` |
+| __open__   | First tick price              | `0.1`       |
+| __high__   | Maximum tick price            | `0.1`       |
+| __low__    | Minimum tick price            | `0.1`       |
+| __close__  | Last tick price               | `0.1`       |
+| __volume__ | Total number of shares traded | `0`         |
 
-If your feed is trading data, a valid OHLCV series should come in each line.
+If your feed is trading data, a valid  OHLCV (Open, High, Low, Close, Value) series should come in each line.
 If the feed has a single value per day, then it should be `open` = `close` = `high` = `low`, and `volume` = 0.
 
 ## Symbol info file format
@@ -40,43 +45,43 @@ This information determines how the TradingView platform will handle a particula
 The symbol information should be placed as a single JSON file in the `symbol_info` directory. 
 The name of the file is similar to the name of the repository.
 
-|      Field      | Type   | Description                                                                                                       |                     Default value                    |                                    Validation rules                                   |
-|---------------|--------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|-------------------------------------------------------------------------------------|
-| base-currency   | String | Code of the base currency in currency pairs.  For example, for `EURUSD` pair the base currency is `EUR`. ISO 4217 | Can by empty for not `forex` and `crypto` types only | If not empty validate `^[A-Z0-9._]+$` Error if empty for `forex` and `crypto` types   |
-| currency        | String | Code of the currency in which the symbol is traded. ISO 4217                                                      | Can be empty for `index` and `economic` types        | If not empty validate `^[A-Z0-9._]+$` Error if empty for `index` and `economic` types |
-| description     | String | Symbol description                                                                                                | Not empty                                            | Error if empty                                                                        |
-| has-intraday    | Bool   | `false` for end-of-day feed                                                                                       | `false`                                              | Error if not `false`                                                                  |
-| has-no-volume   | Bool   | `true` if `volume` = 0 (for `forex`, `index`, etc.)                                                               | `true`/`false`                                       | Error if empty                                                                        |
-| is-cfd          | Bool   | Is the symbol a Contract For Differences                                                                          | `true`/`false`                                       | Warning if not `true`                                                                 |
-| minmovement     | Int    | The number of units that make up one tick                                                                         | >`0`                                                 | Warning if > `1`                                                                      |
-| pricescale      | Int    | Tick size                                                                                                         | `10^n`                                               | Error if not `10^n`                                                                   |
-| session-regular | String | Session time                                                                                                      | `24x7`                                               | Error if not `24x7`                                                                   |
-| symbol          | String | Symbol name in TradingView format                                                                                 | Not empty                                            | Validating `^[A-Z0-9._]+$`                                                            |
-| ticker          | String | Symbol name in feed format.                                                                                       | Not empty                                            | Validating `^[^,]+$`                                                                  |
-| timezone        | String | Timezone code                                                                                                     | `Etc/UTC`                                            | Error if not `Etc/UTC`                                                                |
-| type            | String | Symbol type                                                                                                       | From the table below                                 | From the table only                                                                   |
+|      Field          | Type   | Description                                                                                                                   |                     Default value              |                                    Validation rules                                    |
+|---------------------|--------|-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------|
+| __base-currency__   | String | Code of the base currency in currency pairs.  For example, for `EURUSD` pair the base currency is `EUR`. [ISO 4217][iso_4217] | Can by empty except `forex` and `crypto` types | Error if empty for `forex` and `crypto` types, if not empty validate `^[A-Z0-9._]+$`   |
+| __currency__        | String | Code of the currency in which the symbol is traded. [ISO 4217][iso_4217]                                                      | Can be empty for `index` and `economic` types  | Error if empty for `index` and `economic` types, if not empty validate `^[A-Z0-9._]+$` |
+| __description__     | String | Symbol description                                                                                                            | Not empty                                      | Error if empty                                                                         |
+| __has-intraday__    | Bool   | `false` for end-of-day feed                                                                                                   | `false`                                        | Error if not `false`                                                                   |
+| __has-no-volume__   | Bool   | `true` if `volume` = 0 (for `forex`, `index`, etc.)                                                                           | `true`/`false`                                 | Error if empty                                                                         |
+| __is-cfd__          | Bool   | Is the symbol a Contract For Differences                                                                                      | `true`/`false`                                 | Warning if not `true`                                                                  |
+| __minmovement__     | Int    | The number of units that make up one tick                                                                                     | >`0`                                           | Warning if > `1`                                                                       |
+| __pricescale__      | Int    | Tick size                                                                                                                     | `10^n`                                         | Error if not `10^n`                                                                    |
+| __session-regular__ | String | Session time                                                                                                                  | `24x7`                                         | Error if not `24x7`                                                                    |
+| __symbol__          | String | Symbol name in TradingView format                                                                                             | Not empty                                      | Validating `^[A-Z0-9._]+$`                                                             |
+| __ticker__          | String | Symbol name in feed format.                                                                                                   | Not empty                                      | Validating `^[^,]+$`                                                                   |
+| __timezone__        | String | Timezone code                                                                                                                 | `Etc/UTC`                                      | Error if not `Etc/UTC`                                                                 |
+| __type__            | String | Symbol type                                                                                                                   | From the table below                           | From the table only                                                                    |
 
 Below are `type` filed possible values.
 
-| Value      | Description                                                |
-|------------|------------------------------------------------------------|
-| stock      | Stock (common, preferred, bonus issue, CFD on stocks)      |
-| fund       | Investment fund                                            |
-| dr         | Depositary receipt                                         |
-| right      | Rights issue                                               |
-| bond       | Bond                                                       |
-| warrant    | Warrant                                                    |
-| structured | Structured Product                                         |
-| index      | Index                                                      |
-| cfd        | Contract for differences                                   |
-| forex      | Forex                                                      |
-| futures    | Futures Product                                            |
-| expression | Math Expression                                            |
-| ets        | Exchange Traded Spread                                     |
-| crypto     | Crypto Currency except Crypto Currency Futures and Indices |
-| option     | Option                                                     |
-| swap       | Swap                                                       |
-| economic   | Fundamental economic data                                  |
+| Value.         | Description                                                |
+|----------------|------------------------------------------------------------|
+| __stock__      | Stock (common, preferred, bonus issue, CFD on stocks)      |
+| __fund__       | Investment fund                                            |
+| __dr__         | Depositary receipt                                         |
+| __right__      | Rights issue                                               |
+| __bond__       | Bond                                                       |
+| __warrant__    | Warrant                                                    |
+| __structured__ | Structured Product                                         |
+| __index__      | Index                                                      |
+| __cfd__        | Contract for differences                                   |
+| __forex__      | Forex                                                      |
+| __futures__    | Futures Product                                            |
+| __expression__ | Math Expression                                            |
+| __ets__        | Exchange Traded Spread                                     |
+| __crypto__     | Crypto Currency except Crypto Currency Futures and Indices |
+| __option__     | Option                                                     |
+| __swap__       | Swap                                                       |
+| __economic__   | Fundamental economic data                                  |
 
 > __Warning__
 > 
@@ -85,16 +90,17 @@ Below are `type` filed possible values.
 
 ## Updating the data
 
-We like opensource. Our tools help a lot of people because of it. But if you want to connect private data - that's completely fine.
-Data is very useful. Update it regularly.
-
 Your end-of-day data is checked and uploaded to our repository once a day.
-You see the data for all previous days on the Chart. The checked and uploaded today data will appear on the Chart tomorrow.
+You see the data for all previous days on the [chart][tradingview_chart]. 
+The checked and uploaded today data will appear on the chart tomorrow.
+If the data is not updated till three months, the feed will be disabled.
 
-If you want to handle higher frequency data (per minute/second), you can use a [REST feed](https://www.tradingview.com/brokerage-integration/).
-We don't want to keep data that nobody else wants. If the data is not updated, will we disable the feed after three months?
+If you want to handle higher frequency data (per minute/second), you can use a [REST feed][rest_feed].
 
 ## Accessing a data repository
 
-For public repositories it is convenient to store access keys in environment variables of the repository itself.
+We like opensource. Our tools help a lot of people because of it. 
+But if you want to connect private data - that's completely fine.
+
+For public repositories it is convenient to store access keys in [environment variables][env_var] of the repository itself.
 These variables can be safely used in the action code.
