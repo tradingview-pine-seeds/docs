@@ -95,6 +95,10 @@ You see the data for all previous days on the [chart][tradingview_chart].
 The checked and uploaded today data will appear on the chart tomorrow.
 If the data is not updated till three months, the feed will be disabled.
 
+> __Warning__
+> 
+> The EOD feed has a limit of 1000 symbols a day. Keep this in mind when adding CSV files.
+
 If you want to handle higher frequency data (per minute/second), you can use a [REST feed][rest_feed].
 
 ## Accessing a data repository
