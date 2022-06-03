@@ -16,15 +16,11 @@ This service allows you:
 - visualize it in the TradingView UI
 - use it to create indicators
 
-Its is so simple:
-
-- Use [TradingView](https://tradingview.com) platform as your __frontend__
-- Use GitHub repository as your __backend__
-- Connect you __data storage__ if you need it
+Use [TradingView](https://tradingview.com) as your __frontend__ and use GitHub repository as your __backend__. 
 
 > __Note__
 > 
-> Read [5-minute tutorial](tutorial.md) to start right now or check out the [Frequently asked questions section](/faq.md)
+> Read [5-minute tutorial](tutorial.md) to start right now
 
 ## TradingView UI
 
@@ -75,3 +71,7 @@ The data is stored in two directories.
 
 * `data/your_repo directory` — place CSV data files here. One file for one character. Add a row with data values for every day.
 * `symbol_info` directory — place JSON file with a description of all symbols here. Add description for every CSV to this file.
+
+> __Note__
+> 
+> For further information check out the [Frequently asked questions section](/faq.md)
