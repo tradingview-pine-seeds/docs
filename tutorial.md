@@ -1,15 +1,19 @@
-# Tutorial
+[issue]: ../issues/
+[2fa]: https://github.com/settings/security
+[chart]: https://tradingview.com/chart
+
+# 5-minute tutorial
 
 ## Contact us
 
-- Send request to [support@tradingview.com](mailto:support@tradingview.com)
-- Wait for an email with your repository link
+- Create an [issue][issue] with the request
+- Wait for the link to a repository
 
 ## Fork the repository
 
-- Go to _GitHub Security settings_ → Configure [2FA](https://github.com/settings/security)
+- Go to _GitHub Security settings_ → Configure [2FA][2fa]
 - Create _Personal access token_ for __repo__, __workflow__ and __admin:org__ areas
-- Check your email → Follow the link in the email
+- Follow the link in the issue
 - Create a repository fork
 
 ## Setup the actions
@@ -32,6 +36,6 @@
 
 ## Create a chart
 
-- Log into [tradingview.com](https://tradingview.com/e)
+- Log into [tradingview.com][chart]
 - Go to symbol search box → Enter full symbol name
 - A graph will appear on the chart main area
