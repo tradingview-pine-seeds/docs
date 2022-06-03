@@ -4,22 +4,27 @@
 [ui_pine]: /images/ui_pine.png
 [pine_script_docs]: https://www.tradingview.com/pine-script-docs/en/v5/Introduction.html
 
-# EOF feed documentation
+# Pine Seeds documentation
 
 ## Overview
 
-This servis allows you to use [TradingView](https://tradingview.com) platform to visualize your data.
-We called it _End-of-day feed_ beacuse use single set of value for each day.
+__Pine Seeds__ is a service for working with your data on the [TradingView](https://tradingview.com) platform.
 
-Service is so simple:
+This service allows you:
 
-* Use [TradingView](https://tradingview.com) platform as your __frontend__
-* Use [GitHub](https://github.com) repository as your __backend__
-* Connect you __data storage__ if you need it
+- connect your series data to TradingView
+- visualize it in the TradingView UI
+- use it to create indicators
+
+Its is so simple:
+
+- Use [TradingView](https://tradingview.com) platform as your __frontend__
+- Use GitHub repository as your __backend__
+- Connect you __data storage__ if you need it
 
 > __Note__
 > 
-> Read [5-minute tutorial](tutorial.md) or check out the [Frequently asked questions section](/faq.md)
+> Read [5-minute tutorial](tutorial.md) to start right now or check out the [Frequently asked questions section](/faq.md)
 
 ## TradingView UI
 
