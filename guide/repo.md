@@ -7,7 +7,7 @@
 [env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
 [_data]: /guide/data.md
 
-# GitHub repository
+# GitHub settings
 
 ## Pre-setup
 
