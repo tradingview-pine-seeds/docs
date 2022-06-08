@@ -26,8 +26,8 @@
 
 ## Add data files
 
-- Upload CSV data files to the `data/your_repo` directory
-- Upload a JSON character description file to the `symbol_info` directory
+- Upload data files to the `data/your_repo` directory
+- Upload a symbol description file to the `symbol_info` directory
 
 ## Check the data upload
 
