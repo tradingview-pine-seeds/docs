@@ -1,9 +1,17 @@
 [iso_4217]: https://en.wikipedia.org/wiki/ISO_4217
 [rest_feed]: https://www.tradingview.com/brokerage-integration/
 [env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
-[tradingview_chart]: [https://tradingview.com/chart]
+[tv_chart]: [https://tradingview.com/chart]
+[support_ohlc]: https://www.tradingview.com/support/solutions/43000619436-heikin-ashi/
+[url_encode]: https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier
 
 # Data structure
+
+Store your series data in the repository. 
+You create a separate file for each symbol. And every day you add a row with data to it.
+Symbol parameters are described in a separate file. It changes as needed.
+
+To update data automatically, you can create a separate repository for this and configure GitHub Actions to load from external sources.
 
 ## Data requirements
 
@@ -20,12 +28,12 @@ The structure of the CSV file with data is simple, 6 values in each line.
 
 ## Data formats
 
-All data must be placed as CSV files. One symbol - one file. The files must meet the following requirements:
+All data must be placed as CSV files. One symbol is one file. The files must meet the following requirements:
 
 - Fields are separated by commas
 - No headers
 - No blank lines or spaces
-- File names must be URL encoded
+- File names must be [URL encoded][url_encode]
 
 | Field      | Description                   | Sample      |
 |------------|-------------------------------|-------------|
@@ -36,7 +44,7 @@ All data must be placed as CSV files. One symbol - one file. The files must meet
 | __close__  | Last tick price               | `0.1`       |
 | __volume__ | Total number of shares traded | `0`         |
 
-If your feed is trading data, a valid  OHLCV (Open, High, Low, Close, Value) series should come in each line.
+If your feed is trading data, a valid [OHLCV][support_ohlc] (Open, High, Low, Close, Value) series should come in each line.
 If the feed has a single value per day, then it should be `open` = `close` = `high` = `low`, and `volume` = 0.
 
 ## Symbol info file format
@@ -83,23 +91,24 @@ Below are `type` filed possible values.
 | __swap__       | Swap                                                       |
 | __economic__   | Fundamental economic data                                  |
 
-> __Warning__
-> 
-> If you can't validate any of the fields in symbol_info file, you will get a parsing error in action's log. 
-> If a field is found to be missing from this list, a warning about it will appear in the log.
-
 ## Updating the data
 
-Your end-of-day data is checked and uploaded to our repository once a day.
-You see the data for all previous days on the [chart][tradingview_chart]. 
+Your EOD data is checked and uploaded to our repository once a day.
+You see the data for all previous days on the [chart][tv_chart]. 
 The checked and uploaded today data will appear on the chart tomorrow.
 If the data is not updated till three months, the feed will be disabled.
 
 > __Warning__
 > 
-> The EOD feed has a limit of 1000 symbols a day. Keep this in mind when adding CSV files.
+> The EOD feed has a limit of 1000 symbols a day. Keep this in mind when adding data files.
+> To connect more symbols, you can create another data repository.
 
 If you want to handle higher frequency data (per minute/second), you can use a [REST feed][rest_feed].
+
+## Data validation
+ 
+If you can't validate any of the fields in symbol_info file, you will get a parsing error in Action's log. 
+If a field is found to be missing from this list, a warning about it will appear in the log.
 
 ## Accessing a data repository
 
