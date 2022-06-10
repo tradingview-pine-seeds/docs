@@ -79,7 +79,8 @@ In this case the _Heikin Ashi_ graph will be more useful.
 
 Summary information about the symbol is posted on this panel. Here are symbol name and it's group, current price, price increment/decrease.
 
-![Details][ui_details]
+|![Details][ui_details]|
+|-|
 
 ## Pine Editor
 
