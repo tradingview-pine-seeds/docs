@@ -1,31 +1,33 @@
 [ui_chart_heikin]: /images/ui_chart_heikin.png
 [ui_chart_line]: /images/ui_chart_line.png
 [ui_details]: /images/ui_details.png
-[ui_search]: /images/ui_search.png
+[ui_search]: /images/ui_search_empty.png
 [ui_pine]: /images/ui_pine.png
 [pine_btc]: /images/guide_chart_pine_btc.png
 [request_seed]: https://www.tradingview.com/pine-script-reference/v5/#fun_request{dot}seed
+[support_ohlc]: https://www.tradingview.com/support/solutions/43000619436-heikin-ashi/
 
 # TradingView UI
 
-## Chart
+TradingView platform is your frontend. There are several tools for working with your data.
 
-Chart is the main data visualization tool.There are different types of charts available on the chart area.
-But the most informative for EOD feeds will be the _Line_ and _Heikin Ashi_.
-To switch, just click the button with the graph image on the panel.
+__[Symbol Search](#symbol-search)__
 
-![Heikin Ashi][ui_chart_heikin]
+This is a box for searching for a symbol. Enter its full name, press _Enter_ and you will see it on the Chart.
 
-For single-layer data (`open` = `high` = `low` = `close`), the _Line_ type graph is clearer.
-In the symbol's pop-up menu, you can turn on/off the OHLC values and Volume.
+__[Chart](#chart)__
 
-![Chart][ui_chart_line]
+Chart is the main data visualization tool.
+There are different types of charts, a lot of additional indicators, viewing historical data, data for any period.
 
-## Details
+__[Details](#details)__
 
-Summary information about the symbol is posted here on this panel. Here are symbol name and it's group, current price, price increment/decrease.
+A block with additional information about the symbol: its name, data source, current value, change per day.
 
-![Details][ui_details]
+__[Pine Editor](#pine-editor)__
+
+Built-in language editor. A couple of lines of code are enough to access the data.
+Flexible and convenient tool for displaying data on the Chart.
 
 ## Symbol Search
 
@@ -38,7 +40,8 @@ The symbol name on the TradingView chart is uniquely determined by the Github pa
 - the group of data within the source (we use GitHub repository name)
 - the name of the symbol (we use the name of the data file)
 
-![Symbol Search][ui_search]
+|![Symbol Search][ui_search]|
+|-|
 
 For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbol is obtained as follows:
 
@@ -50,6 +53,33 @@ For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbo
 > __Note__
 >
 > Enter this name in the Symbol Search box, you can upload it to the Chart. But it won't appear in the tooltip as you type.
+
+## Chart
+
+Use the Chart area to work with graphs. After you add a symbol via Symbol Search or Pine Script, its graph will appear on the Chart.
+
+If your data series is one value per day, your data will look something like this.
+
+```csv
+20210101T,0.1,0.1,0.1,0.1,0
+```
+
+For single-layer data (`open` = `high` = `low` = `close`), the _Line_ type graph is clearer.
+
+|![Chart][ui_chart_line]|
+|-|
+
+If your feed is trading data, a valid [OHLCV][support_ohlc] data series should come in each line.
+In this case the _Heikin Ashi_ graph will be more useful.
+
+|![Heikin Ashi][ui_chart_heikin]|
+|-|
+
+## Details
+
+Summary information about the symbol is posted on this panel. Here are symbol name and it's group, current price, price increment/decrease.
+
+![Details][ui_details]
 
 ## Pine Editor
 
@@ -94,4 +124,5 @@ The source send 6 values in each data set.
 
 Add Bitcoin developer activity data from the EOD source to the BTC USD chart. So you will receive information for technical analysis.
 
-![Pine BTC][pine_btc]
+|![pine_btc]|
+|-|
