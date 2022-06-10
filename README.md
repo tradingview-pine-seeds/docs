@@ -43,19 +43,19 @@ Setting up the service include of several steps.
 
 A detailed description of the service can be found in the other sections.
 
-### [Data structure][guide_data]
+__[Data structure][guide_data]__
 
 Data storage form, data structure, fields descriptions, fields types, data validation conditions.
 
-### [GitHub settings][guide_repo]
+___[GitHub settings][guide_repo]__
 
 Account and repository settings, GitHub actions workflow, repositories organization, external data connection.
 
-### [TradingView UI][guide_ui]
+__[TradingView UI][guide_ui]__
 
 Quick guide for TradingView user using custom data series.
 
-### [FAQ][faq]
+__[FAQ][faq]__
 
 If you haven't found something in the main sections, take a look here.
 
