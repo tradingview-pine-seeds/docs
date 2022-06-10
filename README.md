@@ -47,7 +47,7 @@ __[Data structure][guide_data]__
 
 Data storage form, data structure, fields descriptions, fields types, data validation conditions.
 
-___[GitHub settings][guide_repo]__
+__[GitHub settings][guide_repo]__
 
 Account and repository settings, GitHub actions workflow, repositories organization, external data connection.
 
