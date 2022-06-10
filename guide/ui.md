@@ -31,7 +31,7 @@ Flexible and convenient tool for displaying data on the Chart.
 
 ## Symbol Search
 
-Symbol Search is the first entry point to access the data on the TradingView Chart.
+It is the first entry point to access the data on the TradingView Chart.
 
 The symbol name on the TradingView chart is uniquely determined by the Github parameters:
 
@@ -84,7 +84,9 @@ Summary information about the symbol is posted on this panel. Here are symbol na
 
 ## Pine Editor
 
-To get private data in the indicator code, a special [request.seed()][request-seed] function has been added to Pine
+This is one more tool for working with your series data on the TradingView plafrorm.
+
+To get private data in the indicator code, a special [request.seed()][request_seed] function has been added to Pine
 
 ```js
 request.seed(source, group, symbol)
