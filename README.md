@@ -1,7 +1,7 @@
 [faq]: /faq.md
-[guide_data]: /guide/data.md
-[guide_repo]: /guide/repo.md 
-[guide_ui]: /guide/ui.md
+[data]: /data.md
+[repo]: /repo.md 
+[ui]: /ui.md
 [ui_chart_pine]: /images/ui_chart_pine_btc.png
 [github_user]: https://github.com/crypto
 [github_repo]: https://github.com/crypto/santiment
@@ -37,21 +37,21 @@ Keep in mind that such data has limitations (we call them [EOD][solution_eod] da
 
 Setting up the service include of several steps.
 
-1. [data preparation][guide_data]
-1. setting up [repository][guide_repo]
-1. manipulating data in the [TradingView UI][guide_ui]
+1. [data preparation][data]
+1. setting up [repository][repo]
+1. manipulating data in the [TradingView UI][ui]
 
 A detailed description of the service can be found in the other sections.
 
-__[Data structure][guide_data]__
+__[Data structure][data]__
 
 Data storage form, data structure, fields descriptions, fields types, data validation conditions.
 
-__[GitHub settings][guide_repo]__
+__[GitHub settings][repo]__
 
 Account and repository settings, GitHub actions workflow, repositories organization, external data connection.
 
-__[TradingView UI][guide_ui]__
+__[TradingView UI][ui]__
 
 Quick guide for TradingView user using custom data series.
 
