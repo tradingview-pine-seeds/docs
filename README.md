@@ -5,7 +5,6 @@
 [ui_chart_pine]: /images/ui_chart_pine_btc.png
 [github_user]: https://github.com/crypto
 [github_repo]: https://github.com/crypto/santiment
-[tv_chart]: https://tradingview.com/chart
 [pine_docs]: https://www.tradingview.com/pine-script-docs/en/v5/index.html
 [pine_refs]: https://www.tradingview.com/pine-script-reference/v5/#fun_request{dot}seed
 [solution_eod]: https://www.tradingview.com/support/solutions/43000474958-i-see-only-eod-data-for-dxy-symbol-and-no-real-time/
@@ -63,7 +62,7 @@ If you haven't found something in the main sections, take a look here.
 
 You just need to set up the repository, upload your data to it and wait for it to be uploaded to the TradingView storage.
 
-`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` is an example of custom data integration. You can work with on the [Chart][tv_chart].
+`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` is an example of custom data integration. You can work with on the Chart.
 
 Symbol name is uniquely determined by Github settings.
 
