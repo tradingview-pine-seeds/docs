@@ -48,7 +48,7 @@ Data storage form, data structure, fields descriptions, fields types, data valid
 
 __[GitHub settings][repo]__
 
-Account and repository settings, GitHub actions workflow, repositories organization, external data connection.
+Account and repository settings, GitHub actions workflow, repositories organisation, external data connection.
 
 __[TradingView UI][ui]__
 
