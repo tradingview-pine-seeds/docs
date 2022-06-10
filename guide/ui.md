@@ -3,7 +3,7 @@
 [ui_details]: /images/ui_details.png
 [ui_search]: /images/ui_search_empty.png
 [ui_pine]: /images/ui_pine.png
-[pine_btc]: /images/guide_chart_pine_btc.png
+[pine_btc]: /images/ui_chart_pine_btc.png
 [request_seed]: https://www.tradingview.com/pine-script-reference/v5/#fun_request{dot}seed
 [support_ohlc]: https://www.tradingview.com/support/solutions/43000619436-heikin-ashi/
 
