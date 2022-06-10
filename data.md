@@ -44,8 +44,8 @@ All data must be placed as CSV files. One symbol is one file. The files must mee
 | __close__  | Last tick price               | `0.1`       |
 | __volume__ | Total number of shares traded | `0`         |
 
-If your feed is trading data, a valid [OHLCV][support_ohlc] (Open, High, Low, Close, Value) series should come in each line.
-If the feed has a single value per day, then it should be `open` = `close` = `high` = `low`, and `volume` = 0.
+If you connect a trading data source, a valid [OHLCV][support_ohlc] (Open, High, Low, Close, Value) series should come in each line.
+If data series has a single value per day, then it should be `open` = `close` = `high` = `low`, and `volume` = 0.
 
 ## Symbol info file format
 
