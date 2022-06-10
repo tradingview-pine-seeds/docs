@@ -66,20 +66,20 @@ If your data series is one value per day, your data will look something like thi
 
 For single-layer data (`open` = `high` = `low` = `close`), the _Line_ type graph is clearer.
 
-|![Chart][ui_chart_line]|
+|![ui_chart_line]|
 |-|
 
 If your feed is trading data, a valid [OHLCV][support_ohlc] data series should come in each line.
 In this case the _Heikin Ashi_ graph will be more useful.
 
-|![Heikin Ashi][ui_chart_heikin]|
+|![ui_chart_heikin]|
 |-|
 
 ## Details
 
 Summary information about the symbol is posted on this panel. Here are symbol name and it's group, current price, price increment/decrease.
 
-|![Details][ui_details]|
+|![ui_details]|
 |-|
 
 ## Pine Editor
@@ -100,7 +100,8 @@ When calling the function, set the parameters that define the data source:
 
 These parameters uniquely determine the requested series. They cannot be empty strings.
 
-![Pine Editor][ui_pine]
+|![ui_pine]|
+|-|
 
 `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in as
 
