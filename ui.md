@@ -89,13 +89,13 @@ This is one more tool for working with your series data on the TradingView plafr
 To get private data in the indicator code, a special [request.seed()][request_seed] function has been added to Pine
 
 ```js
-request.seed(source, group, symbol, expression)
+request.seed(source, reponame, symbol, expression)
 ```
 
 When calling the function, set the parameters that define the data source:
 
 - `source` — the source name, the same as GitHub account name
-- `group` — a group of symbols, coincides with GitHub repository name
+- `reponame` — a group of symbols, coincides with GitHub repository name
 - `symbol` — the name of the symbol in the group, corresponds to a specific data file
 
 These parameters uniquely determine the requested series. They cannot be empty strings.
@@ -106,7 +106,7 @@ These parameters uniquely determine the requested series. They cannot be empty s
 `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in as
 
 ```js
-//request.seed(source, group, symbol, expression)
+//request.seed(source, reponame, symbol, expression)
 //@version=5
 indicator("My script")
 s = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
