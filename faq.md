@@ -1,22 +1,26 @@
+[data_formats]: data.md#data-formats
+[env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
+
 # FAQ
 
 ## Data requirements
 
 __Q:__ __In what form should the data be stored?__
 
-__A:__ Use palin-text CSV and JSON files.
-The price data itself is in CSV files in the `data/your_repo` directory. Create a separate file for each symbol. 
-The additional symbol information is in a JSON file in the `symbol_info` directory. The settings of all symbols are described in one file.
+__A:__ Use palin-text files to store data.
+The price data itself is in CSV files in the `data/reponame` directory. Create a separate file for each symbol. 
+The additional symbol information is in a JSON file in the `symbol_info` directory. Describe the settings of all symbols in one file.
 
-__Q:__ __How do I write the repository access keys in GitHub variables and use them in code?__
+__Q:__ __How to set up access to the data source and not store access keys in code?__
 
-__A:__ Use envinonment varialbe.
+__A:__ Use [envinonment varialbe][env_var].
 Go to the repository settings. Open _Secrets_ section. Create a variable with a token or password in it. Then use that variable in public code.
 
 __Q:__ __Can only trading data be integrated?__
 
-__A:__ The TradingView platform is a handy tool for dealing with trading data. Such data always has a difference between price values. 
-But if you have only one value a day, use `open = close = high = low`, and `volume=0`
+__A:__ The TradingView platform is a handy tool for dealing with [trading data](data.md#data-formats). 
+Such data always has a difference between price values. 
+But if your data series has a single value per day, use `open` = `close` = `high` = `low`, and `volume` = 0.
 It is suitable for economic indicators.
 
 ```js
