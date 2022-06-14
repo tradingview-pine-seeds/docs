@@ -40,43 +40,25 @@ __A:__ TradingView allows you to watch and analyse the data for any period.
 If data is not updated, it is no longer useful.
 If your files are not updated within three months, the source will be disabled.
 
-__Q:__ __Why host data in public repositories?__
-
-__A:__ We like open source. Our tools help a lot of people because of it. But if you want to connect private data - that's completely fine.
-
 ## TradingView UI
 
 __Q:__ __Why can't I find my symbols in symbol search box?__
 
-__A:__ EOD symbols entering in symbol search box do not show up in the tooltip.
+__A:__ EOD symbols entering in Symbol Search box do not show up in the tooltip.
 Enter the full symbol name (`prefix:symbol_name`) then press _Enter_ - the symbol graph will appears in the chart's main area.
-
-__Q:__ __What is a one-point bar?__
-
-__A:__ A one-point bar is what we call a graph with the following data: `open = close = high = low`, and `volume=0`
 
 __Q:__ __Would a candlestick chart be informative?__
 
-__A:__ Much more informative. Pay attention to the _Heikin Anshi_ candles. 
-The rise is green, the fall is red. The difference between `high` and `low` is immediately noticable.
-
-__Q:__ __How to see `open`, `close`, `high`, `low` volues on chart? And `volume`?__
-
-__A:__ You can turn them on/off in the symbol context menu (in the top left corner of chart area).
+__A:__ A _Heiken Ashi_ graph is useful for visualizing trading data. Growth is green, fall is red.
+The difference between `high` and `low` prices is immediately visible. For economic data, a _Line_ graph is more suitable.
 
 ## GitHub settings
 
-__Q:__ __What is in the repository? What are the scripts and files?__
+__Q:__ __How to catch errors?__
 
-__A:__ See github section in the _Guide_.
+__A:__ Your GitHub repository has a __Check data and create pr__ action set up. 
+Validation warnings and errors are written to its log.
 
+__Q:__ __Why host data in public repositories?__
 
-__Q:__ __What about the 2nd repository?__
-
-__A:__ Pull request should contain changes only in the data files.
-The additional repository will allow you to add and set up scripts for automatic downloading, checking and formatting of data.
-
-__Q:__ __How do I upload data from private storage?__
-
-__A:__ It's not possible in a main repository.
-You can create additional repository, configure access via environments variable, and create scripts for the data upload.
+__A:__ We like open source. Our tools help a lot of people because of it. But if you want to connect private data - that's completely fine.
