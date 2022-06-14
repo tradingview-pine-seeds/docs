@@ -19,7 +19,7 @@ Go to the repository settings. Open _Secrets_ section. Create a variable with a 
 
 __Q:__ __Can only trading data be integrated?__
 
-__A:__ The TradingView platform is a handy tool for dealing with [trading data](data.md#data-formats). 
+__A:__ The TradingView platform is a handy tool for dealing with [trading data][data_formats]. 
 Such data always has a difference between price values. 
 But if your data series has a single value per day, use `open` = `close` = `high` = `low`, and `volume` = 0.
 It is suitable for economic indicators.
