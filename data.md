@@ -107,7 +107,7 @@ If you want to handle higher frequency data (per minute/second), you can use a [
 
 ## Data validation
  
-If you can't validate any of the fields in symbol_info file, you will get a parsing error in Action's log. 
+If you can't validate any of the fields in symbol_info file, you will get a parsing error in the log of __Check data and create pr__ action.
 If a field is found to be missing from this list, a warning about it will appear in the log.
 
 ## Accessing a data repository
