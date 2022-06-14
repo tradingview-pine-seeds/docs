@@ -1,5 +1,6 @@
 [data_formats]: data.md#data-formats
 [env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
+[rest_api]: https://www.tradingview.com/brokerage-integration/
 
 # FAQ
 
@@ -27,20 +28,19 @@ It is suitable for economic indicators.
 20210101T,0.1,0.1,0.1,0.1,0
 ```
 
-__Q:__ __How often is the data being updated?__
+__Q:__ __How quickly can I check the result after updating the data?__
 
-__A:__ Your end-of-day data is checked and uploaded to our repository once a day. You will see the data for the previous day on the chart. 
-If the data needs to be updated more frequently, use a [REST feed](https://www.tradingview.com/brokerage-integration/).
+__A:__ Your EOD data is checked and uploaded to our storage several times a day. 
+On the Chart you will see the values for the previous day and earlier.
+If the data needs to be updated more frequently, you can connect the integration via [REST API][rest_api].
 
-__Q:__ __Why data needs to be updated regularly?__
+__Q:__ __How often do I update data from the source?__
 
-__A:__ TradingView allows you to watch and analyse the data for any period. If data is not updated, it is no longer useful.
+__A:__ TradingView allows you to watch and analyse the data for any period. 
+If data is not updated, it is no longer useful.
+If your files are not updated within three months, the source will be disabled.
 
-__Q:__ __What happens to abandoned data?__
-
-__A:__ We don't want to keep data that is no longer required. Will we disable feeds if they are not updated for three months?
-
-__Q:__ __Why do we prefer public data repositories?__
+__Q:__ __Why host data in public repositories?__
 
 __A:__ We like open source. Our tools help a lot of people because of it. But if you want to connect private data - that's completely fine.
 
