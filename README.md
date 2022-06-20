@@ -76,7 +76,7 @@ Now, using the [request.seed()][pine_refs] function from the built-in [Pine Scri
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, reponame, symbol, expression)
+//request.seed(source, repo_name, symbol, expression)
 activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity)
 ```
