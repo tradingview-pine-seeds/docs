@@ -71,14 +71,14 @@ Symbol name is uniquely determined by Github settings.
 - `SANTIMENT` is the name of [github.com/crypto/santiment][github_repo] repository
 - `BTC_DEV_ACTIVITY` is a data filename _BTC_DEV_ACTIVITY.CSV_
 
-Now, using the [request.see()][pine_refs] function from the built-in [Pine Script language][pine_docs] and the available data, you can build a graph.
+Now, using the [request.seed()][pine_refs] function from the built-in [Pine Script language][pine_docs] and the available data, you can build a graph.
 
 ```js
-//request.seed(source, reponame, symbol, expression)
 //@version=5
-indicator("My script")
-s = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
-plot(s)
+indicator("BTC Dev Activity", format=format.volume)
+//request.seed(source, reponame, symbol, expression)
+activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
+plot(activity)
 ```
 
 By adding Bitcoin developer activity data from the EOD source (_SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY_) to the _BTCUSD_ chart, you will receive information for technical analysis.
