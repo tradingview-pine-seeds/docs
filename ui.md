@@ -89,13 +89,13 @@ This is one more tool for working with your series data on the TradingView plafr
 To get private data in the indicator code, a special [request.seed()][request_seed] function has been added to Pine
 
 ```js
-request.seed(source, reponame, symbol, expression)
+request.seed(source, repo_name, symbol, expression)
 ```
 
 When calling the function, set the parameters that define the data source:
 
 - `source` — the source name, the same as GitHub account name
-- `reponame` — a group of symbols, coincides with GitHub repository name
+- `repo_name` — a group of symbols, coincides with GitHub repository name
 - `symbol` — the name of the symbol in the group, corresponds to a specific data file
 
 These parameters uniquely determine the requested series. They cannot be empty strings.
@@ -106,11 +106,11 @@ These parameters uniquely determine the requested series. They cannot be empty s
 `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in as
 
 ```js
-//request.seed(source, reponame, symbol, expression)
 //@version=5
-indicator("My script")
-s = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
-plot(s)
+indicator("BTC Dev Activity", format=format.volume)
+//request.seed(source, repo_name, symbol, expression)
+activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
+plot(activity)
 ```
 
 The source send 6 values in each data set.
@@ -125,6 +125,17 @@ The source send 6 values in each data set.
 - `high` — the highest value of the tick price
 - `low` — the lowest value of the tick price
 - `volume` — buy/sell volume per day
+
+The `expression` parameter specifies the data set that is requested from the symbol. It can be either a built-in series variable like `close`, or a custom variable or expression, like `ta.sma(close, 10)`:
+
+```js
+//@version=5
+indicator("Average BTC Dev Activity", format=format.volume)
+sma = ta.sma(close, 10)
+//request.seed(source, repo_name, symbol, expression)
+avg_activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", sma)
+plot(avg_activity)
+```
 
 Add Bitcoin developer activity data from the EOD source to the BTC USD chart. So you will receive information for technical analysis.
 
