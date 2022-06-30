@@ -3,6 +3,8 @@
 [repo]: /repo.md 
 [ui]: /ui.md
 [ui_chart_pine]: /images/ui_chart_pine_btc.png
+[data_limits]: /data.md#updating-the-data
+[ui_simbol_search]: /ui.md#symbol-search
 [github_user]: https://github.com/crypto
 [github_repo]: https://github.com/crypto/santiment
 [pine_docs]: https://www.tradingview.com/pine-script-docs/en/v5/index.html
@@ -27,8 +29,8 @@ Keep in mind that such data has limitations (we call them [EOD][solution_eod] da
 
 - the data can only be updated a few times a day
 - only the daily resolution is available
-- the number of data elements (symbols) is limited
-- such data cannot be found with Symbol Search box
+- the number of data elements (symbols) is [limited][data_limits]
+- such data [cannot be found][ui_simbol_search] with Symbol Search box
 
 > __Note__
 > 
@@ -36,42 +38,24 @@ Keep in mind that such data has limitations (we call them [EOD][solution_eod] da
 
 Setting up the service include of several steps.
 
-1. [data preparation][data]
-1. setting up [repository][repo]
-1. manipulating data in the [TradingView UI][ui]
-
-A detailed description of the service can be found in the other sections.
-
-__[Data structure][data]__
-
-Data storage form, data structure, fields descriptions, fields types, data validation conditions.
-
-__[GitHub settings][repo]__
-
-Account and repository settings, GitHub actions workflow, repositories organisation, external data connection.
-
-__[TradingView UI][ui]__
-
-Quick guide for TradingView user using custom data series.
-
-__[FAQ][faq]__
-
-If you haven't found something in the main sections, take a look here.
+1. [Data preparation][data]
+1. Setting up [repository][repo]
+1. Manipulating data in the [TradingView UI][ui]
 
 ## Example
 
 You just need to set up the repository, upload your data to it and wait for it to be uploaded to the TradingView storage.
 
-`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` is an example of custom data integration. You can work with on the Chart.
+`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` is an example of custom data integration. You can work with it on the Chart.
 
 Symbol name is uniquely determined by Github settings.
 
 - `SEED` is a mandatory prefix for this type of data
-- `CRYPTO` is the name of [github.com/crypto][github_user] GitHub user
+- `CRYPTO` is the name of [github.com/crypto][github_user] GitHub account
 - `SANTIMENT` is the name of [github.com/crypto/santiment][github_repo] repository
 - `BTC_DEV_ACTIVITY` is a data filename _BTC_DEV_ACTIVITY.CSV_
 
-Now, using the [request.seed()][pine_refs] function from the built-in [Pine Script language][pine_docs] and the available data, you can build a graph.
+Now, using the [request.seed()][pine_refs] function from the built-in [Pine Script language][pine_docs] and the available data, you can build a chart.
 
 ```js
 //@version=5
@@ -85,3 +69,21 @@ By adding Bitcoin developer activity data from the EOD source (_SEED_CRYPTO_SANT
 
 |![ui_chart_pine]|
 |-|
+
+## Read more
+
+__[Data structure][data]__
+
+Data storage form, data structure, fields descriptions, fields types, data validation conditions.
+
+__[GitHub settings][repo]__
+
+Account and repository settings, GitHub actions workflow, repositories organization, external data connection.
+
+__[TradingView UI][ui]__
+
+Quick guide for TradingView user using custom data series.
+
+__[FAQ][faq]__
+
+If you haven't found something in the main sections, take a look here.
