@@ -36,11 +36,11 @@ Keep in mind that such data has limitations (we call them [EOD][solution_eod] da
 > 
 > Read [5-minute tutorial](tutorial.md) to start right now
 
-Setting up the service include of several steps.
+Setting up the service include of several steps:
 
-1. [Data preparation][data]
-1. Setting up [repository][repo]
-1. Manipulating data in the [TradingView UI][ui]
+- [data preparation][data]
+- setting up [repository][repo]
+- manipulating data in the [TradingView UI][ui]
 
 ## Example
 
