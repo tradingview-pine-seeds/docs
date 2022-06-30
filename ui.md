@@ -1,6 +1,5 @@
 [ui_chart_heikin]: /images/ui_chart_heikin.png
 [ui_chart_line]: /images/ui_chart_line.png
-[ui_details]: /images/ui_details.png
 [ui_search]: /images/ui_search_empty.png
 [ui_pine]: /images/ui_pine.png
 [ui_pine_btc]: /images/ui_chart_pine_btc.png
@@ -19,10 +18,6 @@ __[Chart](#chart)__
 
 Chart is the main data visualization tool.
 There are different types of charts, a lot of additional indicators, viewing historical data, data for any period.
-
-__[Details](#details)__
-
-A block with additional information about the symbol: its name, data source, current value, change per day.
 
 __[Pine Editor](#pine-editor)__
 
@@ -46,7 +41,7 @@ The symbol name on the TradingView chart is uniquely determined by the Github pa
 For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbol is obtained as follows:
 
 - `SEED` prefix
-- `CRYPTO` — github.com/crypto user name
+- `CRYPTO` — github.com/crypto account name
 - `SANTIMENT` — github.com/crypto/santiment repository name
 - `BTC_DEV_ACTIVITY` — the name of the `BTC_DEV_ACTIVITY.CSV` data file
 
@@ -73,13 +68,6 @@ If your feed is trading data, a valid [OHLCV][support_ohlc] data series should c
 In this case the _Heikin Ashi_ graph will be more useful.
 
 |![ui_chart_heikin]|
-|-|
-
-## Details
-
-Summary information about the symbol is posted on this panel. Here are symbol name and it's group, current price, price increment/decrease.
-
-|![ui_details]|
 |-|
 
 ## Pine Editor

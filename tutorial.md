@@ -26,7 +26,7 @@
 
 ## Add data files
 
-- Upload data files to the `data/your_repo` directory
+- Upload data files to the `data/repo_name` directory
 - Upload a symbol description file to the `symbol_info` directory
 
 ## Check the data upload

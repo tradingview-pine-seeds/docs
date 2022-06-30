@@ -1,5 +1,5 @@
 [iso_4217]: https://en.wikipedia.org/wiki/ISO_4217
-[rest_feed]: https://www.tradingview.com/brokerage-integration/
+[rest_api]: https://www.tradingview.com/brokerage-integration/
 [env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
 [tv_chart]: [https://tradingview.com/chart]
 [support_ohlc]: https://www.tradingview.com/support/solutions/43000619436-heikin-ashi/
@@ -8,19 +8,18 @@
 # Data structure
 
 Store your series data in the repository. 
-You create a separate file for each symbol. And every day you add a row with data to it.
-Symbol parameters are described in a separate file. It changes as needed.
+You create a separate CSV file for each symbol. And every day you add a row with data to it.
+Symbol parameters are described in a separate file. It must be changed accordingly.
 
-To update data automatically, you can create a separate repository for this and configure GitHub Actions to load from external sources.
 
 ## Data requirements
 
 Two directories are provided for the data files in the repository.
 
-- Place a CSV file with daily data for each symbol in the `data/your_repo` directory. These files need to be updated once a day.
+- Place a CSV file with daily data for each symbol in the `data/repo_name` directory. These files need to be updated once a day.
 - Place one JSON file with the description of the symbol fields in the `symbol_info` directory.
 
-The structure of the CSV file with data is simple, 6 values in each line.
+The structure of the CSV file with data is simple, 6 values (Date/Time,O,H,L,C,V) in each line.
 
 ```csv
 20210101T,0.1,0.1,0.1,0.1,0
@@ -28,7 +27,7 @@ The structure of the CSV file with data is simple, 6 values in each line.
 
 ## Data formats
 
-All data must be placed as CSV files. One symbol is one file. The files must meet the following requirements:
+All data must be placed as CSV files. One file per symbol. The files must meet the following requirements:
 
 - Fields are separated by commas
 - No headers
@@ -44,8 +43,7 @@ All data must be placed as CSV files. One symbol is one file. The files must mee
 | __close__  | Last tick price               | `0.1`       |
 | __volume__ | Total number of shares traded | `0`         |
 
-If you connect a trading data source, a valid [OHLCV][support_ohlc] (Open, High, Low, Close, Value) series should come in each line.
-If data series has a single value per day, then it should be `open` = `close` = `high` = `low`, and `volume` = 0.
+If your data series has a only a single value, then you should fill OHLC fields with the same single value and V with 0.
 
 ## Symbol info file format
 
@@ -69,7 +67,7 @@ The name of the file is similar to the name of the repository.
 | __timezone__        | String | Timezone code                                                                                                                 | `Etc/UTC`                                      | Error if not `Etc/UTC`                                                                 |
 | __type__            | String | Symbol type                                                                                                                   | From the table below                           | From the table only                                                                    |
 
-Below are `type` filed possible values.
+Below are possible values for `type` field.
 
 | Value.         | Description                                                |
 |----------------|------------------------------------------------------------|
@@ -96,19 +94,19 @@ Below are `type` filed possible values.
 Your EOD data is checked and uploaded to our repository once a day.
 You see the data for all previous days on the [chart][tv_chart]. 
 The checked and uploaded today data will appear on the chart tomorrow.
-If the data is not updated till three months, the feed will be disabled.
+If the data is not updated for three months, the data will be removed from TradingView storage.
 
 > __Warning__
 > 
-> The EOD feed has a limit of 1000 symbols a day. Keep this in mind when adding data files.
+> The EOD feed has a limit of 1000 symbols per repository. Keep this in mind when adding data files.
 > To connect more symbols, you can create another data repository.
 
-If you want to handle higher frequency data (per minute/second), you can use a [REST feed][rest_feed].
+If you want to provide data with higher resolutions (minute/second) and real-time updates, you can use a [REST protocol][rest_api].
 
 ## Data validation
  
-If you can't validate any of the fields in symbol_info file, you will get a parsing error in the log of __Check data and create pr__ action.
-If a field is found to be missing from this list, a warning about it will appear in the log.
+If your symbol_info file is incorrect, you will get a parsing error in the log of __Check data and create pr__ action.
+If some field is found to be missing from this list, a warning about it will appear in the log.
 
 ## Accessing a data repository
 
