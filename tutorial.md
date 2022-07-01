@@ -36,6 +36,6 @@
 
 ## Create a chart
 
-- Log into [tradingview.com][chart]
+- Log in to [tradingview.com][chart]
 - Go to symbol search box → Enter full symbol name
 - A graph will appear on the chart main area
