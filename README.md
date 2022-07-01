@@ -30,7 +30,7 @@ Keep in mind that such data has certain limitations (we call them [EOD][solution
 - the data can only be updated a few times a day
 - only the daily resolution is available
 - the number of data elements (symbols) is [limited][data_limits]
-- such data [cannot be found][ui_simbol_search] with Symbol Search box
+- such data [cannot be found][ui_simbol_search] with the Symbol Search box
 
 > __Note__
 > 
