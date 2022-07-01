@@ -8,21 +8,21 @@
 
 # TradingView UI
 
-TradingView platform is your frontend. There are several tools for working with your data.
+The TradingView platform is your frontend. There are several tools for working with your data.
 
 __[Symbol Search](#symbol-search)__
 
-This is a box for searching for a symbol. Enter its full name, press _Enter_ and you will see it on the Chart.
+This is a box where you can search for a symbol. Enter its full name, press _Enter_ and you will see it on the Chart.
 
 __[Chart](#chart)__
 
-Chart is the main data visualization tool.
+The chart is the main data visualization tool.
 There are different types of charts, a lot of additional indicators, viewing historical data, data for any period.
 
-__[Pine Editor](#pine-editor)__
+__[Pine Script™ Editor](#pine-editor)__
 
-Built-in language editor. A couple of lines of code are enough to access the data.
-Flexible and convenient tool for displaying data on the Chart.
+A built-in language editor. A couple of lines of code are enough to access the data.
+A flexible and convenient tool for displaying data on the Chart.
 
 ## Symbol Search
 
@@ -47,11 +47,11 @@ For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbo
 
 > __Note__
 >
-> Enter this name in the Symbol Search box, you can upload it to the Chart. But it won't appear in the tooltip as you type.
+> Enter this name in the Symbol Search box. You can upload it to the chart but it won't appear in the tooltip as you type.
 
 ## Chart
 
-Use the Chart area to work with graphs. After you add a symbol via Symbol Search or Pine Script, its graph will appear on the Chart.
+Use the Chart area to work with graphs. After you add a symbol via Symbol Search or Pine Script™, its graph will appear on the Chart.
 
 If your data series is one value per day, your data will look something like this.
 
@@ -86,7 +86,7 @@ When calling the function, set the parameters that define the data source:
 - `repo_name` — a group of symbols, coincides with GitHub repository name
 - `symbol` — the name of the symbol in the group, corresponds to a specific data file
 
-These parameters uniquely determine the requested series. They cannot be empty strings.
+These parameters uniquely determine the requested series. They can't be empty strings.
 
 |![ui_pine]|
 |-|
