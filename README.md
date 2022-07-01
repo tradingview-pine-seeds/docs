@@ -17,7 +17,7 @@
 
 __Pine Seeds__ is a service for working with your data on the [TradingView](https://tradingview.com) platform.
 
-This service allows you:
+This service allows you to:
 
 - connect your series data to TradingView
 - visualize it in the TradingView UI
@@ -25,7 +25,7 @@ This service allows you:
 
 Use [TradingView](https://tradingview.com) as your __frontend__ and use GitHub repository as your __backend__. 
 
-Keep in mind that such data has limitations (we call them [EOD][solution_eod] data):
+Keep in mind that such data has certain limitations (we call them [EOD][solution_eod] data):
 
 - the data can only be updated a few times a day
 - only the daily resolution is available
