@@ -86,4 +86,4 @@ Quick guide for TradingView user using custom data series.
 
 __[FAQ][faq]__
 
-If you haven't found something in the main sections, take a look here.
+If you have any questions that haven't been covered by info in the above sections then take a look here.
