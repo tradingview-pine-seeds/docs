@@ -55,7 +55,7 @@ Symbol name is uniquely determined by Github settings.
 - `SANTIMENT` is the name of [github.com/crypto/santiment][github_repo] repository
 - `BTC_DEV_ACTIVITY` is a data filename _BTC_DEV_ACTIVITY.CSV_
 
-Now, using the [request.seed()][pine_refs] function from the built-in [Pine Script language][pine_docs] and the available data, you can build a chart.
+Now, using the [request.seed()][pine_refs] function from the built-in [Pine Script™ language][pine_docs] and the available data, you can build a chart.
 
 ```js
 //@version=5
