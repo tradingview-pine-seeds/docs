@@ -73,4 +73,4 @@ Validation warnings and errors are written to its log.
 
 __Q:__ __Why host data in public repositories?__
 
-__A:__ We like open source. Our tools help a lot of people because of it. But if you want to connect private data - that's completely fine.
+__A:__ We love open source code and our tools help a lot of people because of it but if you want to connect private data - that's completely fine as well.
