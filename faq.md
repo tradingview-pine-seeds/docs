@@ -16,8 +16,8 @@ The additional symbol information is in a JSON file in the `symbol_info` directo
 
 __Q:__ __How to set up access to the data source and not store access keys in code?__
 
-__A:__ Use [envinonment varialbe][env_var].
-Go to the repository settings. Open _Secrets_ section. Create a variable with a token or password in it. Then use that variable in public code.
+__A:__ Use [environment variables][env_var] in your code.
+Go to the repository settings. Open the _Secrets_ section. Create a variable with a token or password in it. Then use that variable in your code.
 
 __Q:__ __Can only trading data be integrated?__
 
