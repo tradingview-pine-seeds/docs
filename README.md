@@ -39,7 +39,7 @@ Keep in mind that such data has certain limitations (we call them [EOD][solution
 Setting up the service include of several steps:
 
 - [data preparation][data]
-- setting up [repository][repo]
+- setting up a [repository][repo]
 - manipulating data in the [TradingView UI][ui]
 
 ## Example
