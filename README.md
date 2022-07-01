@@ -34,7 +34,7 @@ Keep in mind that such data has certain limitations (we call them [EOD][solution
 
 > __Note__
 > 
-> Read [5-minute tutorial](tutorial.md) to start right now
+> Read our [5-minute tutorial](tutorial.md) to get started right now
 
 Setting up the service include of several steps:
 
