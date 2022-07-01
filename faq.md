@@ -10,7 +10,7 @@
 
 __Q:__ __In what form should the data be stored?__
 
-__A:__ Use palin-text files to store data.
+__A:__ Use plain-text files to store your data.
 The price data itself is in CSV files in the `data/repo_name` directory. Create a separate file for each symbol. 
 The additional symbol information is in a JSON file in the `symbol_info` directory. Describe the settings of all symbols in one file.
 
