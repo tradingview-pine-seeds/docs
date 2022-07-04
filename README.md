@@ -3,7 +3,7 @@
 [repo]: /repo.md 
 [ui]: /ui.md
 [ui_chart_pine]: /images/ui_chart_pine_btc.png
-[data_limits]: /data.md#updating-the-data
+[data_limits]: /faq.md#q-what-are-the-limits-on-the-amount-of-data
 [ui_simbol_search]: /ui.md#symbol-search
 [github_user]: https://github.com/crypto
 [github_repo]: https://github.com/crypto/santiment
@@ -30,7 +30,7 @@ Keep in mind that such data has limitations (we call them [EOD][solution_eod] da
 - the data can only be updated a few times a day
 - only the daily resolution is available
 - the number of data elements (symbols) is [limited][data_limits]
-- such data [cannot be found][ui_simbol_search] with Symbol Search box
+- such data [will not appear][ui_simbol_search] in Symbol Search box
 
 > __Note__
 > 
