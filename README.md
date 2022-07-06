@@ -23,7 +23,7 @@ This service allows you to:
 - visualize it in the TradingView UI
 - use it to create indicators
 
-Use [TradingView](https://tradingview.com) as your __frontend__ and use GitHub repository as your __backend__. 
+Use [TradingView](https://tradingview.com) as your __frontend__ and use a GitHub repository as your __backend__. 
 
 Keep in mind that such data has certain limitations (we call them [EOD][solution_eod] data):
 
