@@ -12,12 +12,12 @@
 
 __A:__ Use plain-text files to store your data.
 The price data itself is in CSV files in the `data/repo_name` directory. Create a separate file for each symbol. 
-The additional symbol information is in a JSON file in the `symbol_info` directory. Describe the settings of all symbols in one file.
+The additional symbol information is in a JSON file in the `symbol_info` directory. Describe all of the symbol settings in one file.
 
 #### Q: How to set up access to the data source and not store access keys in code?
 
 __A:__ Use [environment variables][env_var] in your code.
-Go to the repository settings. Open the _Secrets_ section. Create a variable with a token or password in it. Then use that variable in your code.
+Go to the repository settings. Open the _Secrets_ section. Create a variable with a token or password in it then use that variable in your code.
 
 #### Q: Can only trading data be integrated?
 
@@ -38,7 +38,7 @@ Regardless of the number of changes within the day (intraday), you will see only
 #### Q: How quickly can I check the result after updating the data?
 
 __A:__ Your EOD data is checked and uploaded to our storage several times a day. 
-On the Chart you will see the values for the previous day and earlier.
+On the chart you will see the values for the previous day and earlier.
 If the data needs to be updated more frequently, you can connect the integration via [REST API][rest_api].
 
 #### Q: How often do I update data from the source?
@@ -56,12 +56,12 @@ If you have more than 1000 CSV data files, you can create another data repositor
 
 #### Q: Why can't I find my symbols in symbol search box?
 
-__A:__ EOD symbols entering in Symbol Search box do not show up in the tooltip.
+__A:__ EOD symbols entering in the symbol search box do not show up in the tooltip.
 Enter the full symbol name (`prefix:symbol_name`) then press _Enter_. The symbol graph will appears in the chart's main area.
 
 #### Q: Would a candlestick chart be informative?
 
-__A:__ A _Heiken Ashi_ graph is useful for visualizing trading data. Growth is green, fall is red.
+__A:__ A _Heiken Ashi_ graph is useful for visualizing trading data. Bullish behavior is green and bearish behavior is red.
 The difference between `high` and `low` prices is immediately visible. For economic data, a _Line_ graph is more suitable.
 
 #### Q: Who can use my symbols in the UI?
