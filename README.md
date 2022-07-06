@@ -27,7 +27,7 @@ Use [TradingView](https://tradingview.com) as your __frontend__ and use GitHub r
 
 Keep in mind that such data has limitations (we call them [EOD][solution_eod] data):
 
-- the data can only be updated a few times a day
+- the data can only be updated a few times per day
 - only the daily resolution is available
 - the number of data elements (symbols) is [limited][data_limits]
 - such data [will not appear][ui_simbol_search] in Symbol Search box
@@ -36,7 +36,7 @@ Keep in mind that such data has limitations (we call them [EOD][solution_eod] da
 > 
 > Read [5-minute tutorial](tutorial.md) to start right now
 
-Setting up the service include of several steps:
+Setting up the service includes of several steps:
 
 - [data preparation][data]
 - setting up [repository][repo]
