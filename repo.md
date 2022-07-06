@@ -8,11 +8,11 @@
 
 # GitHub settings
 
-Use GitHub as your backend. This is where you upload the data. Here you update them.
+Use GitHub as your backend. This is where you upload the data and updated.
 We will prepare a repository for you. You will fork it. After that, you can upload your data to the fork.
 
 GitHub Actions are already configured. They regularly check the data and create a _Pull Request_ to our repository.
-See the results of the checks in the Action's logs.
+See the results of the checks in the Action logs.
 
 ## Pre-setup
 
@@ -22,7 +22,7 @@ See the results of the checks in the Action's logs.
 - Go to _Settings → Secrets → Action_ of your forked repository
 - Add the created __Personal access token__ by calling it `ACTION_TOKEN` here
 - Now go to _Actions → General → Action permissions_
-- Check the box [Allow all actions and reusable workflows][gh_docs_actions] here
+- Check the [Allow all actions and reusable workflows][gh_docs_actions] box here
 - Click the _Actions_ tab
 - Disable all workflows and only enable __Check data and create pr__
 
@@ -45,12 +45,12 @@ README.md
 
 ## Check the data upload
 
-Data is regularly checked and loaded into TradingView storage by action __Check data and create pr__. 
-The results of the checks are written to the log of this action.
+Data is regularly checked and loaded into TradingView storage by __Check data and create pr__ action. 
+The results of the checks can be found in the log of this action.
 
 After updating the data files and completing the action, examine the log for errors.
 
 - Go to repository __Actions__ tab
-- Check action log __Check data and create pr__
+- Check __Check data and create pr__ action log
 
-The [data requirements][_data] are listed in the tables. In the log, we write which field failed the check and why.
+The [data requirements][_data] are listed in the tables. We indicate which field failed the check in the log, and explain why.
