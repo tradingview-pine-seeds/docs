@@ -10,7 +10,7 @@
 
 Store your series data in the repository. 
 You create a separate CSV file for each symbol, and add a row with data to it every day.
-Symbol parameters are described in a separate file. It must be changed accordingly.
+Symbol parameters are described in a separate file and it must be changed accordingly.
 
 
 ## Data requirements
@@ -93,8 +93,8 @@ Below are possible values for `type` field.
 ## Updating the data
 
 Your EOD data is checked and uploaded to our repository once a day.
-You see the data for all previous days on the [chart][tv_chart]. 
-The checked and uploaded today data will appear on the chart tomorrow.
+You can see the data for all previous days on the [chart][tv_chart]. 
+The data that is checked and uploaded today will appear on the chart tomorrow.
 If the data is not updated for three months, the data will be removed from TradingView storage.
 
 > __Warning__
@@ -102,18 +102,16 @@ If the data is not updated for three months, the data will be removed from Tradi
 > The EOD feed has a limit of 1000 symbols per repository. Keep this in mind when adding data files.
 > To connect more symbols, you can create another data repository.
 
-Working with higher resolution data (minute/second) and real-time updates is possible using a [REST protocol][rest_api].
-But this is only for brokerage integration.
+Working with lower resolution data (minute/second) and real-time updates is possible using a [REST protocol][rest_api], but this is only for brokerage integration.
 
 ## Data validation
  
-If your symbol_info file is incorrect, you will get a parsing error in the log of __Check data and create pr__ action.
+If your symbol_info file is incorrect, you will get a parsing error in the __Check data and create pr__ action log.
 If some field is found to be missing from this list, a warning about it will appear in the log.
 
 ## Accessing a data repository
 
-We like opensource. Our tools help a lot of people because of it. 
-But if you want to connect private data - that's completely fine.
+We like open source code and our tools help a lot of people because of it, but if you want to connect private data - that's completely fine.
 
-For public repositories it is convenient to store access keys in [environment variables][env_var] of the repository itself.
+For public repositories it is convenient to store access keys in the [environment variables][env_var] of the repository itself.
 These variables can be safely used in the Action's code.
