@@ -19,7 +19,7 @@ __[Chart](#chart)__
 The chart is the main data visualization tool.
 There are different types of charts, a lot of additional indicators, viewing historical data, data for any period.
 
-__[Pine Script™ Editor](#pine-editor)__
+__[Pine Script™ editor](#pine-editor)__
 
 A built-in language editor. A couple of lines of code are enough to access the data.
 A flexible and convenient tool for displaying data on the chart.
