@@ -73,7 +73,7 @@ In this case the _Heikin Ashi_ graph will be more useful.
 
 ## Pine Editor
 
-This is one more tool for working with your series data on the TradingView plafrorm.
+This is one more tool for working with your series data on the TradingView platform.
 
 To get private data in the indicator code, a special [request.seed()][request_seed] function has been added to Pine
 
