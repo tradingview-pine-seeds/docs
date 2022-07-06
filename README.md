@@ -15,7 +15,7 @@
 
 ## Overview
 
-__Pine Seeds__ is a service for working with your data on the [TradingView](https://tradingview.com) platform.
+__Pine Seeds__ is a service for importing your custom data on the [TradingView](https://tradingview.com) platform.
 
 This service allows you to:
 
@@ -30,13 +30,13 @@ Keep in mind that such data has certain limitations (we call them [EOD][solution
 - the data can only be updated a few times per day
 - only the daily resolution is available
 - the number of data elements (symbols) is [limited][data_limits]
-- such data [will not appear][ui_symbol_search] in Symbol Search box
+- such data [will not appear][ui_symbol_search] in the symbol search box
 
 > __Note__
 > 
 > Read our [5-minute tutorial](tutorial.md) to get started right now
 
-Setting up the service includes of several steps:
+Setting up the service includes several steps:
 
 - [data preparation][data]
 - setting up a [repository][repo]
@@ -44,11 +44,11 @@ Setting up the service includes of several steps:
 
 ## Example
 
-You just need to set up the repository, upload your data to it and wait for it to be uploaded to the TradingView storage.
+You just need to set up the repository, upload your data to it and wait for it to be uploaded to the TradingView platform.
 
-`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` is an example of custom data integration. You can work with it on the Chart.
+`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` is an example of custom data integration. You can work with it on your Chart.
 
-Symbol name is uniquely determined by Github settings.
+The symbol name is uniquely determined by Github settings.
 
 - `SEED` is a mandatory prefix for this type of data
 - `CRYPTO` is the name of [github.com/crypto][github_user] GitHub account
