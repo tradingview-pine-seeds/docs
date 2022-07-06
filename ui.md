@@ -17,7 +17,7 @@ This is a box for searching for a symbol. Enter its full name, press _Enter_ and
 __[Chart](#chart)__
 
 Chart is the main data visualization tool.
-There are different types of charts, a lot of additional indicators, viewing historical data, data for any period.
+There are different types of charts, a lot of additional indicators, viewing historical data available for any period.
 
 __[Pine Editor](#pine-editor)__
 
@@ -47,7 +47,8 @@ For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbo
 
 > __Note__
 >
-> Enter this name in the Symbol Search box, you can upload it to the Chart. But it won't appear in the tooltip as you type.
+> Typing symbols in Symbol Search box would not show up in the tooltip. 
+> Type the full symbol name and press _Enter_ in order for it to appear on the Chart.
 
 ## Chart
 
@@ -91,7 +92,7 @@ These parameters uniquely determine the requested series. They cannot be empty s
 |![ui_pine]|
 |-|
 
-`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in as
+`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine as
 
 ```js
 //@version=5

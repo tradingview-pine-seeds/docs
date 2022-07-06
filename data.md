@@ -1,3 +1,4 @@
+[faq_ohlcv]: /faq.md#q-can-only-trading-data-be-integrated
 [iso_4217]: https://en.wikipedia.org/wiki/ISO_4217
 [rest_api]: https://www.tradingview.com/brokerage-integration/
 [env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
@@ -8,7 +9,7 @@
 # Data structure
 
 Store your series data in the repository. 
-You create a separate CSV file for each symbol. And every day you add a row with data to it.
+You create a separate CSV file for each symbol, and add a row with data to it every day.
 Symbol parameters are described in a separate file. It must be changed accordingly.
 
 
@@ -19,7 +20,7 @@ Two directories are provided for the data files in the repository.
 - Place a CSV file with daily data for each symbol in the `data/repo_name` directory. These files need to be updated once a day.
 - Place one JSON file with the description of the symbol fields in the `symbol_info` directory.
 
-The structure of the CSV file with data is simple, 6 values (Date/Time,O,H,L,C,V) in each line.
+The structure of the CSV file with data is simple, [6 values][faq_ohlcv] (Date,O,H,L,C,V) in each line.
 
 ```csv
 20210101T,0.1,0.1,0.1,0.1,0
@@ -43,7 +44,7 @@ All data must be placed as CSV files. One file per symbol. The files must meet t
 | __close__  | Last tick price               | `0.1`       |
 | __volume__ | Total number of shares traded | `0`         |
 
-If your data series has a only a single value, then you should fill OHLC fields with the same single value and V with 0.
+If your data series has a single value only, then you should fill OHLC fields with the same single value and V value with 0.
 
 ## Symbol info file format
 
@@ -53,8 +54,8 @@ The name of the file is similar to the name of the repository.
 
 |      Field          | Type   | Description                                                                                                                   |                     Default value              |                                    Validation rules                                    |
 |---------------------|--------|-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------|
-| __base-currency__   | String | Code of the base currency in currency pairs.  For example, for `EURUSD` pair the base currency is `EUR`. [ISO 4217][iso_4217] | Can by empty except `forex` and `crypto` types | Error if empty for `forex` and `crypto` types, if not empty validate `^[A-Z0-9._]+$`   |
-| __currency__        | String | Code of the currency in which the symbol is traded. [ISO 4217][iso_4217]                                                      | Can be empty for `index` and `economic` types  | Error if empty for `index` and `economic` types, if not empty validate `^[A-Z0-9._]+$` |
+| __base-currency__   | String | Code of the base currency in currency pairs.  For example, for `EURUSD` pair the base currency is `EUR`. [ISO 4217][iso_4217] | Can be empty except `forex` and `crypto` types | Error if empty for `forex` and `crypto` types, if not empty, it is validated `^[A-Z0-9._]+$`   |
+| __currency__        | String | Code of the currency in which the symbol is traded. [ISO 4217][iso_4217]                                                      | Can be empty for `index` and `economic` types  | Error if empty for `index` and `economic` types, if not empty, it is validated `^[A-Z0-9._]+$` |
 | __description__     | String | Symbol description                                                                                                            | Not empty                                      | Error if empty                                                                         |
 | __has-intraday__    | Bool   | `false` for end-of-day feed                                                                                                   | `false`                                        | Error if not `false`                                                                   |
 | __has-no-volume__   | Bool   | `true` if `volume` = 0 (for `forex`, `index`, etc.)                                                                           | `true`/`false`                                 | Error if empty                                                                         |
@@ -63,13 +64,13 @@ The name of the file is similar to the name of the repository.
 | __pricescale__      | Int    | Tick size                                                                                                                     | `10^n`                                         | Error if not `10^n`                                                                    |
 | __session-regular__ | String | Session time                                                                                                                  | `24x7`                                         | Error if not `24x7`                                                                    |
 | __symbol__          | String | Symbol name in TradingView format                                                                                             | Not empty                                      | Validating `^[A-Z0-9._]+$`                                                             |
-| __ticker__          | String | Symbol name in feed format.                                                                                                   | Not empty                                      | Validating `^[^,]+$`                                                                   |
+| __ticker__          | String | Symbol name in feed format                                                                                                   | Not empty                                      | Validating `^[^,]+$`                                                                   |
 | __timezone__        | String | Timezone code                                                                                                                 | `Etc/UTC`                                      | Error if not `Etc/UTC`                                                                 |
 | __type__            | String | Symbol type                                                                                                                   | From the table below                           | From the table only                                                                    |
 
 Below are possible values for `type` field.
 
-| Value.         | Description                                                |
+| Value          | Description                                                |
 |----------------|------------------------------------------------------------|
 | __stock__      | Stock (common, preferred, bonus issue, CFD on stocks)      |
 | __fund__       | Investment fund                                            |
