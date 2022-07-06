@@ -16,7 +16,7 @@ The additional symbol information is in a JSON file in the `symbol_info` directo
 
 #### Q: How to set up access to the data source and not store access keys in code?
 
-__A:__ Use [envinonment varialbe][env_var].
+__A:__ Use [environment varialbe][env_var].
 Go to the repository settings. Open _Secrets_ section. Create a variable with a token or password in it. Then use that variable in public code.
 
 #### Q: Can only trading data be integrated?
@@ -67,14 +67,14 @@ The difference between `high` and `low` prices is immediately visible. For econo
 #### Q: Who can use my symbols in the UI?
 
 __A:__ An EOD data symbol can only be accessed by [knowing the full name][ui_symbol_search].
-Therefore, if your repository is public, it is possible to find out the symbol name. If it's private, no.
+Therefore, if your repository is public, it is possible to find out the symbol name, and not possible if it’s private.
 
 ## GitHub settings
 
 #### Q: How to catch errors?
 
 __A:__ Your GitHub repository has a __Check data and create pr__ action set up. 
-Validation warnings and errors are written to its log.
+Validation warnings and errors can be found in its log.
 
 #### Q: Why host data in public repositories?
 
