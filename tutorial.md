@@ -31,11 +31,11 @@
 
 ## Check the data upload
 
-- Go to _Actions_ tab
-- Check __Check data and create pr__ action log
+- Go to the _Actions_ tab
+- Check the __Check data and create pr__ action log
 
 ## Create a chart
 
-- Log in to [tradingview.com][chart]
-- Go to symbol search box → Enter full symbol name
-- A graph will appear on the chart main area
+- Log in to a [tradingview.com][chart]
+- Go to the symbol search box → Enter the full symbol name
+- A graph will appear on the chart's main area
