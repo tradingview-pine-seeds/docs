@@ -20,7 +20,7 @@
 - Go to _Settings → Secrets → Action_ of your forked repository
 - Add the created _Personal access token_ by calling it `ACTION_TOKEN` here
 - Now go to _Actions → General → Action permissions_
-- Check the box __Allow all actions and reusable workflows__ here
+- Check the __Allow all actions and reusable workflows__ box here
 - Click the _Actions_ tab
 - Disable all workflows and only enable __Check data and create pr__
 
@@ -32,7 +32,7 @@
 ## Check the data upload
 
 - Go to _Actions_ tab
-- Check action log __Check data and create pr__
+- Check __Check data and create pr__ action log
 
 ## Create a chart
 

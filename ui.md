@@ -47,7 +47,8 @@ For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbo
 
 > __Note__
 >
-> Enter this name in the Symbol Search box. You can upload it to the chart but it won't appear in the tooltip as you type.
+> Typing symbols in Symbol Search box would not show up in the tooltip. 
+> Type the full symbol name and press _Enter_ in order for it to appear on the Chart.
 
 ## Chart
 
@@ -91,7 +92,7 @@ These parameters uniquely determine the requested series. They can't be empty st
 |![ui_pine]|
 |-|
 
-`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in as
+`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine as
 
 ```js
 //@version=5
