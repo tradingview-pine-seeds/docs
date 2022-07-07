@@ -8,31 +8,31 @@
 
 # TradingView UI
 
-TradingView platform is your frontend. There are several tools for working with your data.
+The TradingView platform is your frontend. There are several tools for working with your data.
 
-__[Symbol Search](#symbol-search)__
+__[Symbol search](#symbol-search)__
 
-This is a box for searching for a symbol. Enter its full name, press _Enter_ and you will see it on the Chart.
+This is a box where you can search for a symbol. Enter its full name, press _Enter_ and you will see it on the Chart.
 
 __[Chart](#chart)__
 
-Chart is the main data visualization tool.
-There are different types of charts, a lot of additional indicators, viewing historical data available for any period.
+The chart is the main data visualization tool.
+There are different types of charts, a lot of additional indicators, viewing historical data, data for any period.
 
-__[Pine Editor](#pine-editor)__
+__[Pine Script™ editor](#pine-editor)__
 
-Built-in language editor. A couple of lines of code are enough to access the data.
-Flexible and convenient tool for displaying data on the Chart.
+A built-in language editor. A couple of lines of code are enough to access the data.
+A flexible and convenient tool for displaying data on the chart.
 
-## Symbol Search
+## Symbol search
 
-It is the first entry point to access the data on the TradingView Chart.
+It is the first entry point to access the data on the TradingView chart.
 
 The symbol name on the TradingView chart is uniquely determined by the Github parameters:
 
 - `SEED` is a mandatory prefix for data of this type
-- the name of the data source (we use GitHub account name)
-- the group of data within the source (we use GitHub repository name)
+- the name of the data source (we use the GitHub account name)
+- the group of data within the source (we use the GitHub repository name)
 - the name of the symbol (we use the name of the data file)
 
 |![Symbol Search][ui_search]|
@@ -47,12 +47,12 @@ For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbo
 
 > __Note__
 >
-> Typing symbols in Symbol Search box would not show up in the tooltip. 
-> Type the full symbol name and press _Enter_ in order for it to appear on the Chart.
+> Typing symbols in the symbol search box would not show up in the tooltip. 
+> Type the full symbol name and press _Enter_ in order for it to appear on the chart.
 
 ## Chart
 
-Use the Chart area to work with graphs. After you add a symbol via Symbol Search or Pine Script, its graph will appear on the Chart.
+Use the chart area to work with graphs. After you add a symbol via symbol search or Pine Script™, its graph will appear on the Chart.
 
 If your data series is one value per day, your data will look something like this.
 
@@ -73,7 +73,7 @@ In this case the _Heikin Ashi_ graph will be more useful.
 
 ## Pine Editor
 
-This is one more tool for working with your series data on the TradingView plafrorm.
+This is one more tool for working with your series data on the TradingView platform.
 
 To get private data in the indicator code, a special [request.seed()][request_seed] function has been added to Pine
 
@@ -83,16 +83,16 @@ request.seed(source, repo_name, symbol, expression)
 
 When calling the function, set the parameters that define the data source:
 
-- `source` — the source name, the same as GitHub account name
-- `repo_name` — a group of symbols, coincides with GitHub repository name
-- `symbol` — the name of the symbol in the group, corresponds to a specific data file
+- `source` — the source name, the same as the GitHub account name
+- `repo_name` — a group of symbols, coincides with the GitHub repository name
+- `symbol` — the name of the symbol in the group that corresponds to a specific data file
 
-These parameters uniquely determine the requested series. They cannot be empty strings.
+These parameters uniquely determine the requested series so they can't be empty strings.
 
 |![ui_pine]|
 |-|
 
-`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine as
+`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine Script™ as
 
 ```js
 //@version=5
@@ -102,7 +102,7 @@ activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity)
 ```
 
-The source send 6 values in each data set.
+The source contains 6 values in each data row.
 
 ```csv
 20210101T,0.1,0.1,0.1,0.1,0
@@ -126,7 +126,7 @@ avg_activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", sma)
 plot(avg_activity)
 ```
 
-Add Bitcoin developer activity data from the EOD source to the BTC USD chart. So you will receive information for technical analysis.
+Add the Bitcoin developer activity data from the EOD source to the BTC USD chart so can then perform your own technical analysis.
 
 |![ui_pine_btc]|
 |-|

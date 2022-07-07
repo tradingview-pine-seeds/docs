@@ -8,17 +8,17 @@
 
 # GitHub settings
 
-Use GitHub as your backend. This is where you upload the data and updated.
-We will prepare a repository for you. You will fork it. After that, you can upload your data to the fork.
+Use GitHub as your backend. This is where you upload the data and update it.
+We will prepare a repository for you and you will need to fork it. After that, you can upload your data to the forked version.
 
-GitHub Actions are already configured. They regularly check the data and create a _Pull Request_ to our repository.
-See the results of the checks in the Action logs.
+GitHub actions are already configured. They regularly check the data and create a _Pull Request_ to our repository.
+See the results of the data checks in the action logs.
 
 ## Pre-setup
 
 - Go to [GitHub Security settings][gh_docs_2fa] → Configure [2FA][gh_security]
 - Create [Personal access token][gh_docs_pat] for __repo__, __workflow__ and __admin:org__ areas
-- We have created a repository for you. Fork it.
+- We have created a repository for you and you will need to fork it.
 - Go to _Settings → Secrets → Action_ of your forked repository
 - Add the created __Personal access token__ by calling it `ACTION_TOKEN` here
 - Now go to _Actions → General → Action permissions_
@@ -45,12 +45,12 @@ README.md
 
 ## Check the data upload
 
-Data is regularly checked and loaded into TradingView storage by __Check data and create pr__ action. 
-The results of the checks can be found in the log of this action.
+Data is regularly checked and loaded into TradingView storage by the __Check data and create pr__ action. 
+The results of the data checks can be found in the action logs.
 
-After updating the data files and completing the action, examine the log for errors.
+After updating the data files and completing the relevant actions, examine the log for errors.
 
-- Go to repository __Actions__ tab
-- Check __Check data and create pr__ action log
+- Go to the repository __Actions__ tab
+- Check the __Check data and create pr__ action log
 
-The [data requirements][_data] are listed in the tables. We indicate which field failed the check in the log, and explain why.
+The [data requirements][_data] are listed in the tables. We indicate which field failed the check in the log and explain why.
