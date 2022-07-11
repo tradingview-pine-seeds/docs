@@ -102,7 +102,7 @@ If the data is not updated for three months, the data will be removed from Tradi
 > The EOD feed has a limit of 1000 symbols per repository. Keep this in mind when adding data files.
 > To connect more symbols, you can create another data repository.
 
-Working with lower resolution data (minute/second) and real-time updates is possible using a [REST protocol][rest_api], but this is only for brokerage integration.
+Intraday data and real-time updates are possible using a [REST protocol][rest_api], but this option is only available for brokerage integration.
 
 ## Data validation
  
