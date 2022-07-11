@@ -38,4 +38,4 @@
 
 - Log in to [tradingview.com][chart]
 - Go to the symbol search box → Enter the full symbol name
-- A graph will appear on the chart's main area
+- The symbol you requested will be open on the chart
