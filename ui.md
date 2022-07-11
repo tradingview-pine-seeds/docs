@@ -12,7 +12,7 @@ The TradingView platform is your frontend. There are several tools for working w
 
 __[Symbol search](#symbol-search)__
 
-This is a box where you can search for a symbol. Enter its full name, press _Enter_ and you will see it on the Chart.
+This is a box where you can search for a symbol. Enter its full name, press _Enter_ and you will see it on the chart.
 
 __[Chart](#chart)__
 
@@ -47,12 +47,12 @@ For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbo
 
 > __Note__
 >
-> Typing symbols in the symbol search box would not show up in the tooltip. 
+> EOD symbols will not appear in the symbol search suggestion field. 
 > Type the full symbol name and press _Enter_ in order for it to appear on the chart.
 
 ## Chart
 
-Use the chart area to work with graphs. After you add a symbol via symbol search or Pine Script™, its graph will appear on the Chart.
+Use the chart area to work with graphs. After you add a symbol via symbol search or Pine Script™, it will appear on the chart.
 
 If your data series is one value per day, your data will look something like this.
 
@@ -60,22 +60,22 @@ If your data series is one value per day, your data will look something like thi
 20210101T,0.1,0.1,0.1,0.1,0
 ```
 
-For single-layer data (`open` = `high` = `low` = `close`), the _Line_ type graph is clearer.
+For single-layer data (`open` = `high` = `low` = `close`), the _Line_ chart type fits best. It displays Close values as dots connected by lines.
 
 |![ui_chart_line]|
 |-|
 
 If your feed is trading data, a valid [OHLCV][support_ohlc] data series should come in each line.
-In this case the _Heikin Ashi_ graph will be more useful.
+In this case the _Candlestick_ chart type will be more useful, as it displays all four values separately.
 
 |![ui_chart_heikin]|
 |-|
 
 ## Pine Editor
 
-This is one more tool for working with your series data on the TradingView platform.
+This is one more tool for working with your series data on TradingView.
 
-To get private data in the indicator code, a special [request.seed()][request_seed] function has been added to Pine
+To get private data in the indicator code, a special [request.seed()][request_seed] function has been added to Pine.
 
 ```js
 request.seed(source, repo_name, symbol, expression)
@@ -92,7 +92,7 @@ These parameters uniquely determine the requested series so they can't be empty 
 |![ui_pine]|
 |-|
 
-`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine Script™ as
+For example, `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine Script™ as
 
 ```js
 //@version=5
@@ -126,7 +126,7 @@ avg_activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", sma)
 plot(avg_activity)
 ```
 
-Add the Bitcoin developer activity data from the EOD source to the BTC USD chart so can then perform your own technical analysis.
+Once this indicator is added to the chart, it displays the 10-day average Bitcoin developer activity data from the EOD source on your chart, potentially helping your technical analysis.
 
 |![ui_pine_btc]|
 |-|
