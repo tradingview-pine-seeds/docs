@@ -59,9 +59,9 @@ Now, using the built-in [request.seed()][pine_refs] function from the [Pine Scri
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, repo_name, symbol, expression)
+//request.seed(source, repo_name, symbol, expression[, gaps])
 activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
-plot(activity)
+plot(activity, "BTC Dev Activity")
 ```
 
 By adding Bitcoin developer activity data from the EOD source (_SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY_) to the _BTCUSD_ chart, you will receive additional information for technical analysis.
