@@ -14,13 +14,13 @@
 
 ## Overview
 
-__Pine Seeds__ is a service for importing your custom data on the [TradingView](https://tradingview.com) platform.
+__Pine Seeds__ is a service to import your custom data and access it via [TradingView](https://tradingview.com).
 
 This service allows you to:
 
 - connect your series data to TradingView
-- visualize it in the TradingView UI
-- use it to create indicators
+- open it on the TradingView chart
+- use it in custom indicators
 
 Use [TradingView](https://tradingview.com) as your __frontend__ and use a GitHub repository as your __backend__. 
 
@@ -50,8 +50,8 @@ You just need to set up the repository, upload your data to it and wait for it t
 The symbol name is uniquely determined by Github settings.
 
 - `SEED` is a mandatory prefix for this type of data
-- `CRYPTO` is the name of [github.com/crypto][github_user] GitHub account
-- `SANTIMENT` is the name of [github.com/crypto/santiment][github_repo] repository
+- `CRYPTO` is the name of the [github.com/crypto][github_user] GitHub account
+- `SANTIMENT` is the name of the [github.com/crypto/santiment][github_repo] repository
 - `BTC_DEV_ACTIVITY` is a data filename _BTC_DEV_ACTIVITY.CSV_
 
 Now, using the built-in [request.seed()][pine_refs] function from the [Pine Script™ language][pine_docs] and the available data, you can build a chart.
@@ -64,7 +64,7 @@ activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity)
 ```
 
-By adding Bitcoin developer activity data from the EOD source (_SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY_) to the _BTCUSD_ chart, you will receive information for technical analysis.
+By adding Bitcoin developer activity data from the EOD source (_SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY_) to the _BTCUSD_ chart, you will receive additional information for technical analysis.
 
 |![ui_chart_pine]|
 |-|
