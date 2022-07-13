@@ -61,7 +61,7 @@ Enter the full symbol name (`prefix:symbol_name`) then press _Enter_, and the ch
 
 #### Q: Would a candlestick chart be informative?
 
-__A:__ For economic data, which commonly only has a single data source, a _Line_ graph is suitable, as it only shows Close values. The data that has different OHLC values will be better represented with the Candlestick chart, which displays each four of these values separately.
+__A:__ For economic data, which commonly only has a single data source, a _Line_ graph is suitable, as it only shows `close` values. The data that has different OHLC values will be better represented with the _Candles_ chart, which displays each four of these values separately.
 
 #### Q: Who can use my symbols in the UI?
 
