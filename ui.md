@@ -1,4 +1,4 @@
-[ui_chart_heikin]: /images/ui_chart_heikin.png
+[ui_chart_candles]: /images/ui_chart_candles.png
 [ui_chart_line]: /images/ui_chart_line.png
 [ui_search]: /images/ui_search_empty.png
 [ui_pine]: /images/ui_pine.png
@@ -40,9 +40,9 @@ The symbol name on the TradingView chart is uniquely determined by the Github pa
 
 For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbol is obtained as follows:
 
-- `SEED` prefix
-- `CRYPTO` — github.com/crypto account name
-- `SANTIMENT` — github.com/crypto/santiment repository name
+- `SEED` — prefix
+- `CRYPTO` — `github.com/crypto` account name
+- `SANTIMENT` — `github.com/crypto/santiment` repository name
 - `BTC_DEV_ACTIVITY` — the name of the `BTC_DEV_ACTIVITY.CSV` data file
 
 > __Note__
@@ -60,20 +60,21 @@ If your data series is one value per day, your data will look something like thi
 20210101T,0.1,0.1,0.1,0.1,0
 ```
 
-For single-layer data (`open` = `high` = `low` = `close`), the _Line_ chart type fits best. It displays Close values as dots connected by lines.
+For single-layer data (`open` = `high` = `low` = `close`), the _Line_ chart type fits best. It displays `close` values as dots connected by lines.
 
 |![ui_chart_line]|
 |-|
 
 If your feed is trading data, a valid [OHLCV][support_ohlc] data series should come in each line.
-In this case the _Candlestick_ chart type will be more useful, as it displays all four values separately.
+In this case the _Candles_ chart type will be more useful, as it displays all four values separately.
 
-|![ui_chart_heikin]|
+|![ui_chart_candles]|
 |-|
 
 ## Pine Editor
 
-Pine Script™ is one more tool for working with your custom data on TradingView. Unlike the Symbol Search, which changes the main symbol on the chart, indicators written in Pine Script™ are an addition to the currently open symbol.
+Pine Script™ is one more tool for working with your custom data on TradingView. 
+Unlike the symbol search, which changes the main symbol on the chart, indicators written in Pine Script™ are an addition to the currently open symbol.
 
 You can request custom data with the [request.seed()][request_seed] built-in function:
 
@@ -89,7 +90,8 @@ When calling the function, the first three parameters define the data source:
 
 These parameters uniquely determine the requested series so they can't be empty strings.
 
-The `expression` parameter specifies what data series you request from the specified symbol, and the optional `gaps` argument controls whether the gaps between data values should be filled.
+The `expression` parameter specifies what data series you request from the specified symbol, 
+and the optional `gaps` argument controls whether the gaps between data values should be filled.
 
 |![ui_pine]|
 |-|
@@ -117,7 +119,9 @@ The source contains 6 values in each data row.
 - `low` — the lowest value of the tick price
 - `volume` — buy/sell volume per day
 
-The `expression` parameter specifies the data set that is requested from the symbol. It can be either a built-in series variable like `close`, or a custom variable or expression, like `ta.sma(close, 10)`, or even a tuple of several different values (enclosed in square brackets and separated by commas):
+The `expression` parameter specifies the data set that is requested from the symbol. 
+It can be either a built-in series variable like `close`, or a custom variable or expression, 
+like `ta.sma(close, 10)`, or even a tuple of several different values (enclosed in square brackets and separated by commas):
 
 ```js
 //@version=5
@@ -128,7 +132,8 @@ plot(activity, "BTC Dev Activity")
 plot(activitySMA, "BTC Dev Activity, SMA10", color=color.green)
 ```
 
-Once this indicator is added to the chart, it displays the daily Bitcoin developer activity data from the EOD source on your chart and its 10-day average without changing the symbol open on the chart itself.
+Once this indicator is added to the chart, it displays the daily Bitcoin developer activity data 
+from the EOD source on your chart and its 10-day average without changing the symbol open on the chart itself.
 
 |![ui_pine_btc]|
 |-|
