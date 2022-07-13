@@ -5,8 +5,6 @@
 [ui_chart_pine]: /images/ui_chart_pine_btc.png
 [data_limits]: /faq.md#q-what-are-the-limits-on-the-amount-of-data
 [ui_symbol_search]: /ui.md#symbol-search
-[github_user]: https://github.com/crypto
-[github_repo]: https://github.com/crypto/santiment
 [pine_docs]: https://www.tradingview.com/pine-script-docs/en/v5/index.html
 [pine_refs]: https://www.tradingview.com/pine-script-reference/v5/#fun_request{dot}seed
 
@@ -50,9 +48,9 @@ You just need to set up the repository, upload your data to it and wait for it t
 The symbol name is uniquely determined by Github settings.
 
 - `SEED` is a mandatory prefix for this type of data
-- `CRYPTO` is the name of the [github.com/crypto][github_user] GitHub account
-- `SANTIMENT` is the name of the [github.com/crypto/santiment][github_repo] repository
-- `BTC_DEV_ACTIVITY` is a data filename _BTC_DEV_ACTIVITY.CSV_
+- `CRYPTO` is the name of the `github.com/crypto` GitHub account
+- `SANTIMENT` is the name of the `github.com/crypto/santiment` repository
+- `BTC_DEV_ACTIVITY` is a data filename `BTC_DEV_ACTIVITY.CSV`
 
 Now, using the built-in [request.seed()][pine_refs] function from the [Pine Script™ language][pine_docs] and the available data, you can build a chart.
 
