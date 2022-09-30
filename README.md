@@ -71,7 +71,7 @@ By adding Bitcoin developer activity data from the EOD source (_SEED_CRYPTO_SANT
 
 __[Data structure][data]__
 
-Data storage form, data structure, fields descriptions, fields types, data validation conditions.
+Data storage form, data structure, field descriptions, field types, data validation conditions.
 
 __[GitHub settings][repo]__
 
