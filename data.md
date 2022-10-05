@@ -6,25 +6,26 @@
 
 # Data structure
 
-All symbol data and its description is stored in a repository.
-To do this, you need to provide two directories and add data files to them.
+You need to store all symbol data and its description in a repository.
+To do this, provide two directories and add data files to them.
 
-- Create a [CSV file](#data-formats) with daily data for each symbol in the `data/repo_name` directory.
-- Create a [JSON file](#symbolinfo-file-format) with a description of the symbol fields in the `symbol_info` directory.
+- For each symbol, create a [CSV file](#data-format) with daily data in the `data/repo_name` directory.
+- Create a [JSON file](#symbolinfo-format) with symbol descriptions in the `symbol_info` directory.
 
-## Symbol data format
+## Data format
 
-Each symbol data must be placed into a separate CSV file in the `data/repo_name` directory.
+Each symbol and its daily data must be placed into a separate CSV file in the `data/repo_name` directory.
+Daily data represents the symbol's OHLC (open-high-low-close) prices on charts.
 
 > __Note__
 > 
 > The EOD (End-of-Day) feed has a limit of 1,000 symbols per repository. Keep this in mind when adding data files.
 > To connect more symbols, you can create another data repository.
 
-The files and their content must meet the following requirements:
+Follow these requirements when creating a file:
 
 - Values must be comma-separated.
-- No headers, blank lines, and spaces are used.
+- Do not use headers, blank lines, and spaces.
 - File names must be [URL encoded][url_encode].
 
 | Field    | Description                   | Sample      |
@@ -40,32 +41,31 @@ The files and their content must meet the following requirements:
 > 
 > If your data series has a single value only, fill the `open`, `close`, `high`, and `low` fields with the same value and `volume` with `0`.
 
-<details>
-    <summary>CSV file example</summary>
+CSV file example
 
 ```csv
 20210101T,0.1,0.1,0.1,0.1,0
 ```
 
-</details>
-
-<br>
-
 ### Data update
 
-Your EOD data is checked and uploaded to our repository once a day.
+Your EOD data is checked and uploaded to the TradingView repository once a day.
 You can see the data for all previous days on the [chart][tv_chart]. 
-The data that is checked and uploaded today will appear on the chart tomorrow.
-If the data is not updated for three months, the data will be removed from the TradingView storage.
+The data that is checked and uploaded today will appear on the chart the next day.
+If you don't update the data for three months, it will be removed from the TradingView storage.
 
 Intraday data and real-time updates are possible using a REST protocol, but this option is only available for [brokerage integration][brokerage_integration].
 
-## Symbol information format
+## Symbol_info format
 
 Symbol information must be placed into a single JSON file in the `symbol_info` directory. 
-The file name must be similar to the repository name.
 
-A file format is a JSON object consisting of the following required fields.
+Follow these requirements when creating a file:
+
+- The file name must be similar to the repository name.
+- The file consists of a JSON object that cannot be empty.
+
+The object consists of the following required fields:
 
 | Field | Type | Description | Note |
 |-|-|-|-|
@@ -80,62 +80,59 @@ A file format is a JSON object consisting of the following required fields.
 > For all fields, the length of these arrays must match.
 > However, if all the values in the array are the same, you can specify a single value for the field instead of an array.
 
-<details>
-    <summary>JSON object example</summary>
+Consider the following example.
+If you specify three symbols in the object, 
+then you also need to specify three descriptions, three price scales, and three currencies (can be empty) for each symbol.
 
 ```json
 {
-   "pricescale": [10, 10],
    "symbol": [
       "BTC_DEV_ACTIVITY",
-      "BTC_SOCIAL_VOLUME_TOTAL"
+      "BTC_SOCIAL_VOLUME_TOTAL",
+      "ETH_DEV_ACTIVITY"
    ],
+   "pricescale": [10, 10, 10],
    "currency": "",
    "description": [
       "Bitcoin developer activity",
-      "Bitcoin social volume total"
+      "Bitcoin social volume total",
+      "Ethereum developer activity"
    ]
 }
 ```
 
-</details>
-
-<details>
-    <summary>JSON object example with a single value for <code>pricescale</code></summary>
+However, if all added symbols have the same price scale, you can only specify a single value in the `pricescale` field:
+`"pricescale": 10` instead of `"pricescale": [10, 10, 10]`.
 
 ```json
 {
+   "symbol": [
+      "BTC_DEV_ACTIVITY",
+      "BTC_SOCIAL_VOLUME_TOTAL",
+      "ETH_DEV_ACTIVITY"
+   ],
    "pricescale": 10,
-   "symbol": [
-      "BTC_DEV_ACTIVITY",
-      "BTC_SOCIAL_VOLUME_TOTAL"
-   ],
    "currency": "",
    "description": [
       "Bitcoin developer activity",
-      "Bitcoin social volume total"
+      "Bitcoin social volume total",
+      "Ethereum developer activity"
    ]
 }
 ```
 
-</details>
+Both examples above are equivalent and will not cause a [validation error](#data-validation).
 
-<br>
+## Data validation
 
-### Data validation
+When your data is ready, you need to run the __Check data and create pr__ action on the repository *Actions* page.
+This action validates your files and loads them into the TradingView storage.
 
-Keep in mind the following validation rules for the `symbol_info` file and its content.
-
-- The file format must be JSON.
-- JSON object cannot be empty.
-- All four [fields](#symbolinfo-file-format) are required.
-- The array length of the fields must match.
-
-You will get errors in the log if these rules are not followed.
+Before running the action, ensure that your files and their content follow the requirements described in this article.
+Otherwise, you will get errors in the *Actions* page logs.
 
 ## Data repository access
 
-We like open-source code, and our tools help a lot of people, but if you want to connect private data, that's completely fine.
-
-For public repositories, it is convenient to store access keys in the [environment variables][env_var] of the repository itself.
-These variables can be safely used in the Action's code.
+Your repository can be either public or private.
+If you store data in a public one, 
+we recommend using [environment variables][env_var] to store access keys.
