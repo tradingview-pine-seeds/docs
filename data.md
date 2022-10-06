@@ -49,9 +49,9 @@ CSV file example:
 
 ### Data update
 
-Your EOD data is checked and uploaded to the TradingView repository once a day.
+Your EOD data is checked and uploaded to the TradingView repository daily.
 You can see the data for all previous days on the [chart][tv_chart]. 
-The data that is checked and uploaded today will appear on the chart the next day.
+The data checked and uploaded today will appear on the chart the next day.
 If you don't update the data for three months, it will be removed from the TradingView storage.
 
 Intraday data and real-time updates are possible using a REST protocol, but this option is only available for [brokerage integration][brokerage_integration].
@@ -82,7 +82,7 @@ The object consists of the following required fields:
 
 Consider the following example.
 If you specify three symbols in the object, 
-then you also need to specify three descriptions, three price scales, and three currencies (can be empty) for each symbol.
+then you also need to specify three descriptions, three price scales, and three currencies (which can be empty) for each symbol.
 
 ```json
 {
@@ -125,7 +125,7 @@ Both examples above are equivalent and will not cause a validation error.
 
 ## Data validation
 
-When your data is merged, the __Check data and create pr__ action will run automatically on the repository *Actions* page.
+When your data is merged, the __Check data and create pr__ action will run on the repository *Actions* page automatically.
 This action validates your files and loads them into the TradingView storage.
 
 Before merging your data, ensure that your files and their content follow the requirements described in this article.

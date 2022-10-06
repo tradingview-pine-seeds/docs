@@ -48,8 +48,8 @@ If your files have not been updated for three months, the source will be disable
 
 #### Q: What are the limits on the amount of data?
 
-__A:__ EOD data has a [limit][data_format] of 1000 symbols per repository. 
-If you have more than 1,000 CSV data files, you can create another data repository.
+__A:__ EOD data has a [limit][data_format] of 1,000 symbols per repository. 
+You can create another data repository if you have more than 1,000 CSV data files.
 
 ## TradingView UI
 
