@@ -7,7 +7,7 @@
 # Data structure
 
 You need to store all symbol data and its description in a repository.
-To do this, provide two directories and add data files to them.
+To do this, provide two directories and add your data files.
 
 - For each symbol, create a [CSV file](#data-format) with daily data in the `data/repo_name` directory.
 - Create a [JSON file](#symbolinfo-format) with symbol descriptions in the `symbol_info` directory.
@@ -41,7 +41,7 @@ Follow these requirements when creating a file:
 > 
 > If your data series has a single value only, fill the `open`, `close`, `high`, and `low` fields with the same value and `volume` with `0`.
 
-CSV file example
+CSV file example:
 
 ```csv
 20210101T,0.1,0.1,0.1,0.1,0
@@ -72,7 +72,7 @@ The object consists of the following required fields:
 | `symbol` | String | Symbol name used in TradingView. | Cannot be empty. Validation rule: `^[A-Z0-9._]+$`. |
 | `currency` | String | Three-letter currency code according to [ISO 4217][iso_4217]. | Can be empty. Validation rule: `^[A-Z0-9._]+$`. |
 | `description` | String | Symbol description. | Cannot be empty. |
-| `pricescale` | Integer | Tick size. | Values must match `10^n`. Otherwise, an error occurs. |
+| `pricescale` | Integer | Indicates how many decimal places the price has. | The value format is `10^n`, where *n* is the number of decimal places. For example, if the price has two decimal places `300.01`, set `pricescale` to `100`. If it has three decimal places `300.001`, set `pricescale` to `1000`, etc. If the price doesn't have decimals, set `pricescale` to `1`. |
 
 > __Note__
 > 
@@ -121,14 +121,14 @@ However, if all added symbols have the same price scale, you can only specify a 
 }
 ```
 
-Both examples above are equivalent and will not cause a [validation error](#data-validation).
+Both examples above are equivalent and will not cause a validation error.
 
 ## Data validation
 
-When your data is ready, you need to run the __Check data and create pr__ action on the repository *Actions* page.
+When your data is merged, the __Check data and create pr__ action will run automatically on the repository *Actions* page.
 This action validates your files and loads them into the TradingView storage.
 
-Before running the action, ensure that your files and their content follow the requirements described in this article.
+Before merging your data, ensure that your files and their content follow the requirements described in this article.
 Otherwise, you will get errors in the *Actions* page logs.
 
 ## Data repository access
