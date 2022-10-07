@@ -1,117 +1,138 @@
-[faq_ohlcv]: /faq.md#q-can-only-trading-data-be-integrated
-[iso_4217]: https://en.wikipedia.org/wiki/ISO_4217
-[rest_api]: https://www.tradingview.com/brokerage-integration/
+[brokerage_integration]: https://www.tradingview.com/brokerage-integration/
 [env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
+[iso_4217]: https://en.wikipedia.org/wiki/ISO_4217
 [tv_chart]: [https://tradingview.com/chart]
-[support_ohlc]: https://www.tradingview.com/support/solutions/43000619436-heikin-ashi/
 [url_encode]: https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier
 
 # Data structure
 
-Store your series data in the repository. 
-You create a separate CSV file for each symbol, and add a row with data to it every day.
-Symbol parameters are described in a separate file and it must be changed accordingly.
+You need to store all symbol data and its description in a repository.
+To do this, provide two directories and add your data files.
 
+- For each symbol, create a [CSV file](#data-format) with daily data in the `data/repo_name` directory.
+- Create a [JSON file](#symbolinfo-format) with symbol descriptions in the `symbol_info` directory.
 
-## Data requirements
+## Data format
 
-Two directories are provided for the data files in the repository.
+Each symbol and its daily data must be placed into a separate CSV file in the `data/repo_name` directory.
+Daily data represents the symbol's OHLC (open-high-low-close) prices on charts.
 
-- Place a CSV file with daily data for each symbol in the `data/repo_name` directory. These files need to be updated once a day.
-- Place one JSON file with the description of the symbol fields in the `symbol_info` directory.
+> __Note__
+> 
+> The EOD (End-of-Day) feed has a limit of 1,000 symbols per repository. Keep this in mind when adding data files.
+> To connect more symbols, you can create another data repository.
 
-The structure of the CSV file with data is simple, [6 values][faq_ohlcv] (Date,O,H,L,C,V) in each line.
+Follow these requirements when creating a file:
+
+- Values must be comma-separated.
+- Do not use headers, blank lines, and spaces.
+- File names must be [URL encoded][url_encode].
+
+| Field    | Description                   | Sample      |
+|----------|-------------------------------|-------------|
+| `date`   | Date in YYYYMMDDT format      | `20210101T` |
+| `open`   | First tick price              | `0.1`       |
+| `high`   | Maximum tick price            | `0.1`       |
+| `low`    | Minimum tick price            | `0.1`       |
+| `close`  | Last tick price               | `0.1`       |
+| `volume` | Total number of shares traded | `0`         |
+
+> __Note__
+> 
+> If your data series has a single value only, fill the `open`, `close`, `high`, and `low` fields with the same value and `volume` with `0`.
+
+CSV file example:
 
 ```csv
 20210101T,0.1,0.1,0.1,0.1,0
 ```
 
-## Data formats
+### Data update
 
-All data must be placed as CSV files. One file per symbol. The files must meet the following requirements:
-
-- Fields are separated by commas
-- No headers
-- No blank lines or spaces
-- File names must be [URL encoded][url_encode]
-
-| Field      | Description                   | Sample      |
-|------------|-------------------------------|-------------|
-| __date__   | Date in YYYYMMDDT format      | `20210101T` |
-| __open__   | First tick price              | `0.1`       |
-| __high__   | Maximum tick price            | `0.1`       |
-| __low__    | Minimum tick price            | `0.1`       |
-| __close__  | Last tick price               | `0.1`       |
-| __volume__ | Total number of shares traded | `0`         |
-
-If your data series has a single value only, then you should fill OHLC fields with the same single value and V value with 0.
-
-## Symbol info file format
-
-This information determines how the TradingView platform will handle a particular symbol. 
-The symbol information should be placed as a single JSON file in the `symbol_info` directory. 
-The name of the file is similar to the name of the repository.
-
-|      Field          | Type   | Description                                                                                                                   |                     Default value              |                                    Validation rules                                    |
-|---------------------|--------|-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------|
-| __base-currency__   | String | Code of the base currency in currency pairs.  For example, for `EURUSD` pair the base currency is `EUR`. [ISO 4217][iso_4217] | Can be empty except `forex` and `crypto` types | Error if empty for `forex` and `crypto` types, if not empty, it is validated `^[A-Z0-9._]+$`   |
-| __currency__        | String | Code of the currency in which the symbol is traded. [ISO 4217][iso_4217]                                                      | Can be empty for `index` and `economic` types  | Error if empty for `index` and `economic` types, if not empty, it is validated `^[A-Z0-9._]+$` |
-| __description__     | String | Symbol description                                                                                                            | Not empty                                      | Error if empty                                                                         |
-| __has-intraday__    | Bool   | `false` for end-of-day feed                                                                                                   | `false`                                        | Error if not `false`                                                                   |
-| __has-no-volume__   | Bool   | `true` if `volume` = 0 (for `forex`, `index`, etc.)                                                                           | `true`/`false`                                 | Error if empty                                                                         |
-| __is-cfd__          | Bool   | Is the symbol a Contract For Differences                                                                                      | `true`/`false`                                 | Warning if not `true`                                                                  |
-| __minmovement__     | Int    | The number of units that make up one tick                                                                                     | >`0`                                           | Warning if > `1`                                                                       |
-| __pricescale__      | Int    | Tick size                                                                                                                     | `10^n`                                         | Error if not `10^n`                                                                    |
-| __session-regular__ | String | Session time                                                                                                                  | `24x7`                                         | Error if not `24x7`                                                                    |
-| __symbol__          | String | Symbol name in TradingView format                                                                                             | Not empty                                      | Validating `^[A-Z0-9._]+$`                                                             |
-| __ticker__          | String | Symbol name in feed format                                                                                                   | Not empty                                      | Validating `^[^,]+$`                                                                   |
-| __timezone__        | String | Timezone code                                                                                                                 | `Etc/UTC`                                      | Error if not `Etc/UTC`                                                                 |
-| __type__            | String | Symbol type                                                                                                                   | From the table below                           | From the table only                                                                    |
-
-Below are possible values for `type` field.
-
-| Value          | Description                                                |
-|----------------|------------------------------------------------------------|
-| __stock__      | Stock (common, preferred, bonus issue, CFD on stocks)      |
-| __fund__       | Investment fund                                            |
-| __dr__         | Depositary receipt                                         |
-| __right__      | Rights issue                                               |
-| __bond__       | Bond                                                       |
-| __warrant__    | Warrant                                                    |
-| __structured__ | Structured Product                                         |
-| __index__      | Index                                                      |
-| __cfd__        | Contract for differences                                   |
-| __forex__      | Forex                                                      |
-| __futures__    | Futures Product                                            |
-| __expression__ | Math Expression                                            |
-| __ets__        | Exchange Traded Spread                                     |
-| __crypto__     | Crypto Currency except Crypto Currency Futures and Indices |
-| __option__     | Option                                                     |
-| __swap__       | Swap                                                       |
-| __economic__   | Fundamental economic data                                  |
-
-## Updating the data
-
-Your EOD data is checked and uploaded to our repository once a day.
+Your EOD data is checked and uploaded to the TradingView repository daily.
 You can see the data for all previous days on the [chart][tv_chart]. 
-The data that is checked and uploaded today will appear on the chart tomorrow.
-If the data is not updated for three months, the data will be removed from TradingView storage.
+The data checked and uploaded today will appear on the chart the next day.
+If you don't update the data for three months, it will be removed from the TradingView storage.
 
-> __Warning__
+Intraday data and real-time updates are possible using a REST protocol, but this option is only available for [brokerage integration][brokerage_integration].
+
+## Symbol_info format
+
+Symbol information must be placed into a single JSON file in the `symbol_info` directory. 
+
+Follow these requirements when creating a file:
+
+- The file name must be similar to the repository name.
+- The file consists of a JSON object that cannot be empty.
+
+The object consists of the following required fields:
+
+| Field | Type | Description | Note |
+|-|-|-|-|
+| `symbol` | String | Symbol name used in TradingView. | Cannot be empty. Validation rule: `^[A-Z0-9._]+$`. |
+| `currency` | String | Three-letter currency code according to [ISO 4217][iso_4217]. | Can be empty. Validation rule: `^[A-Z0-9._]+$`. |
+| `description` | String | Symbol description. | Cannot be empty. |
+| `pricescale` | Integer | Indicates how many decimal places the price has. | The value format is `10^n`, where *n* is the number of decimal places. For example, if the price has two decimal places `300.01`, set `pricescale` to `100`. If it has three decimal places `300.001`, set `pricescale` to `1000`, etc. If the price doesn't have decimals, set `pricescale` to `1`. |
+
+> __Note__
 > 
-> The EOD feed has a limit of 1000 symbols per repository. Keep this in mind when adding data files.
-> To connect more symbols, you can create another data repository.
+> Each object field is an array with values.
+> For all fields, the length of these arrays must match.
+> However, if all the values in the array are the same, you can specify a single value for the field instead of an array.
 
-Intraday data and real-time updates are possible using a [REST protocol][rest_api], but this option is only available for brokerage integration.
+Consider the following example.
+If you specify three symbols in the object, 
+then you also need to specify three descriptions, three price scales, and three currencies (which can be empty) for each symbol.
+
+```json
+{
+   "symbol": [
+      "BTC_DEV_ACTIVITY",
+      "BTC_SOCIAL_VOLUME_TOTAL",
+      "ETH_DEV_ACTIVITY"
+   ],
+   "pricescale": [10, 10, 10],
+   "currency": "",
+   "description": [
+      "Bitcoin developer activity",
+      "Bitcoin social volume total",
+      "Ethereum developer activity"
+   ]
+}
+```
+
+However, if all added symbols have the same price scale, you can only specify a single value in the `pricescale` field:
+`"pricescale": 10` instead of `"pricescale": [10, 10, 10]`.
+
+```json
+{
+   "symbol": [
+      "BTC_DEV_ACTIVITY",
+      "BTC_SOCIAL_VOLUME_TOTAL",
+      "ETH_DEV_ACTIVITY"
+   ],
+   "pricescale": 10,
+   "currency": "",
+   "description": [
+      "Bitcoin developer activity",
+      "Bitcoin social volume total",
+      "Ethereum developer activity"
+   ]
+}
+```
+
+Both examples above are equivalent and will not cause a validation error.
 
 ## Data validation
- 
-If your symbol_info file is incorrect, you will get a parsing error in the __Check data and create pr__ action log.
-If some field is found to be missing from this list, a warning about it will appear in the log.
 
-## Accessing a data repository
+When your data is merged, the __Check data and create pr__ action will run on the repository *Actions* page automatically.
+This action validates your files and loads them into the TradingView storage.
 
-We like open source code and our tools help a lot of people because of it, but if you want to connect private data - that's completely fine.
+Before merging your data, ensure that your files and their content follow the requirements described in this article.
+Otherwise, you will get errors in the *Actions* page logs.
 
-For public repositories it is convenient to store access keys in the [environment variables][env_var] of the repository itself.
-These variables can be safely used in the Action's code.
+## Data repository access
+
+Your repository can be either public or private.
+If you store data in a public one, 
+we recommend using [environment variables][env_var] to store access keys.

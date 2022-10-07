@@ -1,5 +1,4 @@
-[data_formats]: data.md#data-formats
-[data_limits]: data.md#updating-the-data
+[data_format]: data.md#data-format
 [ui_symbol_search]: ui.md#symbol-search
 [env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
 [rest_api]: https://www.tradingview.com/brokerage-integration/
@@ -21,7 +20,7 @@ Go to the repository settings. Open the _Secrets_ section. Create a variable wit
 
 #### Q: Can only trading data be integrated?
 
-__A:__ The TradingView platform is a handy tool for dealing with [trading data][data_formats]. 
+__A:__ The TradingView platform is a handy tool for dealing with [trading data][data_format]. 
 Such data always has a difference between price values. 
 But if your data series has a single value per day, use `open` = `close` = `high` = `low`, and `volume` = 0.
 It is suitable for economic indicators.
@@ -49,8 +48,8 @@ If your files have not been updated for three months, the source will be disable
 
 #### Q: What are the limits on the amount of data?
 
-__A:__ EOD data has a [limit][data_limits] of 1000 symbols per repository. 
-If you have more than 1000 CSV data files, you can create another data repository.
+__A:__ EOD data has a [limit][data_format] of 1,000 symbols per repository. 
+You can create another data repository if you have more than 1,000 CSV data files.
 
 ## TradingView UI
 
