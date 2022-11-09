@@ -15,6 +15,7 @@ To do this, provide two directories and add your data files.
 ## Data format
 
 Each symbol and its daily data must be placed into a separate CSV file in the `data/repo_name` directory.
+The data file name must be equal to symbol and extension must be `.csv`.
 Daily data represents the symbol's OHLC (open-high-low-close) prices on charts.
 
 > __Note__
@@ -27,15 +28,17 @@ Follow these requirements when creating a file:
 - Values must be comma-separated.
 - Do not use headers, blank lines, and spaces.
 - File names must be [URL encoded][url_encode].
+- The lines of the file must be sorted by `date` in ascending order.
+- The lines should not contain duplicates by `date`.  
 
-| Field    | Description                   | Sample      |
-|----------|-------------------------------|-------------|
-| `date`   | Date in YYYYMMDDT format      | `20210101T` |
-| `open`   | First tick price              | `0.1`       |
-| `high`   | Maximum tick price            | `0.1`       |
-| `low`    | Minimum tick price            | `0.1`       |
-| `close`  | Last tick price               | `0.1`       |
-| `volume` | Total number of shares traded | `0`         |
+| Field    | Description                   | Sample      | Note              |
+|----------|-------------------------------|-------------|-------------------|
+| `date`   | Date in YYYYMMDDT format      | `20210101T` |                   |
+| `open`   | First tick price              | `0.1`       |                   |
+| `high`   | Maximum tick price            | `0.1`       |                   |
+| `low`    | Minimum tick price            | `0.1`       |                   |
+| `close`  | Last tick price               | `0.1`       |                   |
+| `volume` | Total number of shares traded | `0.0`       | Can't be negative |
 
 > __Note__
 > 
@@ -62,7 +65,7 @@ Symbol information must be placed into a single JSON file in the `symbol_info` d
 
 Follow these requirements when creating a file:
 
-- The file name must be similar to the repository name.
+- The file name must be equal to the repository name and extension must be `.json`.
 - The file consists of a JSON object that cannot be empty.
 
 The object consists of the following required fields:
