@@ -5,6 +5,9 @@
 [gh_docs_actions]: https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#allowing-select-actions-and-reusable-workflows-to-run
 [gh_docs_logs]: https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs
 [_data]: /data.md
+[git_token-scopes]: /images/github-Token-scopes.png
+[git_add_secret]: /images/github-Action_secrets-New_secret.png
+[git_allow_actions]: /images/github-Allow_Actions.png
 
 # GitHub settings
 
@@ -17,12 +20,15 @@ See the results of the data checks in the action logs.
 ## Pre-setup
 
 - Go to [GitHub Security settings][gh_docs_2fa] → Configure [2FA][gh_security]
-- Create [Personal access token][gh_docs_pat] for __repo__, __workflow__ and __admin:org__ areas
+- Create [Personal access token][gh_docs_pat] with access scopes __repo__, __workflow__ and __admin:org__
+![git_token-scopes]
 - We have created a repository for you and you will need to fork it.
 - Go to _Settings → Secrets → Action_ of your forked repository
-- Add the created __Personal access token__ by calling it `ACTION_TOKEN` here
+- Press __New repository secret__ and add created __Personal access token__ with name `ACTION_TOKEN` here
+![git_add_secret]
 - Now go to _Actions → General → Action permissions_
 - Check the [Allow all actions and reusable workflows][gh_docs_actions] box here
+![git_allow_actions]
 - Click the _Actions_ tab
 - Disable all workflows and only enable __Check data and create pr__
 
@@ -34,7 +40,7 @@ Your forked repository contains the following files and directories.
 .github/workflows    # GitHub actions files
 data/repo_name       # Your data CSV-files
 scripts              # Scripts for GitHub actions
-symbol_info          # Your JSON-files with symbol information
+symbol_info          # Your JSON-file with symbol information
 README.md
 ```
 
