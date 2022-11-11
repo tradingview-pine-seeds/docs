@@ -8,7 +8,7 @@
 [git_token-scopes]: /images/github-Token-scopes.png
 [git_add_secret]: /images/github-Action_secrets-New_secret.png
 [git_allow_actions]: /images/github-Allow_Actions.png
-
+[git_more_workflows]: /images/github-Show_More_Actions.png
 # GitHub settings
 
 Use GitHub as your backend. This is where you upload the data and update it.
@@ -29,7 +29,8 @@ See the results of the data checks in the action logs.
 - Now go to _Actions → General → Action permissions_
 - Check the [Allow all actions and reusable workflows][gh_docs_actions] box here
 ![git_allow_actions]
-- Click the _Actions_ tab
+- Click the _Actions_ tab and click __Show more workflows__ 
+![git_more_workflows]
 - Disable all workflows and only enable __Check data and create pr__
 
 ## Repository scructure
