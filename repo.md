@@ -29,7 +29,8 @@ See the results of the data checks in the action logs.
 - Now go to _Actions → General → Action permissions_
 - Check the [Allow all actions and reusable workflows][gh_docs_actions] box here
 ![git_allow_actions]
-- Click the _Actions_ tab and click __Show more workflows__ 
+- Click the _Actions_ tab and click __Show more workflows__
+
 ![git_more_workflows]
 - Disable all workflows and only enable __Check data and create pr__
 
