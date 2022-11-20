@@ -6,7 +6,7 @@
 
 ## Contact us
 
-- Create an [issue][issue] with the request
+- Send us an email to pine.seeds@tradingview.com with subject **Pine Seeds Request**. Specify your GitHub username and desired repository name. Please keep in mind that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
 - Wait for the link to a repository
 
 ## Fork the repository
