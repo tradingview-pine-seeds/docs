@@ -1,4 +1,3 @@
-[issue]: ../../issues/
 [2fa]: https://github.com/settings/security
 [chart]: https://tradingview.com/chart
 
