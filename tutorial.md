@@ -3,7 +3,7 @@
 
 # 5-minute tutorial
 
-## Contact us
+## Get access to a repository
 
 1. Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__. Specify your GitHub username and desired repository name. Note that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
 2. Wait for the link to a repository.
