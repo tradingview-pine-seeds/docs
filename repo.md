@@ -8,7 +8,9 @@
 
 # GitHub settings
 
-Use GitHub as your backend. This is where you upload the data and update it.
+Use GitHub as your backend: upload the data there and update it.
+
+Contact us at pine.seeds@tradingview.com and specify the subject __Pine Seeds Request__.
 We will prepare a repository for you and you will need to fork it. After that, you can upload your data to the forked version.
 
 GitHub actions are already configured. They regularly check the data and create a _Pull Request_ to our repository.
@@ -16,9 +18,9 @@ See the results of the data checks in the action logs.
 
 ## Pre-setup
 
-- Go to [GitHub Security settings][gh_docs_2fa] → Configure [2FA][gh_security]
+- Go to GitHub [_Settings → Password and authentication_][gh_security] and configure [two-factor authentication][gh_docs_2fa]
 - Create [Personal access token][gh_docs_pat] for __repo__, __workflow__ and __admin:org__ areas
-- We have created a repository for you and you will need to fork it.
+- We have created a repository for you and you will need to fork it
 - Go to _Settings → Secrets → Action_ of your forked repository
 - Add the created __Personal access token__ by calling it `ACTION_TOKEN` here
 - Now go to _Actions → General → Action permissions_

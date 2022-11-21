@@ -6,36 +6,36 @@
 
 ## Contact us
 
-- Send us an email to pine.seeds@tradingview.com with subject **Pine Seeds Request**. Specify your GitHub username and desired repository name. Please keep in mind that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
-- Wait for the link to a repository
+1. Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__. Specify your GitHub username and desired repository name. Note that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
+2. Wait for the link to a repository.
 
 ## Fork the repository
 
-- Go to _GitHub Security settings_ → Configure [2FA][2fa]
-- Create _Personal access token_ for __repo__, __workflow__ and __admin:org__ areas
-- Follow the link in the issue
-- Create a repository fork
+1. Go to GitHub _Settings → Password and authentication_ and configure [two-factor authentication][2fa].
+2. Create _Personal access token_ for __repo__, __workflow__, and __admin:org__ areas.
+3. Follow the repository link and create a fork.
 
-## Setup the actions
-- Go to _Settings → Secrets → Action_ of your forked repository
-- Add the created _Personal access token_ by calling it `ACTION_TOKEN` here
-- Now go to _Actions → General → Action permissions_
-- Check the __Allow all actions and reusable workflows__ box here
-- Click the _Actions_ tab
-- Disable all workflows and only enable __Check data and create pr__
+## Set up the actions
+
+1. Go to _Settings → Secrets → Action_ of your forked repository.
+2. Add the created _Personal access token_ by calling it `ACTION_TOKEN` here.
+3. Now go to _Actions → General → Action permissions_.
+4. Check the __Allow all actions and reusable workflows__ box here.
+5. Click the _Actions_ tab.
+6. Disable all workflows and only enable __Check data and create pr__.
 
 ## Add data files
 
-- Upload your data files to the `data/repo_name` directory
-- Upload a symbol description file to the `symbol_info` directory
+1. Upload your data files to the `data/repo_name` directory.
+2. Upload a symbol description file to the `symbol_info` directory.
 
 ## Check the data upload
 
-- Go to the _Actions_ tab
-- Check the __Check data and create pr__ action log
+1. Go to the _Actions_ tab.
+2. Check the __Check data and create pr__ action log.
 
 ## Create a chart
 
-- Log in to [tradingview.com][chart]
-- Go to the symbol search box → Enter the full symbol name
-- The symbol you requested will be open on the chart
+1. Log in to [tradingview.com][chart].
+2. Go to the symbol search box and enter the full symbol name.
+3. The symbol you requested will be opened on the chart.
