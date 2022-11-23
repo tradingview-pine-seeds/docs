@@ -16,10 +16,10 @@ The results of the data checks will be available in the action logs.
 ## Get access to a repository
 
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
-Specify your GitHub username and desired repository name.
+Specify your GitHub username and the desired repository name.
 Note that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
 
-We will prepare a repository for you, which you'll need to fork.
+As a result, you will get a link to the repository you need to fork.
 
 ## Pre-setup
 
@@ -27,7 +27,6 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 
 - Go to GitHub [_Settings → Password and authentication_][gh_security] and configure [two-factor authentication][gh_docs_2fa]
 - Create [Personal access token][gh_docs_pat] for __repo__, __workflow__ and __admin:org__ areas
-- We have created a repository for you and you will need to fork it
 - Go to _Settings → Secrets → Action_ of your forked repository
 - Add the created __Personal access token__ by calling it `ACTION_TOKEN` here
 - Now go to _Actions → General → Action permissions_
