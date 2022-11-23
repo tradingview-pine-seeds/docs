@@ -18,27 +18,30 @@ Each symbol and its daily data must be placed into a separate CSV file in the `d
 Daily data represents the symbol's OHLC (open-high-low-close) prices on charts.
 
 > __Note__
-> 
+>
 > The EOD (End-of-Day) feed has a limit of 1,000 symbols per repository. Keep this in mind when adding data files.
 > To connect more symbols, you can create another data repository.
 
 Follow these requirements when creating a file:
 
+- File names must be equal to symbol names and must be [URL encoded][url_encode].
+- File extension must be `.csv`.
 - Values must be comma-separated.
 - Do not use headers, blank lines, and spaces.
-- File names must be [URL encoded][url_encode].
+- The lines of the file must be sorted by `date` in ascending order.
+- The lines should not contain duplicates by `date`.  
 
-| Field    | Description                   | Sample      |
-|----------|-------------------------------|-------------|
-| `date`   | Date in YYYYMMDDT format      | `20210101T` |
-| `open`   | First tick price              | `0.1`       |
-| `high`   | Maximum tick price            | `0.1`       |
-| `low`    | Minimum tick price            | `0.1`       |
-| `close`  | Last tick price               | `0.1`       |
-| `volume` | Total number of shares traded | `0`         |
+| Field    | Description                                        | Sample      |
+|----------|----------------------------------------------------|-------------|
+| `date`   | Date in YYYYMMDDT format.                          | `20210101T` |
+| `open`   | First tick price.                                  | `0.1`       |
+| `high`   | Maximum tick price.                                | `0.1`       |
+| `low`    | Minimum tick price.                                | `0.1`       |
+| `close`  | Last tick price.                                   | `0.1`       |
+| `volume` | Total number of shares traded. Cannot be negative. | `0.0`       |
 
 > __Note__
-> 
+>
 > If your data series has a single value only, fill the `open`, `close`, `high`, and `low` fields with the same value and `volume` with `0`.
 
 CSV file example:
@@ -50,7 +53,7 @@ CSV file example:
 ### Data update
 
 Your EOD data is checked and uploaded to the TradingView repository daily.
-You can see the data for all previous days on the [chart][tv_chart]. 
+You can see the data for all previous days on the [chart][tv_chart].
 The data checked and uploaded today will appear on the chart the next day.
 If you don't update the data for three months, it will be removed from the TradingView storage.
 
@@ -58,11 +61,11 @@ Intraday data and real-time updates are possible using a REST protocol, but this
 
 ## Symbol_info format
 
-Symbol information must be placed into a single JSON file in the `symbol_info` directory. 
+Symbol information must be placed into a single JSON file in the `symbol_info` directory.
 
 Follow these requirements when creating a file:
 
-- The file name must be similar to the repository name.
+- The file name must be equal to the repository name, and the extension must be `.json`.
 - The file consists of a JSON object that cannot be empty.
 
 The object consists of the following required fields:
