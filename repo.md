@@ -49,10 +49,10 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 Your forked repository contains the following files and directories.
 
 ```bash
-.github/workflows    # GitHub actions files
-data/repo_name       # Your data CSV-files
+.github/workflows    # GitHub action files
+data/repo_name       # Your data CSV files
 scripts              # Scripts for GitHub actions
-symbol_info          # Your JSON-file with symbol information
+symbol_info          # Your JSON file with symbol information
 README.md
 ```
 
