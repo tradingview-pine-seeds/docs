@@ -6,19 +6,27 @@
 [gh_docs_logs]: https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs
 [_data]: /data.md
 
-# GitHub settings
+# GitHub repository settings
 
-Use GitHub as your backend. This is where you upload the data and update it.
-We will prepare a repository for you and you will need to fork it. After that, you can upload your data to the forked version.
+Use GitHub as your backend: we will provide you with a repository where you can store your data and update it.
+In this repository, GitHub actions are already configured.
+They regularly check the data and create _Pull Requests_ to the TradingView repository.
+The results of the data checks will be available in the action logs.
 
-GitHub actions are already configured. They regularly check the data and create a _Pull Request_ to our repository.
-See the results of the data checks in the action logs.
+## Get access to a repository
+
+Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
+Specify your GitHub username and the desired repository name.
+Note that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
+
+As a result, you will get a link to the repository you need to fork.
 
 ## Pre-setup
 
-- Go to [GitHub Security settings][gh_docs_2fa] → Configure [2FA][gh_security]
+After you fork the repository, you will need to do a pre-setup. Then you can upload your data.
+
+- Go to GitHub [_Settings → Password and authentication_][gh_security] and configure [two-factor authentication][gh_docs_2fa]
 - Create [Personal access token][gh_docs_pat] for __repo__, __workflow__ and __admin:org__ areas
-- We have created a repository for you and you will need to fork it.
 - Go to _Settings → Secrets → Action_ of your forked repository
 - Add the created __Personal access token__ by calling it `ACTION_TOKEN` here
 - Now go to _Actions → General → Action permissions_
