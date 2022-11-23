@@ -51,7 +51,7 @@ README.md
 ## Add data files
 
 - Upload CSV data files to the `data/repo_name` directory.
-- Upload a JSON character description file to the `symbol_info` directory.
+- Upload a JSON symbol description file to the `symbol_info` directory.
 
 ## Check the data upload
 
