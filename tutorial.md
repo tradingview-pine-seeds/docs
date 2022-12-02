@@ -11,7 +11,7 @@
 ## Fork the repository
 
 1. Go to GitHub _Settings → Password and authentication_ and configure [two-factor authentication][2fa].
-2. Create _Personal access token_ for __repo__, __workflow__, and __admin:org__ areas.
+2. Go to _Developer settings_ and create _Personal access token_ for __repo__, __workflow__, and __admin:org__ areas.
 3. Follow the repository link and create a fork.
 
 ## Set up the actions
