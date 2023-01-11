@@ -17,7 +17,7 @@ Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Req
 Specify your GitHub username and the desired repository name.
 Note that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
 
-As a result, you will get a link to the repository you need to fork.
+As a result, you will get a link to the repository you need to fork. The repository will be private, so your fork can only be private.
 
 ## Pre-setup
 
@@ -70,5 +70,7 @@ After updating the data files and completing the relevant actions, examine the l
 
 1. Go to the repository __Actions__ tab.
 2. Check the __Check data and create pr__ action log.
+
+It may take some time for the initial upload to be visible on TradingView chart.
 
 The [data requirements][_data] are listed in the tables. We indicate which field failed the check in the log and explain why.

@@ -73,7 +73,3 @@ Therefore, if your repository is public, anyone can check its full name and open
 
 __A:__ Your GitHub repository has a __Check data and create pr__ action set up. 
 Validation warnings and errors can be found in its log.
-
-#### Q: Why host data in public repositories?
-
-__A:__ We love open source code and our tools help a lot of people because of it, but if you want to connect private data - that's completely fine as well.

@@ -36,5 +36,5 @@
 ## Create a chart
 
 1. Log in to [tradingview.com][chart].
-2. Go to the symbol search box and enter the full symbol name.
+2. Go to the symbol search box and enter the full symbol name (it may take some time for the initial upload to be visible on TradingView chart).
 3. The symbol you requested will be opened on the chart.
