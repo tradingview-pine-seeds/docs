@@ -28,7 +28,7 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 
     ![GitHub access scopes](/images/github_access_scopes.png)
 
-3. Go to _Settings → Secrets → Actions_ of your forked repository.
+3. Go to _Settings (settings of forked repository not your account) → Secrets and variables → Actions_.
 4. Click __New repository secret__, specify `ACTION_TOKEN` in the _Name_ field, and paste created __Personal access token__ into the _Secret_ field. Select _Add secret_.
 
     ![Adding GitHub action secret](/images/github_new_action_secret.png)

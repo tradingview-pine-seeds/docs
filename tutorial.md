@@ -16,7 +16,7 @@
 
 ## Set up the actions
 
-1. Go to _Settings → Secrets → Action_ of your forked repository.
+1. Go to _Settings (settings of forked repository not your account) → Secrets and variables → Action_.
 2. Add the created _Personal access token_ by calling it `ACTION_TOKEN` here.
 3. Now go to _Actions → General → Action permissions_.
 4. Check the __Allow all actions and reusable workflows__ option button is selected here.
