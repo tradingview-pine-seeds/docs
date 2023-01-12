@@ -5,7 +5,7 @@
 
 ## Get access to a repository
 
-1. Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__. Specify your GitHub username and the desired repository name. Note that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
+1. Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__. Specify your GitHub username and the desired repository postfix. Repository name will be seed_\<your_github_username>_\<postfix_you_provided>. Note that the account and repository name postfix will also be used as [parts](README.md#Example) of the unique prefix for your data.
 2. Wait for a link to the repository.
 
 ## Fork the repository
@@ -19,9 +19,10 @@
 1. Go to _Settings → Secrets → Action_ of your forked repository.
 2. Add the created _Personal access token_ by calling it `ACTION_TOKEN` here.
 3. Now go to _Actions → General → Action permissions_.
-4. Check the __Allow all actions and reusable workflows__ box here.
+4. Check the __Allow all actions and reusable workflows__ option button is selected here.
 5. Click the _Actions_ tab.
-6. Disable all workflows and only enable __Check data and create pr__.
+6. Disable all workflows with __Disable workflow__ button except __Check data and create pr__.
+    ![GitHub disable action](/images/github_action_disable.png)
 
 ## Add data files
 
@@ -31,7 +32,8 @@
 ## Check the data upload
 
 1. Go to the _Actions_ tab.
-2. Check the __Check data and create pr__ action log.
+2. Check the __Check data and create pr__ action. It's last run should be with green tick like on image below.
+    ![GitHub successful action runs](/images/github_ok_action.png)
 
 ## Create a chart
 

@@ -14,8 +14,8 @@ The results of the data checks will be available in the action logs.
 ## Get access to a repository
 
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
-Specify your GitHub username and the desired repository name.
-Note that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
+Specify your GitHub username and the desired repository name postfix. Repository name will be seed_\<your_github_username>_\<postfix_you_provided>.
+Note that the account and repository name postfix will also be used as [parts](README.md#Example) of the unique prefix for your data.
 
 As a result, you will get a link to the repository you need to fork. The repository will be private, so your fork can only be private.
 
@@ -42,7 +42,8 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 
     ![Repository action list](/images/github_action_list.png)
 
-8. Disable all workflows and only enable __Check data and create pr__.
+8. Disable all workflows with __Disable workflow__ button except __Check data and create pr__.
+    ![GitHub disable action](/images/github_action_disable.png)
 
 ## Repository structure
 
