@@ -27,7 +27,7 @@
 ## Add data files
 
 1. Upload your data files to the `data/repo_name` directory.
-2. Upload a symbol description file to the `symbol_info` directory.
+2. Upload a symbol description file with name `repo_name.json` to the `symbol_info` directory.
 
 ## Check the data upload
 

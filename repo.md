@@ -60,7 +60,7 @@ README.md
 ## Add data files
 
 - Upload CSV data files to the `data/repo_name` directory.
-- Upload a JSON symbol description file to the `symbol_info` directory.
+- Upload a JSON symbol description file with name `repo_name.json` to the `symbol_info` directory.
 
 ## Check the data upload
 
@@ -70,7 +70,8 @@ You can find the results of the data checks in the action logs.
 After updating the data files and completing the relevant actions, examine the log for errors.
 
 1. Go to the repository __Actions__ tab.
-2. Check the __Check data and create pr__ action log.
+2. Check the __Check data and create pr__ action. It's last run should be with green tick like on image below.
+    ![GitHub successful action runs](/images/github_ok_action.png)
 
 It may take some time for the initial upload to be visible on TradingView chart.
 
