@@ -24,7 +24,7 @@ As a result, you will get a link to the repository you need to fork. The reposit
 After you fork the repository, you will need to do a pre-setup. Then you can upload your data.
 
 1. Go to GitHub [_Settings → Password and authentication_][gh_security] and configure [two-factor authentication][gh_docs_2fa].
-2. Generate [Personal access token][gh_docs_pat] with the __repo__, __workflow__, and __admin:org__ access scopes.
+2. Go to GitHub _Settings → Developer settings → Personal access tokens → Generate new token → Generate new token (classic)_. Generate [Personal access token][gh_docs_pat] with the __repo__, __workflow__, and __admin:org__ access scopes.
 
     ![GitHub access scopes](/images/github_access_scopes.png)
 
