@@ -25,6 +25,12 @@
 6. Disable all workflows with __Disable workflow__ button except __Check data and create pr__.
     ![GitHub disable action](/images/github_action_disable.png)
 
+## Demo files
+
+After repository created it contains one example symbol DEMO. As described in [data structure][_data] there is csv file data/\<postfix_you_provided>/DEMO.csv with history for that symbol
+and it is also described in symbol info file symbol_info/\<postfix_you_provided>.json. You can use this demo files as a template for your data. After you add your own symbols with data,
+remove DEMO symbol (delete DEMO.csv and remove lines for DEMO symbol from symbol_info/\<postfix_you_provided>.json)
+
 ## Add data files
 
 1. Upload your data files to the `data/repo_name` directory.
