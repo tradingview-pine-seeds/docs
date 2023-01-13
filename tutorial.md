@@ -1,5 +1,6 @@
 [2fa]: https://github.com/settings/security
 [chart]: https://tradingview.com/chart
+[_data]: /data.md
 
 # 5-minute tutorial
 
