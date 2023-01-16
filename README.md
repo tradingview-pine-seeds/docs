@@ -45,12 +45,14 @@ You just need to set up the repository, upload your data to it and wait for it t
 
 `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` is an example of custom data integration. You can work with it on your Chart.
 
-The symbol name is uniquely determined by Github settings.
+The symbol name is uniquely determined by GitHub settings.
 
-- `SEED` is a mandatory prefix for this type of data
-- `CRYPTO` is the name of the `github.com/crypto` GitHub account
-- `SANTIMENT` is the postfix for repository name `github.com/crypto/seed_crypto_santiment` you provided
-- `BTC_DEV_ACTIVITY` is a data filename `BTC_DEV_ACTIVITY.CSV`
+- `SEED` is a mandatory prefix for this type of data.
+- `CRYPTO` is the name of the `github.com/crypto` GitHub account.
+- `SANTIMENT` is the suffix for the repository name `github.com/crypto/seed_crypto_santiment` that you provided.
+    The suffix is needed so that you can use several repositories for different data groups,
+    e.g., `seed_<username>_<suffix1>`, `seed_<username>_<suffix2>`.
+- `BTC_DEV_ACTIVITY` is a data filename `BTC_DEV_ACTIVITY.CSV`.
 
 Now, using the built-in [request.seed()][pine_refs] function from the [Pine Script™ language][pine_docs] and the available data, you can build a chart.
 
