@@ -14,8 +14,9 @@ The results of the data checks will be available in the action logs.
 ## Get access to a repository
 
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
-Specify your GitHub username and the desired repository name postfix. Repository name will be seed_\<your_github_username>_\<postfix_you_provided>.
-Note that the account and repository name postfix will also be used as [parts](README.md#Example) of the unique prefix for your data.
+Specify your GitHub username and the desired repository suffix.
+Repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
+Note that your username and repository suffix will be used as [parts](README.md#Example) of the unique prefix for your data.
 
 As a result, you will get a link to the repository you need to fork. The repository will be private, so your fork can only be private.
 
@@ -61,7 +62,7 @@ README.md
 
 The repository contains demo files that you can use as a template for your symbol data.
 
-- `symbol_info/<postfix_you_provided>.json` with the only one `DEMO` symbol:
+- `symbol_info/seed_<your_github_username>_<suffix_you_provided>.json` with the only one `DEMO` symbol:
 
     ```json
     {
@@ -76,7 +77,7 @@ The repository contains demo files that you can use as a template for your symbo
     }
     ```
 
-- `data/<postfix_you_provided>/DEMO.csv` with the history for the `DEMO` symbol:
+- `data/seed_<your_github_username>_<suffix_you_provided>/DEMO.csv` with the history for the `DEMO` symbol:
 
     ```csv
     20210101T,0.1,0.1,0.1,0.1,0
