@@ -10,7 +10,7 @@
 #### Q: In what form should the data be stored?
 
 __A:__ Use plain-text files to store your data.
-Store the price data itself is in CSV files in the `data/repo_name` directory. Create a separate file for each symbol. 
+Store the price data itself is in CSV files in the `data/seed_<your_github_username>_<suffix_you_provided>` directory. Create a separate file for each symbol. 
 The additional symbol information should be stored in a JSON file in the `symbol_info` directory. Describe all of the symbol settings in one file.
 
 #### Q: How to set up access to the data source and not store access keys in code?

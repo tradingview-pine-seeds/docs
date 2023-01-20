@@ -35,8 +35,8 @@
 >
 > The repository contains [demo files](/repo.md#demo-files) that you can use as a template for your symbol data.
 
-1. Upload your data files to the `data/repo_name` directory.
-2. Upload a symbol description file with name `repo_name.json` to the `symbol_info` directory.
+1. Upload your data files to the `data/seed_<your_github_username>_<suffix_you_provided>` directory.
+2. Upload a symbol description file with name `seed_<your_github_username>_<suffix_you_provided>.json` to the `symbol_info` directory.
 
 ## Check the data upload
 
