@@ -8,7 +8,7 @@
 1. Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
     Specify your GitHub username and the desired repository suffix.
     Repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
-    Note that your username and suffix will be used as [parts](README.md#Example) of the unique suffix for your data.
+    Note that your username and suffix will be used as [parts](README.md#Example) of the unique prefix for your data.
 2. Wait for a link to the repository.
 
 ## Fork the repository
