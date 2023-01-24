@@ -24,7 +24,7 @@ Daily data represents the symbol's OHLC (open-high-low-close) prices on charts.
 
 Follow these requirements when creating a file:
 
-- File names must be equal to symbol names and must be [URL encoded][url_encode].
+- File names must be equal to symbol names, capitalized, and [URL encoded][url_encode].
 - File extension must be `.csv`.
 - Values must be comma-separated.
 - Do not use headers, blank lines, and spaces.
@@ -131,11 +131,12 @@ Both examples above are equivalent and will not cause a validation error.
 When your data is merged, the __Check data and create pr__ action will run on the repository *Actions* page automatically.
 This action validates your files and loads them into the TradingView storage.
 
+You can also run the __Check data and create pr__ action manually by clicking __Run workflow__ button on the repository *Actions* tab with selected __Check data and create pr__ action.
+Running action manually can be used when the automatic run fails for some external reason (e.g., GitHub is down, temporary problem with the runner occurred).
+
 Before merging your data, ensure that your files and their content follow the requirements described in this article.
 Otherwise, you will get errors in the *Actions* page logs.
 
 ## Data repository access
 
-Your repository can be either public or private.
-If you store data in a public one, 
-we recommend using [environment variables][env_var] to store access keys.
+Your repository can only be private.
