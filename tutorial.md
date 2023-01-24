@@ -1,11 +1,15 @@
 [2fa]: https://github.com/settings/security
 [chart]: https://tradingview.com/chart
+[_data]: /data.md
 
 # 5-minute tutorial
 
 ## Get access to a repository
 
-1. Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__. Specify your GitHub username and the desired repository postfix. Repository name will be seed_\<your_github_username>_\<postfix_you_provided>. Note that the account and repository name postfix will also be used as [parts](README.md#Example) of the unique prefix for your data.
+1. Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
+    Specify your GitHub username and the desired repository suffix.
+    Repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
+    Note that your username and suffix will be used as [parts](README.md#Example) of the unique prefix for your data.
 2. Wait for a link to the repository.
 
 ## Fork the repository
@@ -27,8 +31,12 @@
 
 ## Add data files
 
-1. Upload your data files to the `data/repo_name` directory.
-2. Upload a symbol description file with name `repo_name.json` to the `symbol_info` directory.
+> __Note__
+>
+> The repository contains [demo files](/repo.md#demo-files) that you can use as a template for your symbol data.
+
+1. Upload your data files to the `data/seed_<your_github_username>_<suffix_you_provided>` directory.
+2. Upload a symbol description file with name `seed_<your_github_username>_<suffix_you_provided>.json` to the `symbol_info` directory.
 
 ## Check the data upload
 

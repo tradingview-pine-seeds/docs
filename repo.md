@@ -14,8 +14,9 @@ The results of the data checks will be available in the action logs.
 ## Get access to a repository
 
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
-Specify your GitHub username and the desired repository name postfix. Repository name will be seed_\<your_github_username>_\<postfix_you_provided>.
-Note that the account and repository name postfix will also be used as [parts](README.md#Example) of the unique prefix for your data.
+Specify your GitHub username and the desired repository suffix.
+Repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
+Note that your username and repository suffix will be used as [parts](README.md#Example) of the unique prefix for your data.
 
 As a result, you will get a link to the repository you need to fork. The repository will be private, so your fork can only be private.
 
@@ -50,17 +51,50 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 Your forked repository contains the following files and directories.
 
 ```bash
-.github/workflows    # GitHub action files
-data/repo_name       # Your data CSV files
-scripts              # Scripts for GitHub actions
-symbol_info          # Your JSON file with symbol information
+.github/workflows                                           # GitHub action files
+data/seed_<your_github_username>_<suffix_you_provided>      # Your data CSV files
+scripts                                                     # Scripts for GitHub actions
+symbol_info                                                 # Your JSON file with symbol information
 README.md
 ```
 
+## Demo files
+
+The repository contains demo files that you can use as a template for your symbol data.
+
+- `symbol_info/seed_<your_github_username>_<suffix_you_provided>.json` with the only one `DEMO` symbol:
+
+    ```json
+    {
+      "symbol": [
+        "DEMO"
+      ],
+      "pricescale": [10],
+      "currency": "",
+      "description": [
+        "Demo symbol description"
+      ]
+    }
+    ```
+
+- `data/seed_<your_github_username>_<suffix_you_provided>/DEMO.csv` with the history for the `DEMO` symbol:
+
+    ```csv
+    20210101T,0.1,0.1,0.1,0.1,0
+    20210102T,0.2,0.2,0.2,0.2,0
+    20210103T,0.3,0.3,0.3,0.3,0
+    20210104T,0.4,0.4,0.4,0.4,0
+    ```
+
+This symbol is available on the *Chart*.
+
+When you add your symbol data, you can remove the `DEMO` symbol data
+by deleting `DEMO.csv` and removing lines related to the symbol from `symbol_info`.
+
 ## Add data files
 
-- Upload CSV data files to the `data/repo_name` directory.
-- Upload a JSON symbol description file with name `repo_name.json` to the `symbol_info` directory.
+- Upload CSV data files to the `data/seed_<your_github_username>_<suffix_you_provided>` directory.
+- Upload a JSON symbol description file with name `seed_<your_github_username>_<suffix_you_provided>.json` to the `symbol_info` directory.
 
 ## Check the data upload
 
