@@ -9,12 +9,12 @@
 You need to store all symbol data and its description in a repository.
 To do this, provide two directories and add your data files.
 
-- For each symbol, create a [CSV file](#data-format) with daily data in the `data/repo_name` directory.
-- Create a [JSON file](#symbolinfo-format) with symbol descriptions in the `symbol_info` directory.
+- For each symbol, create a [CSV file](#data-format) with daily data in the `data/seed_<your_github_username>_<suffix_you_provided>` directory.
+- Create a [JSON file](#symbol_info-format) with symbol descriptions in the `symbol_info` directory.
 
 ## Data format
 
-Each symbol and its daily data must be placed into a separate CSV file in the `data/repo_name` directory.
+Each symbol and its daily data must be placed into a separate CSV file in the `data/seed_<your_github_username>_<suffix_you_provided>` directory.
 Daily data represents the symbol's OHLC (open-high-low-close) prices on charts.
 
 > __Note__

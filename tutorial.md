@@ -6,7 +6,10 @@
 
 ## Get access to a repository
 
-1. Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__. Specify your GitHub username and the desired repository postfix. Repository name will be seed_\<your_github_username>_\<postfix_you_provided>. Note that the account and repository name postfix will also be used as [parts](README.md#Example) of the unique prefix for your data.
+1. Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
+    Specify your GitHub username and the desired repository suffix.
+    Repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
+    Note that your username and suffix will be used as [parts](README.md#Example) of the unique prefix for your data.
 2. Wait for a link to the repository.
 
 ## Fork the repository
@@ -26,16 +29,14 @@
 6. Disable all workflows with __Disable workflow__ button except __Check data and create pr__.
     ![GitHub disable action](/images/github_action_disable.png)
 
-## Demo files
-
-After repository created it contains one example symbol DEMO. As described in [data structure][_data] there is csv file data/\<postfix_you_provided>/DEMO.csv with history for that symbol
-and it is also described in symbol info file symbol_info/\<postfix_you_provided>.json. You can use this demo files as a template for your data. After you add your own symbols with data,
-remove DEMO symbol (delete DEMO.csv and remove lines for DEMO symbol from symbol_info/\<postfix_you_provided>.json)
-
 ## Add data files
 
-1. Upload your data files to the `data/repo_name` directory.
-2. Upload a symbol description file with name `repo_name.json` to the `symbol_info` directory.
+> __Note__
+>
+> The repository contains [demo files](/repo.md#demo-files) that you can use as a template for your symbol data.
+
+1. Upload your data files to the `data/seed_<your_github_username>_<suffix_you_provided>` directory.
+2. Upload a symbol description file with name `seed_<your_github_username>_<suffix_you_provided>.json` to the `symbol_info` directory.
 
 ## Check the data upload
 

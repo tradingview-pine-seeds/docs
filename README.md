@@ -49,7 +49,7 @@ The symbol name is uniquely determined by Github settings.
 
 - `SEED` is a mandatory prefix for this type of data
 - `CRYPTO` is the name of the `github.com/crypto` GitHub account
-- `SANTIMENT` is the postfix for repository name `github.com/crypto/seed_crypto_santiment` you provided
+- `SANTIMENT` is the suffix for repository name `github.com/crypto/seed_crypto_santiment` you provided
 - `BTC_DEV_ACTIVITY` is a data filename `BTC_DEV_ACTIVITY.CSV`
 
 Now, using the built-in [request.seed()][pine_refs] function from the [Pine Script™ language][pine_docs] and the available data, you can build a chart.
