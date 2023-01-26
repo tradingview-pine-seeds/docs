@@ -1,9 +1,5 @@
 # Tutorial how to add symbols to the TradingView chart
->__NOTE__
->
-> __There are only 5 pull requests that can be accepted per day__
->
-> You can add multiple symbols at once by following steps below
+__There are only 5 pull requests that can be accepted per day__. You can add multiple symbols at once by following steps below
 ## Add symbol description
 1. Add description of your symbol in the [JSON file](data.md#symbol_info-format) in `symbol_info` directory.
 2. In your repository check if action `Check data and create PR` finished successfully.
