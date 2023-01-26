@@ -13,7 +13,7 @@
 >
 > Symbols are uploaded into the TradingView storage every hour at minute 45.
 >
->__Do not add data to your symbol before you can see `No data here` on the chart__
+>__Do not add data to your symbol before you can see `No data here` on the chart otherwise there may be problems with displaying data on chart__
 
 ***
 
