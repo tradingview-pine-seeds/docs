@@ -5,17 +5,7 @@ import csv
 import os
 from datetime import datetime
 
-import dataclasses
 import requests
-
-
-@dataclasses.dataclass
-class CoinInfo:
-    """crypto coin name in Santiment API and data
-    filename prefix when saving values to CSV file"""
-
-    slug: str
-    data_filename_prefix: str
 
 
 # metrics for crypto coins to request from Santiment API
@@ -31,17 +21,11 @@ METRICS = [
 ]
 
 # crypto coins for which you need to request metrics
-# object contains slug - Santiment API field value to request this coin
-# and data_filename_prefix - prefix for CSV file for this coin
+# tuple contains slug - Santiment API field value to request this coin
+# and data filename prefix - prefix for CSV file for this coin
 COIN_INFOS = [
-    CoinInfo(
-        slug="bitcoin",
-        data_filename_prefix="btc",
-    ),
-    CoinInfo(
-        slug="ethereum",
-        data_filename_prefix="eth",
-    ),
+    ("bitcoin", "btc"),
+    ("ethereum", "eth"),
 ]
 
 REQUEST_URL = "https://api.santiment.net/graphql"
@@ -87,7 +71,7 @@ def save_new_data(data_json, filename):
 
 def process_data_file(data_folder, coin_info, metric, to_date):
     """request data from Santiment API and save updated values to file"""
-    req_body = REQUEST_BODY_TEMPLATE % (metric, coin_info.slug, to_date)
+    req_body = REQUEST_BODY_TEMPLATE % (metric, coin_info[0], to_date)
 
     response = requests.post(REQUEST_URL, headers=REQUEST_HEADERS, data=req_body)
 
@@ -98,11 +82,11 @@ def process_data_file(data_folder, coin_info, metric, to_date):
         data_point["datetime"] = data_point["datetime"][:end].replace("-", "")
 
     # use metric as suffix
-    filename = (coin_info.data_filename_prefix + "_" + metric).upper() + ".csv"
+    filename = (coin_info[1] + "_" + metric).upper() + ".csv"
     out_path = os.path.join(data_folder, filename)
 
     save_new_data(data_json, out_path)
-    print("updated", coin_info.slug, metric)
+    print("updated", coin_info[0], metric)
 
 
 def parse_args():
