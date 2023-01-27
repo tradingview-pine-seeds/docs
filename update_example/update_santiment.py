@@ -23,7 +23,7 @@ METRICS = [
 # crypto coins for which you need to request metrics
 # tuple contains slug - Santiment API field value to request this coin
 # and data filename prefix - prefix for CSV file for this coin
-COIN_INFOS = [
+COINS = [
     ("bitcoin", "btc"),
     ("ethereum", "eth"),
 ]
@@ -69,9 +69,9 @@ def save_new_data(data_json, filename):
             writer.writerow([date, val, val, val, val, 0])
 
 
-def process_data_file(data_folder, coin_info, metric, to_date):
+def process_data_file(data_folder, coin, metric, to_date):
     """request data from Santiment API and save updated values to file"""
-    req_body = REQUEST_BODY_TEMPLATE % (metric, coin_info[0], to_date)
+    req_body = REQUEST_BODY_TEMPLATE % (metric, coin[0], to_date)
 
     response = requests.post(REQUEST_URL, headers=REQUEST_HEADERS, data=req_body)
 
@@ -82,11 +82,11 @@ def process_data_file(data_folder, coin_info, metric, to_date):
         data_point["datetime"] = data_point["datetime"][:end].replace("-", "")
 
     # use metric as suffix
-    filename = (coin_info[1] + "_" + metric).upper() + ".csv"
+    filename = (coin[1] + "_" + metric).upper() + ".csv"
     out_path = os.path.join(data_folder, filename)
 
     save_new_data(data_json, out_path)
-    print("updated", coin_info[0], metric)
+    print("updated", coin[0], metric)
 
 
 def parse_args():
@@ -106,9 +106,9 @@ def main():
 
     to_date = datetime.today().strftime("%Y-%m-%d") + "T23:59:59Z"
 
-    for slug_info in COIN_INFOS:
+    for coin in COINS:
         for metric in METRICS:
-            process_data_file(args.data_folder, slug_info, metric, to_date)
+            process_data_file(args.data_folder, coin, metric, to_date)
 
 
 if __name__ == "__main__":
