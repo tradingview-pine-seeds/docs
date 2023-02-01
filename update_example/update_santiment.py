@@ -1,5 +1,5 @@
-"""This script downloads data from Santiment API, converts it to
-Pine Seeds historical data format and saves it as CSV files."""
+"""This script downloads data from the Santiment API, converts it to
+Pine Seeds historical data format, and saves it as CSV files."""
 import argparse
 import csv
 import os
@@ -81,7 +81,7 @@ def process_data_file(data_folder, coin, metric, to_date):
         end = data_point["datetime"].index("T") + 1
         data_point["datetime"] = data_point["datetime"][:end].replace("-", "")
 
-    # use metric as suffix
+    # use a metric as a suffix
     filename = (coin[1] + "_" + metric).upper() + ".csv"
     out_path = os.path.join(data_folder, filename)
 
