@@ -34,15 +34,17 @@ To update the data, follow the steps below:
 
 1. On the repository page, open `update_example/update_example.py` and click the *Copy raw contents* (<img src = "../images/svg/clone-regular.svg" alt="My Happy SVG"/>) button.
     The file contents will be copied to the clipboard.
-2. Open any text editor on your computer and paste the contents.
-3. Save the file with the `update_santiment.py` name in any folder you prefer.
 
     ![Copy raw contents](/images/copy_raw_contents.png)
 
+2. Open any text editor on your computer and paste the contents.
+3. Save the file with the `update_santiment.py` name in any folder you prefer.
 4. On the repository page, copy the repository name by clicking *Code → Copy to clipboard*.
-5. On your computer, open command line and run the `git clone <your-repository-name.git>` command.
 
     ![Clone repository name on GitHub](/images/github_clone_repository.png)
+
+5. On your computer, open command line and run the `git clone <your-repository-name.git>` command.
+
     ![Execute git clone command](/images/clone_fork.png)
 
 6. Change the current folder to folder where you saved `update_santiment.py` by executing `cd <folder-name-with-update_santiment.py>`
