@@ -1,6 +1,8 @@
 # Example script for automating data history uploads
 
-This article describes an example `/update example/update_santiment.py` script that automates data history uploads to a forked repository.
+There is a way to update historical data in GitHub repository by scripts. You can prepare a script that will write data in CSV files with expected EOD data format. 
+
+This article describes an example [`/update example/update_santiment.py`](/update_example/update_santiment.py) script that automates data history uploads to a forked repository.
 The script gets data from [Santiment API], converts it into CSV files, and uploads them into the repository.
 For more information about [Santiment API], you can refer to the Santiment's [main page], [API reference], and [metrics overview].
 
@@ -69,26 +71,28 @@ To update the data, follow the steps below:
 
     ![Check diff output](/images/diff_output.png)
 
-10. Run `git add .`.
+10. Run `git add .` to add file contents to the index.
 
     ![Run Git add](/images/git_add.png)
 
-11. Run `git commit -m "Update data"`.
+11. Run `git commit -m "Update data"` to record changes to the repository.
 
     ![Run Git commit](/images/git_commit.png)
+> NOTE
+>
+>You need to add symbol description in [symbol info](/data.md#symbol_info-format) before you add its data, etherwise the data won't be uploaded to the TradingView storage
 
-12. Run `git push`.
+12. Run `git push` to upload local repository content to a remote repository.
 
     ![Run Git push](/images/git_push.png)
 
-13. Go to your repository page on GitHub and open *Actions*.
-    Check that there is a new successful action run.
+13. Go to your repository page on GitHub and open *Actions*. Check that the action `Check data and create PR` run successfully in your fork repository on GitHub.
 
     ![GitHub successful action run](/images/github_successful_action.png)
 
 > __Note__
 >
-> Data should be updated every day. For next updates, you only need to follow steps 3−10.
+> Data should be updated every day. For next updates, you only need to follow steps 6−13.
 
 [API reference]: https://academy.santiment.net/sanapi/
 [main page]: https://santiment.net/
