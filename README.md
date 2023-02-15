@@ -7,6 +7,7 @@
 [ui_symbol_search]: /ui.md#symbol-search
 [pine_docs]: https://www.tradingview.com/pine-script-docs/en/v5/index.html
 [pine_refs]: https://www.tradingview.com/pine-script-reference/v5/#fun_request{dot}seed
+[update_script]: /update_example/update_example.md
 
 # Pine Seeds documentation
 
@@ -84,3 +85,7 @@ Quick guide to requesting custom data series on TradingView charts.
 __[FAQ][faq]__
 
 If you have any questions that haven't been covered by info in the sections above, take a look here.
+
+__[Example script for automating data history uploads][update_script]__
+
+Check the script example that automates data history uploads to a forked repository.
