@@ -69,15 +69,15 @@ To update the data, follow the steps below:
 
     ![Check diff output](/images/diff_output.png)
 
-10. Run `git add .`.
+10. Run `git add .` to add the changes in the working directory to the index.
 
     ![Run Git add](/images/git_add.png)
 
-11. Run `git commit -m "Update data"`.
+11. Run `git commit -m "Update data"` to record the changes to your remote repository.
 
     ![Run Git commit](/images/git_commit.png)
 
-12. Run `git push`.
+12. Run `git push` to upload your local repository content to the remote repository.
 
     ![Run Git push](/images/git_push.png)
 
@@ -88,7 +88,7 @@ To update the data, follow the steps below:
 
 > __Note__
 >
-> Data should be updated every day. For next updates, you only need to follow steps 7−12.
+> Data should be updated every day. For next updates, you only need to follow steps 7−13.
 
 [API reference]: https://academy.santiment.net/sanapi/
 [main page]: https://santiment.net/
