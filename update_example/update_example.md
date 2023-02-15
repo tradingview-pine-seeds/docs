@@ -1,7 +1,7 @@
 # Example script for automating data history uploads
 
 This article describes an example `/update example/update_santiment.py` script that automates data history uploads to a forked repository.
-The script gets data from [Santiment API], converts it into CSV files, and uploads them into the repository.
+The script gets data from [Santiment API] and converts it into CSV files.
 For more information about [Santiment API], you can refer to the Santiment's [main page], [API reference], and [metrics overview].
 
 > __Note__
@@ -88,7 +88,7 @@ To update the data, follow the steps below:
 
 > __Note__
 >
-> Data should be updated every day. For next updates, you only need to follow steps 3−10.
+> Data should be updated every day. For next updates, you only need to follow steps 7−12.
 
 [API reference]: https://academy.santiment.net/sanapi/
 [main page]: https://santiment.net/
