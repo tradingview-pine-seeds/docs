@@ -14,7 +14,7 @@ The results of the data checks will be available in the action logs.
 ## Get access to a repository
 
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
-Specify your GitHub username and the desired repository suffix.
+Specify your GitHub username and the desired repository suffix. __The maximum number of characters in suffix must be 16.__
 The repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
 
 > __Note__
@@ -30,7 +30,7 @@ Note that the repository will be private, so your fork can only be private.
 After you fork the repository, you will need to do a pre-setup. Then you can upload your data.
 
 1. Go to GitHub [_Settings → Password and authentication_][gh_security] and configure [two-factor authentication][gh_docs_2fa].
-2. Go to GitHub _Settings → Developer settings → Personal access tokens → Generate new token → Generate new token (classic)_. Generate [Personal access token][gh_docs_pat] with the __repo__, __workflow__, and __admin:org__ access scopes.
+2. Go to GitHub _Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token → Generate new token (classic)_. Generate [Personal access token][gh_docs_pat] with the __repo__, __workflow__, and __admin:org__ access scopes.
 
     ![GitHub access scopes](/images/github_access_scopes.png)
 
@@ -44,11 +44,9 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 
     ![Selecting GitHub actions permissions](/images/github_actions_permissions.png)
 
-7. Click the _Actions_ tab and click __Show more workflows__.
+7. Go to the _Action_ tab and click to the _I undestand my worflows, go ahead and enable them_ button
+8. Disable workflow __Upload data__ with __Disable workflow__ button. Check that workflow __Check data__ is enabled.
 
-    ![Repository action list](/images/github_action_list.png)
-
-8. Disable all workflows with __Disable workflow__ button except __Check data and create pr__.
     ![GitHub disable action](/images/github_action_disable.png)
 
 ## Repository structure
@@ -65,18 +63,18 @@ README.md
 
 ## Add data files
 
+- Add symbol description to the JSON file in the `symbol_onfo/repo_name.json` directory.
 - Upload CSV data files to the `data/repo_name` directory.
-- Upload a JSON symbol description file with the `repo_name.json` name to the `symbol_info` directory.
 
 ## Check the data upload
 
-The __Check data and create pr__ action regularly validates data and loads it into the TradingView storage.
+The __Check data__ action regularly validates data and loads it into the TradingView storage.
 You can find the results of the data checks in the action logs.
 
 After updating the data files and completing the relevant actions, examine the log for errors.
 
 1. Go to the repository __Actions__ tab.
-2. Check the __Check data and create pr__ action. It's last run should be marked with a green tick like on the image below.
+2. Check the __Check data__ action. It's last run should be marked with a green tick like on the image below.
     ![GitHub successful action runs](/images/github_ok_action.png)
 
 It may take some time for the initial upload to be visible on the TradingView chart.
