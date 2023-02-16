@@ -63,6 +63,8 @@ README.md
 
 ## Add data files
 
+How to add new symbols and data described in [tutorial](/data_tutorial.md)
+
 - Add symbol description to the JSON file in the `symbol_onfo/repo_name.json` directory.
 - Upload CSV data files to the `data/repo_name` directory.
 
