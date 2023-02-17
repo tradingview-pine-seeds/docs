@@ -25,3 +25,4 @@ __There are only 5 pull requests that can be merged into main repository per day
 If you need to remove symbol and its data you should follow steps:
 1. Remove information about symbol from the JSON file in `symbol_info/repo_name.json` directory
 2. Delete a CSV file with data from the `data/` directory. 
+3. In the main repository сheck if action `Upload data` finished succesfully and pull request is merged automatically.
