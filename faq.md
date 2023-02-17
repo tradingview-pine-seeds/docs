@@ -10,7 +10,7 @@
 #### Q: In what form should the data be stored?
 
 __A:__ Use plain-text files to store your data.
-Store the price data itself is in CSV files in the `data/repo_name` directory. Create a separate file for each symbol. 
+Store the price data itself is in CSV files in the `data/` directory. Create a separate file for each symbol. 
 The additional symbol information should be stored in a JSON file in the `symbol_info` directory. Describe all of the symbol settings in one file.
 
 #### Q: How to set up access to the data source and not store access keys in code?
@@ -71,5 +71,5 @@ Therefore, if your repository is public, anyone can check its full name and open
 
 #### Q: How to catch errors?
 
-__A:__ Your GitHub repository has a __Check data and create pr__ action set up. 
+__A:__ Your GitHub repository has a __Check data__ action set up. 
 Validation warnings and errors can be found in its log.
