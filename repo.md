@@ -55,7 +55,7 @@ Your forked repository contains the following files and directories.
 
 ```bash
 .github/workflows    # GitHub action files
-data/repo_name       # Your data CSV files
+data                 # Your data CSV files
 scripts              # Scripts for GitHub actions
 symbol_info          # Your JSON file with symbol information
 README.md
@@ -65,8 +65,8 @@ README.md
 
 How to add new symbols and data described in [tutorial](/data_tutorial.md)
 
-- Add symbol description to the JSON file in the `symbol_onfo/repo_name.json` directory.
-- Upload CSV data files to the `data/repo_name` directory.
+- Add symbol description to the JSON file in the `symbol_info/repo_name.json` directory.
+- Upload CSV data files to the `data/` directory.
 
 ## Check the data upload
 
