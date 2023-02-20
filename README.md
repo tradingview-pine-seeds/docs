@@ -29,15 +29,11 @@ Keep in mind that such data (we call them EOD data, short for End-of-Day) has ce
 - the number of data elements (symbols) is [limited][data_limits] to 1000
 - such data [will not appear][ui_symbol_search] in the symbol search box
 
-> __Note__
-> 
-> Read our [5-minute tutorial](tutorial.md) to get started right now
-
 Setting up the service includes several steps:
 
-- [data preparation][data]
-- setting up a [repository][repo]
-- manipulating data in the [TradingView UI][ui]
+1. setting up a [repository][repo]
+2. [data preparation][data]
+3. manipulating data in the [TradingView UI][ui]
 
 ## Example
 
