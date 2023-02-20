@@ -24,7 +24,7 @@ Use [TradingView](https://tradingview.com) as your __frontend__ and use a GitHub
 
 Keep in mind that such data (we call them EOD data, short for End-of-Day) has certain limitations:
 
-- the data can only be updated a few times per day
+- the data can only be updated 5 times per day
 - only daily-based timeframes (1D and above) can be applied to such data
 - the number of data elements (symbols) is [limited][data_limits] to 1000
 - such data [will not appear][ui_symbol_search] in the symbol search box
