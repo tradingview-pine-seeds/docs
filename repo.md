@@ -39,7 +39,7 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 
     ![Adding GitHub action secret](/images/github_new_action_secret.png)
 
-5. Go to _Actions → General → Actions permissions_.
+5. Now go to _Actions → General → Actions permissions_.
 6. Select the [Allow all actions and reusable workflows][gh_docs_actions] checkbox and click __Save__.
 
     ![Selecting GitHub actions permissions](/images/github_actions_permissions.png)

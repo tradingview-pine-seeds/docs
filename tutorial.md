@@ -32,7 +32,7 @@
 
 How to add new symbols and data described in [tutorial](/data_tutorial.md)
 
-1. Add symbol description to the JSON file in the `symbol_onfo/repo_name.json` directory.
+1. Add symbol description to the JSON file in the `symbol_info/repo_name.json` directory.
 2. Upload your data files to the `data/repo_name` directory.
 
 
