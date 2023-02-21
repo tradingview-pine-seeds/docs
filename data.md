@@ -59,7 +59,7 @@ If you don't update the data for three months, it will be removed from the Tradi
 
 Intraday data and real-time updates are possible using a REST protocol, but this option is only available for [brokerage integration][brokerage_integration].
 
-## Symbol_info format
+## Symbol info format
 
 Symbol information must be placed into a single JSON file in the `symbol_info/` directory.
 
