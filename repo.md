@@ -7,8 +7,9 @@
 # GitHub repository settings
 
 Use GitHub as your backend: we will provide you with a repository where you can store your data and update it.
-In this repository, GitHub actions are already configured.
-They regularly check the data and create _Pull Requests_ to the TradingView repository.
+In this repository, GitHub actions are already configured. 
+You can fork this repository and add data. 
+Action checks data after changes in forked repository and creates _Pull Requests_ to the main repository. From the main repository data uploads to the TradingView storage so data can be viewed on the TradingView charts.
 The results of the data checks will be available in the action logs.
 
 ## Get access to a repository
@@ -44,7 +45,8 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 
     ![Selecting GitHub actions permissions](/images/github_actions_permissions.png)
 
-7. Go to the _Action_ tab and click to the _I undestand my worflows, go ahead and enable them_ button
+7. Go to the _Action_ tab and click to the _I undestand my worflows, go ahead and enable them_ button.
+![GitHub enable actions](/images/actions_workflows.png)
 8. Disable workflow __Upload data__ with __Disable workflow__ button. Check that workflow __Check data__ is enabled.
 
     ![GitHub disable action](/images/github_action_disable.png)

@@ -9,13 +9,13 @@
 You need to store all symbol data and its description in a repository.
 To do this, provide two directories and add your data files.
 
-- Create a [JSON file](#symbolinfo-format) with symbol descriptions in the `symbol_info` directory.
+- Create a [JSON file](#symbolinfo-format) with symbol descriptions in the `symbol_info/` directory.
 - For each symbol, create a [CSV file](#data-format) with daily data in the `data/` directory.
 
 ## Data format
 
 Each symbol and its daily data must be placed into a separate CSV file in the `data/` directory.
-Daily data represents the symbol's OHLC (open-high-low-close) prices on charts.
+Daily data represents the symbol's OHLCV (open-high-low-close-volume) prices on charts.
 
 > __Note__
 >
@@ -61,7 +61,7 @@ Intraday data and real-time updates are possible using a REST protocol, but this
 
 ## Symbol_info format
 
-Symbol information must be placed into a single JSON file in the `symbol_info` directory.
+Symbol information must be placed into a single JSON file in the `symbol_info/` directory.
 
 Follow these requirements when creating a file:
 
