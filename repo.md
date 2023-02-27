@@ -67,7 +67,6 @@ Your forked repository contains the following files and directories.
 ```bash
 .github/workflows    # GitHub action files
 data                 # Your data CSV files
-scripts              # Scripts for GitHub actions
 symbol_info          # Your JSON file with symbol information
 README.md
 ```
