@@ -4,7 +4,7 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 
 > __Note__
 >
-> There are only 5 pull requests that can be merged into the main repository per day.
+> Only 5 pull requests per day can be merged from your personal repository into the main one.
 > Carefully consider your changes and plan them in advance.
 
 ## Add symbol and its data
