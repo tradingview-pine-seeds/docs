@@ -9,14 +9,17 @@
 
 #### Q: In what form should the data be stored?
 
-__A:__ Use plain-text files to store your data.
-Store the price data itself is in CSV files in the `data/` directory. Create a separate file for each symbol. 
-The additional symbol information should be stored in a JSON file in the `symbol_info` directory. Describe all of the symbol settings in one file.
+__A:__ Use plain-text files to store your data:
+
+- Store the price data in CSV files in the `data/` directory. Create a separate file for each symbol.
+- Store additional symbol information in a JSON file in the `symbol_info/` directory. Describe all symbol settings in one file.
+
+See the [Data structure](data.md) article for more information.
 
 #### Q: How to set up access to the data source and not store access keys in code?
 
 __A:__ Use [environment variables][env_var] in your code.
-Go to the repository settings. Open the _Secrets_ section. Create a variable with a token or password in it, then use that variable in your code.
+Go to the repository settings and open the _Secrets_ section. Create a variable with a token or password in it, then use the variable in your code.
 
 #### Q: Can only trading data be integrated?
 
@@ -42,7 +45,7 @@ If the data needs to be updated more frequently, you can connect the integration
 
 #### Q: How often do I update data from the source?
 
-__A:__ TradingView allows you to watch and analyse the data for any period. 
+__A:__ TradingView allows you to watch and analyze the data for any period. 
 If data is not updated, it is no longer useful.
 If your files have not been updated for three months, the source will be disabled.
 

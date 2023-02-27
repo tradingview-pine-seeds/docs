@@ -9,7 +9,7 @@
 You need to store all symbol data and its description in a repository.
 To do this, provide two directories and add your data files.
 
-- Create a [JSON file](#symbolinfo-format) with symbol descriptions in the `symbol_info/` directory.
+- Create a [JSON file](#symbol-info-format) with symbol descriptions in the `symbol_info/` directory.
 - For each symbol, create a [CSV file](#data-format) with daily data in the `data/` directory.
 
 ## Data format

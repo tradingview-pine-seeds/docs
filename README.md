@@ -31,9 +31,9 @@ Keep in mind that such data (we call them EOD data, short for End-of-Day) has ce
 
 Setting up the service includes several steps:
 
-1. setting up a [repository][repo]
-2. [data preparation][data]
-3. manipulating data in the [TradingView UI][ui]
+1. Setting up a [repository][repo].
+2. [Data preparation][data].
+3. Manipulating data in the [TradingView UI][ui].
 
 ## Example
 
