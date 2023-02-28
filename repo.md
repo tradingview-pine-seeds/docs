@@ -80,7 +80,7 @@ How to add new symbols and data described in [tutorial](/data_tutorial.md)
 
 ## Check the data upload
 
-The __Check data__ action regularly validates data and loads it into the TradingView storage.
+The __Check data__ action validates data and loads it into the TradingView storage.
 You can find the results of the data checks in the action logs.
 
 After updating the data files and completing the relevant actions, examine the log for errors.
