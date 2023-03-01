@@ -23,18 +23,19 @@ If there is a value for a date in the file, but there is no one in the response 
 
 ## Prerequisites
 
-To run the script, you first need to:
+Before running the script, you first need to:
 
 1. Install the latest version of Python. For more information, refer to the [Downloading Python instructions](https://wiki.python.org/moin/BeginnersGuide/Download).
 2. Install the latest version of Git. For more information, refer to the [Git download page](https://git-scm.com/downloads).
-3. Download the `update_example/update_example.py` file from the current repository. You can do it either by right-clicking *Raw* → *Save as…* or clicking *Copy raw contents* (<img src = "../images/svg/clone-regular.svg" alt="My Happy SVG"/>) and saving the file content locally via any text editor.
+3. Download the `update_example/update_example.py` file from the current repository. You can do it either by right-clicking *Raw* → *Save as…* or clicking *Copy raw contents* (<img src = "../images/svg/clone-regular.svg" alt="Copy raw contents"/>) and saving the file content locally via any text editor.
 
 ## Run the script
 
 To update the data, follow the steps below:
 
-1. On the repository page, copy the repository name by clicking *Code → Copy to clipboard*. You can use HTTPS or SSH 
-authentication. To use HTTPS you need to generate [access token], to use SSH you need to generate [SSH key].
+1. On the repository page, copy the repository name by clicking *Code → Copy to clipboard* (<img src = "../images/svg/clone-regular.svg" alt="Copy raw contents"/>).
+You can use the HTTPS or SSH authentication.
+To use HTTPS, you need to generate an [access token]. To use SSH, you need to generate an [SSH key].
 
     ![Clone repository name on GitHub](/images/github_clone_repository.png)
 
@@ -56,18 +57,19 @@ authentication. To use HTTPS you need to generate [access token], to use SSH you
 
     ![Change folder](/images/change_folder_to_fork.png)
 
-6. You can run `git status` to see which files have changed. 
-- If you can see Untracked file in the output, you need to add these symbols descriptions in symbol info according to step 1 in [tutorial](/data_tutorial.md).
+6. You can run `git status` to see which files have changed.
 
-    ![Run Git status for first updates](/images/git_status_first_update.png)
+    - If you see *Untracked files* in the output, you need to add your symbol descriptions into symbol_info according to the step 1 in the [tutorial](/data_tutorial.md).
 
-- If you can see only changes on existing files you can go to the next step.
+        ![Run Git status for first updates](/images/git_status_first_update.png)
 
-    ![Run Git status for next updates](/images/git_status_next_updates.png)
-    
-- If it is not the first update, you can see what changed in files by running `git diff`. Press 'q' to close diff.
+    - If you see changes only in existing files, you can go to the next step.
 
-    ![Check diff output](/images/diff_output.png)
+        ![Run Git status for next updates](/images/git_status_next_updates.png)
+
+    - If it is not your first data update, you can see what changed in the files by running `git diff`. Press `q` to exit `git diff`.
+
+        ![Check diff output](/images/diff_output.png)
 
 7. Run `git add .` to add the changes in the working directory to the index.
 
