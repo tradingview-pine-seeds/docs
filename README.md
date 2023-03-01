@@ -54,8 +54,7 @@ plot(activity, "BTC Dev Activity")
 By adding Bitcoin developer activity data from the EOD source (`SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY`) to the `BTCUSD` chart,
 you will receive additional information for technical analysis.
 
-|![ui_chart_pine]|
-|-|
+![ui_chart_pine]
 
 ## Read more
 
