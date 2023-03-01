@@ -65,7 +65,7 @@ For single-layer data (`open` = `high` = `low` = `close`), the _Line_ chart type
 |![ui_chart_line]|
 |-|
 
-If your feed is trading data, a valid [OHLCV][support_ohlc] data series should come in each line.
+If your feed is trading data, valid [OHLCV][support_ohlc] (open-high-low-close-volume) data series should come in each line.
 In this case the _Candles_ chart type will be more useful, as it displays all four values separately.
 
 |![ui_chart_candles]|
@@ -76,16 +76,16 @@ In this case the _Candles_ chart type will be more useful, as it displays all fo
 Pine Script™ is one more tool for working with your custom data on TradingView. 
 Unlike the symbol search, which changes the main symbol on the chart, indicators written in Pine Script™ are an addition to the currently open symbol.
 
-You can request custom data with the [request.seed()][request_seed] built-in function:
+You can request custom data with the [`request.seed()`][request_seed] built-in function:
 
 ```js
-request.seed(source, repo_name, symbol, expression, gaps)
+request.seed(source, group, symbol, expression, gaps)
 ```
 
-When calling the function, the first three parameters define the data source:
+When you call the function, the first three parameters define the data source:
 
-- `source` — the source name, the same as the GitHub account name
-- `repo_name` — a group of symbols, coincides with the GitHub repository name
+- `source` — the source name, the same as the GitHub username
+- `group` — a group of symbols, coincides with the GitHub repository name
 - `symbol` — the name of the symbol in the group that corresponds to a specific data file
 
 These parameters uniquely determine the requested series so they can't be empty strings.
@@ -93,18 +93,17 @@ These parameters uniquely determine the requested series so they can't be empty 
 The `expression` parameter specifies what data series you request from the specified symbol, 
 and the optional `gaps` argument controls whether the gaps between data values should be filled.
 
-|![ui_pine]|
-|-|
-
-For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine Script™ as
+For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine Script™ as:
 
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, repo_name, symbol, expression[, gaps])
+//request.seed(source, group, symbol, expression[, gaps])
 activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity)
 ```
+
+![ui_pine]
 
 The source contains 6 values in each data row.
 
@@ -126,7 +125,7 @@ like `ta.sma(close, 10)`, or even a tuple of several different values (enclosed 
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, repo_name, symbol, expression)
+//request.seed(source, group, symbol, expression)
 [activity, activitySMA] = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", [close, ta.sma(close, 10)])
 plot(activity, "BTC Dev Activity")
 plot(activitySMA, "BTC Dev Activity, SMA10", color=color.green)

@@ -2,33 +2,47 @@
 [gh_docs_pat]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 [gh_security]: https://github.com/settings/security
 [gh_docs_actions]: https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#allowing-select-actions-and-reusable-workflows-to-run
-[_data]: /data.md
+[data]: /data.md
 
 # GitHub repository settings
 
-Use GitHub as your backend: we will provide you with a repository where you can store your data and update it.
-In this repository, GitHub actions are already configured.
-They regularly check the data and create _Pull Requests_ to the TradingView repository.
+Use GitHub as your backend: TradingView will provide you with a repository that you need to fork.
+Then you can store your data and update it.
+
+In the repository, GitHub actions are already configured.
+Actions check data after changes in forked repository and creates _Pull Requests_ to the main TradingView repository.
+From the main repository, data uploads to the TradingView storage so data can be viewed on the TradingView charts.
 The results of the data checks will be available in the action logs.
 
 ## Get access to a repository
 
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
-Specify your GitHub username and the desired repository name.
-Note that the account and repository names will be used as [parts](README.md#Example) of the unique prefix for your data.
+Specify your GitHub username and the desired repository suffix.
+Note that the maximum number of characters in the suffix must be 16.
+The repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
 
+> __Note__
+>
+> Your username and suffix will be used as [parts](README.md#Example) of the unique suffix for your data.
+>
+> If your GitHub username contains capital letters or hyphens,
+> it will be automatically converted to lowercase or replaced with underscores.
+> For example, the `Crypto-TV` account name will be changed to `crypto_tv`.
+
+Your request processing may take up to one day.
 As a result, you will get a link to the repository you need to fork.
+Note that the repository will be private, so your fork can only be private.
 
 ## Pre-setup
 
 After you fork the repository, you will need to do a pre-setup. Then you can upload your data.
 
 1. Go to GitHub [_Settings → Password and authentication_][gh_security] and configure [two-factor authentication][gh_docs_2fa].
-2. Generate [Personal access token][gh_docs_pat] with the __repo__, __workflow__, and __admin:org__ access scopes.
+2. Go to GitHub _Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token → Generate new token (classic)_. Generate [Personal access token][gh_docs_pat] with the __repo__, __workflow__, and __admin:org__ access scopes.
 
     ![GitHub access scopes](/images/github_access_scopes.png)
 
-3. Go to _Settings → Secrets → Actions_ of your forked repository.
+3. In the forked repository, go to _Settings → Secrets and variables → Actions_.
 4. Click __New repository secret__, specify `ACTION_TOKEN` in the _Name_ field, and paste created __Personal access token__ into the _Secret_ field. Select _Add secret_.
 
     ![Adding GitHub action secret](/images/github_new_action_secret.png)
@@ -38,11 +52,13 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 
     ![Selecting GitHub actions permissions](/images/github_actions_permissions.png)
 
-7. Click the _Actions_ tab and click __Show more workflows__.
+7. Go to the _Action_ tab and click _I understand my workflows, go ahead and enable them_.
 
-    ![Repository action list](/images/github_action_list.png)
+    ![GitHub enable actions](/images/github_actions_workflows.png)
 
-8. Disable all workflows and only enable __Check data and create pr__.
+8. Disable workflow __Upload data__ with __Disable workflow__ button. Check that workflow __Check data__ is enabled.
+
+    ![GitHub disable workflow](/images/github_disable_workflow.png)
 
 ## Repository structure
 
@@ -50,25 +66,30 @@ Your forked repository contains the following files and directories.
 
 ```bash
 .github/workflows    # GitHub action files
-data/repo_name       # Your data CSV files
-scripts              # Scripts for GitHub actions
+data                 # Your data CSV files
 symbol_info          # Your JSON file with symbol information
 README.md
 ```
 
 ## Add data files
 
-- Upload CSV data files to the `data/repo_name` directory.
-- Upload a JSON symbol description file to the `symbol_info` directory.
+How to add new symbols and data described in [tutorial](/data_tutorial.md)
+
+- Add symbol description to the JSON file in the `symbol_info/repo_name.json` directory.
+- Upload CSV data files to the `data/` directory.
 
 ## Check the data upload
 
-The __Check data and create pr__ action regularly validates data and loads it into the TradingView storage.
+The __Check data__ action validates data and loads it into the TradingView storage.
 You can find the results of the data checks in the action logs.
 
 After updating the data files and completing the relevant actions, examine the log for errors.
 
 1. Go to the repository __Actions__ tab.
-2. Check the __Check data and create pr__ action log.
+2. Check the __Check data__ action. It's last run should be marked with a green tick like on the image below.
 
-The [data requirements][_data] are listed in the tables. We indicate which field failed the check in the log and explain why.
+    ![GitHub successful action runs](/images/github_ok_action.png)
+
+It may take some time for the initial upload to be visible on the TradingView chart.
+
+The [data requirements][data] are listed in the tables. We indicate which field failed the check in the log and explain why.
