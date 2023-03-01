@@ -93,10 +93,7 @@ These parameters uniquely determine the requested series so they can't be empty 
 The `expression` parameter specifies what data series you request from the specified symbol, 
 and the optional `gaps` argument controls whether the gaps between data values should be filled.
 
-|![ui_pine]|
-|-|
-
-For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine Script™ as
+For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine Script™ as:
 
 ```js
 //@version=5
@@ -105,6 +102,9 @@ indicator("BTC Dev Activity", format=format.volume)
 activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity)
 ```
+
+|![ui_pine]|
+|-|
 
 The source contains 6 values in each data row.
 
