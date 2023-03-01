@@ -2,25 +2,32 @@
 [gh_docs_pat]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 [gh_security]: https://github.com/settings/security
 [gh_docs_actions]: https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#allowing-select-actions-and-reusable-workflows-to-run
-[_data]: /data.md
+[data]: /data.md
 
 # GitHub repository settings
 
-Use GitHub as your backend: we will provide you with a repository where you can store your data and update it.
-In this repository, GitHub actions are already configured. 
-You can fork this repository and add data. 
-Action checks data after changes in forked repository and creates _Pull Requests_ to the main repository. From the main repository data uploads to the TradingView storage so data can be viewed on the TradingView charts.
+Use GitHub as your backend: TradingView will provide you with a repository that you need to fork.
+Then you can store your data and update it.
+
+In the repository, GitHub actions are already configured.
+Actions check data after changes in forked repository and creates _Pull Requests_ to the main TradingView repository.
+From the main repository, data uploads to the TradingView storage so data can be viewed on the TradingView charts.
 The results of the data checks will be available in the action logs.
 
 ## Get access to a repository
 
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
-Specify your GitHub username and the desired repository suffix. __The maximum number of characters in suffix must be 16.__
+Specify your GitHub username and the desired repository suffix.
+Note that the maximum number of characters in the suffix must be 16.
 The repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
 
 > __Note__
 >
 > Your username and suffix will be used as [parts](README.md#Example) of the unique suffix for your data.
+>
+> If your GitHub username contains capital letters or hyphens,
+> it will be automatically converted to lowercase or replaced with underscores.
+> For example, the `Crypto-TV` account name will be changed to `crypto_tv`.
 
 Your request processing may take up to one day.
 As a result, you will get a link to the repository you need to fork.
@@ -40,16 +47,18 @@ After you fork the repository, you will need to do a pre-setup. Then you can upl
 
     ![Adding GitHub action secret](/images/github_new_action_secret.png)
 
-5. Now go to _Actions → General → Actions permissions_.
+5. Go to _Actions → General → Actions permissions_.
 6. Select the [Allow all actions and reusable workflows][gh_docs_actions] checkbox and click __Save__.
 
     ![Selecting GitHub actions permissions](/images/github_actions_permissions.png)
 
-7. Go to the _Action_ tab and click to the _I undestand my worflows, go ahead and enable them_ button.
-![GitHub enable actions](/images/actions_workflows.png)
+7. Go to the _Action_ tab and click _I understand my workflows, go ahead and enable them_.
+
+    ![GitHub enable actions](/images/github_actions_workflows.png)
+
 8. Disable workflow __Upload data__ with __Disable workflow__ button. Check that workflow __Check data__ is enabled.
 
-    ![GitHub disable action](/images/github_action_disable.png)
+    ![GitHub disable workflow](/images/github_disable_workflow.png)
 
 ## Repository structure
 
@@ -58,7 +67,6 @@ Your forked repository contains the following files and directories.
 ```bash
 .github/workflows    # GitHub action files
 data                 # Your data CSV files
-scripts              # Scripts for GitHub actions
 symbol_info          # Your JSON file with symbol information
 README.md
 ```
@@ -72,15 +80,16 @@ How to add new symbols and data described in [tutorial](/data_tutorial.md)
 
 ## Check the data upload
 
-The __Check data__ action regularly validates data and loads it into the TradingView storage.
+The __Check data__ action validates data and loads it into the TradingView storage.
 You can find the results of the data checks in the action logs.
 
 After updating the data files and completing the relevant actions, examine the log for errors.
 
 1. Go to the repository __Actions__ tab.
 2. Check the __Check data__ action. It's last run should be marked with a green tick like on the image below.
+
     ![GitHub successful action runs](/images/github_ok_action.png)
 
 It may take some time for the initial upload to be visible on the TradingView chart.
 
-The [data requirements][_data] are listed in the tables. We indicate which field failed the check in the log and explain why.
+The [data requirements][data] are listed in the tables. We indicate which field failed the check in the log and explain why.
