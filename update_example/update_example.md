@@ -39,7 +39,8 @@ To update the data, follow the steps below:
 
 2. Open any text editor on your computer and paste the contents.
 3. Save the file with the `update_santiment.py` name in any folder you prefer.
-4. On the repository page, copy the repository name by clicking *Code → Copy to clipboard*.
+4. On the repository page, copy the repository name by clicking *Code → Copy to clipboard*. You can use HTTPS or SSH 
+authentication. To use HTTPS you need to generate [access token], to use SSH you need to generate [SSH key].
 
     ![Clone repository name on GitHub](/images/github_clone_repository.png)
 
@@ -61,11 +62,16 @@ To update the data, follow the steps below:
 
     ![Change folder](/images/change_folder_to_fork.png)
 
-9. You can run `git status` to see which files have changed. If it is not the first update, you can see what changed in files by running `git diff`. Press 'q' to close diff.
+9. You can run `git status` to see which files have changed. 
+- If you can see Untracked file in the output, you need to add these symbols descriptions in symbol info according to step 1 in [tutorial](/data_tutorial.md).
 
     ![Run Git status for first updates](/images/git_status_first_update.png)
 
+- If you can see only changes on existing files you can go to the next step.
+
     ![Run Git status for next updates](/images/git_status_next_updates.png)
+    
+- If it is not the first update, you can see what changed in files by running `git diff`. Press 'q' to close diff.
 
     ![Check diff output](/images/diff_output.png)
 
@@ -94,3 +100,5 @@ To update the data, follow the steps below:
 [main page]: https://santiment.net/
 [metrics overview]: https://academy.santiment.net/metrics/#financial
 [Santiment API]: https://api.santiment.net/
+[SSH key]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+[access token]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
