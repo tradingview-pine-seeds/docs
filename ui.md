@@ -103,8 +103,7 @@ activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity)
 ```
 
-|![ui_pine]|
-|-|
+![ui_pine]
 
 The source contains 6 values in each data row.
 
