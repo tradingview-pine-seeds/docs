@@ -9,13 +9,13 @@
 You need to store all symbol data and its description in a repository.
 To do this, provide two directories and add your data files.
 
-- For each symbol, create a [CSV file](#data-format) with daily data in the `data/repo_name` directory.
-- Create a [JSON file](#symbolinfo-format) with symbol descriptions in the `symbol_info` directory.
+- Create a [JSON file](#symbol-info-format) with symbol descriptions in the `symbol_info/` directory.
+- For each symbol, create a [CSV file](#data-format) with daily data in the `data/` directory.
 
 ## Data format
 
-Each symbol and its daily data must be placed into a separate CSV file in the `data/repo_name` directory.
-Daily data represents the symbol's OHLC (open-high-low-close) prices on charts.
+Each symbol and its daily data must be placed into a separate CSV file in the `data/` directory.
+Daily data represents the symbol's OHLCV (open-high-low-close-volume) prices on charts.
 
 > __Note__
 >
@@ -59,9 +59,9 @@ If you don't update the data for three months, it will be removed from the Tradi
 
 Intraday data and real-time updates are possible using a REST protocol, but this option is only available for [brokerage integration][brokerage_integration].
 
-## Symbol_info format
+## Symbol info format
 
-Symbol information must be placed into a single JSON file in the `symbol_info` directory.
+Symbol information must be placed into a single JSON file in the `symbol_info/` directory.
 
 Follow these requirements when creating a file:
 
@@ -128,10 +128,10 @@ Both examples above are equivalent and will not cause a validation error.
 
 ## Data validation
 
-When your data is merged, the __Check data and create pr__ action will run on the repository *Actions* page automatically.
+When your data is merged, the __Check data__ action will run on the repository *Actions* page automatically.
 This action validates your files and loads them into the TradingView storage.
 
-You can also run the __Check data and create pr__ action manually by clicking __Run workflow__ button on the repository *Actions* tab with selected __Check data and create pr__ action.
+You can also run the __Check data__ action manually by clicking __Run workflow__ button on the repository *Actions* tab with selected __Check data__ action.
 Running action manually can be used when the automatic run fails for some external reason (e.g., GitHub is down, temporary problem with the runner occurred).
 
 Before merging your data, ensure that your files and their content follow the requirements described in this article.

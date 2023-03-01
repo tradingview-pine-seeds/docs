@@ -1,6 +1,5 @@
 [data_format]: data.md#data-format
 [ui_symbol_search]: ui.md#symbol-search
-[env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
 [rest_api]: https://www.tradingview.com/brokerage-integration/
 
 # FAQ
@@ -9,14 +8,12 @@
 
 #### Q: In what form should the data be stored?
 
-__A:__ Use plain-text files to store your data.
-Store the price data itself is in CSV files in the `data/repo_name` directory. Create a separate file for each symbol. 
-The additional symbol information should be stored in a JSON file in the `symbol_info` directory. Describe all of the symbol settings in one file.
+__A:__ Use plain-text files to store your data:
 
-#### Q: How to set up access to the data source and not store access keys in code?
+- Store the price data in CSV files in the `data/` directory. Create a separate file for each symbol.
+- Store additional symbol information in a JSON file in the `symbol_info/` directory. Describe all symbol settings in one file.
 
-__A:__ Use [environment variables][env_var] in your code.
-Go to the repository settings. Open the _Secrets_ section. Create a variable with a token or password in it, then use that variable in your code.
+See the [Data structure](data.md) article for more information.
 
 #### Q: Can only trading data be integrated?
 
@@ -42,7 +39,7 @@ If the data needs to be updated more frequently, you can connect the integration
 
 #### Q: How often do I update data from the source?
 
-__A:__ TradingView allows you to watch and analyse the data for any period. 
+__A:__ TradingView allows you to watch and analyze the data for any period. 
 If data is not updated, it is no longer useful.
 If your files have not been updated for three months, the source will be disabled.
 
@@ -64,12 +61,11 @@ __A:__ For economic data, which commonly only has a single data source, a _Line_
 
 #### Q: Who can use my symbols in the UI?
 
-__A:__ An EOD data symbol can only be accessed by [knowing its full name][ui_symbol_search].
-Therefore, if your repository is public, anyone can check its full name and open the symbol on the chart. If it’s private, only those who know the full name will be able to access the data.
+__A:__ Anyone who knows the full symbol names can access your symbols' EOD data from the [_Symbol Search_][ui_symbol_search].
 
 ## GitHub settings
 
 #### Q: How to catch errors?
 
-__A:__ Your GitHub repository has a __Check data and create pr__ action set up. 
-Validation warnings and errors can be found in its log.
+__A:__ Your GitHub repository has a __Check data__ action set up.
+Validation warnings and errors can be found in its logs.
