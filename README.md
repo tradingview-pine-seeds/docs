@@ -78,3 +78,16 @@ If you have any questions that haven't been covered by info in the sections abov
 __[Example script for automating data history uploads][update_script]__
 
 Check the script example that automates data history uploads to a forked repository.
+
+[chart]: https://www.tradingview.com/chart
+[data]: /data.md
+[data_limits]: /faq.md#q-what-are-the-limits-on-the-amount-of-data
+[faq]: /faq.md
+[pine_docs]: https://www.tradingview.com/pine-script-docs/en/v5/index.html
+[pine_refs]: https://www.tradingview.com/pine-script-reference/v5/#fun_request{dot}seed
+[repo]: /repo.md
+[seed_crypto_santiment]: https://github.com/tradingview-pine-seeds/seed_crypto_santiment
+[ui]: /ui.md
+[ui_chart_pine]: /images/ui_chart_pine_btc.png
+[ui_symbol_search]: /ui.md#symbol-search
+[update_script]: /update_example/update_exhamle.md
