@@ -90,4 +90,4 @@ Check the script example that automates data history uploads to a forked reposit
 [ui]: /ui.md
 [ui_chart_pine]: /images/ui_chart_pine_btc.png
 [ui_symbol_search]: /ui.md#symbol-search
-[update_script]: /update_example/update_exhamle.md
+[update_script]: /update_example/update_example.md
