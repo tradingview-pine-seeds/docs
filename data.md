@@ -73,7 +73,6 @@ The object consists of the following required fields:
 | Field | Type | Description | Note |
 |-|-|-|-|
 | `symbol` | String | Symbol name used in TradingView. | Cannot be empty. Validation rule: `^[A-Z0-9._]+$`. |
-| `currency` | String | Three-letter currency code according to [ISO 4217][iso_4217]. | Can be empty. Validation rule: `^[A-Z0-9._]+$`. |
 | `description` | String | Symbol description. | Cannot be empty. |
 | `pricescale` | Integer | Indicates how many decimal places the price has. | The value format is `10^n`, where *n* is the number of decimal places. For example, if the price has two decimal places `300.01`, set `pricescale` to `100`. If it has three decimal places `300.001`, set `pricescale` to `1000`, etc. If the price doesn't have decimals, set `pricescale` to `1`. |
 
@@ -81,7 +80,7 @@ The object consists of the following required fields:
 > 
 > Each object field is an array with values.
 > For all fields, the length of these arrays must match.
-> However, if all the values in the array are the same, you can specify a single value for the field instead of an array.
+> However, if all the values in the array are the same in the `pricescale` field, you can specify a single value for the field instead of an array.
 
 Consider the following example.
 If you specify three symbols in the object, 
@@ -95,7 +94,6 @@ then you also need to specify three descriptions, three price scales, and three 
       "ETH_DEV_ACTIVITY"
    ],
    "pricescale": [10, 10, 10],
-   "currency": "",
    "description": [
       "Bitcoin developer activity",
       "Bitcoin social volume total",
@@ -115,7 +113,6 @@ However, if all added symbols have the same price scale, you can only specify a 
       "ETH_DEV_ACTIVITY"
    ],
    "pricescale": 10,
-   "currency": "",
    "description": [
       "Bitcoin developer activity",
       "Bitcoin social volume total",
