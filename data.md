@@ -1,5 +1,4 @@
 [brokerage_integration]: https://www.tradingview.com/brokerage-integration/
-[env_var]: https://docs.github.com/en/actions/learn-github-actions/environment-variables
 [iso_4217]: https://en.wikipedia.org/wiki/ISO_4217
 [tv_chart]: [https://tradingview.com/chart]
 [url_encode]: https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier
