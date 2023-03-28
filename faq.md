@@ -110,12 +110,12 @@ Validation warnings and errors can be found in its logs.
 __A:__ Check that the JSON file in the `symbol_info/` directory has a valid format.
 Refer to [Symbol info format] for more information.
 
-#### Q: What if the Check data action in my repository has failed after adding the symbol data?
+#### Q: What if the Check data action has failed in my repository after adding the symbol data?
 
 A: Check that CSV files in the `data/` directory have valid formats.
 Refer to [Data format][data_format] for more information.
 
-#### Q: What if the Upload data action in the main repository failed?
+#### Q: What if the Upload data action has failed in the main repository?
 
 __A:__  Check that you have not exceeded the [daily number of pull requests].
 If not, contact us at pine.seeds@tradingview.com.
