@@ -69,20 +69,20 @@ Follow these requirements when creating a file:
 
 The object consists of the following required fields:
 
-| Field | Type | Description | Note |
-|-|-|-|-|
-| `symbol` | String | Symbol name used in TradingView. | Cannot be empty. Validation rule: `^[A-Z0-9._]+$`. The maximum number of characters in the symbol must be 42. |
-| `description` | String | Symbol description. | Cannot be empty. The maximum number of characters in the description must be 128. |
-| `pricescale` | Integer | Indicates how many decimal places the price has. | The value format is `10^n`, where *n* is the number of decimal places. For example, if the price has two decimal places `300.01`, set `pricescale` to `100`. If it has three decimal places `300.001`, set `pricescale` to `1000`, etc. If the price doesn't have decimals, set `pricescale` to `1`. The maximum value of the pricescale must be 10000000000000000000000 (22 zeroes). |
+| Field | Type | Description | Max value | Note |
+|-|-|-|-|-|
+| `symbol` | String | Symbol name used in TradingView. | The maximum number of characters in `symbol` is 42. |Cannot be empty. Validation rule: `^[A-Z0-9._]+$`. |
+| `description` | String | Symbol description. | The maximum number of characters in `description` is 128. | Cannot be empty. |
+| `pricescale` | Integer | Indicates how many decimal places the price has. | The maximum value of `pricescale` is `10000000000000000000000` (22 zeroes). | The value format is `10^n`, where *n* is the number of decimal places. For example, if the price has two decimal places `300.01`, set `pricescale` to `100`. If it has three decimal places `300.001`, set `pricescale` to `1000`, etc. If the price doesn't have decimals, set `pricescale` to `1`. |
 
 > __Note__
 > 
 > Each object field is an array with values.
 > For all fields, the length of these arrays must match.
-> However, if all the values in the array are the same in the `pricescale` field, you can specify a single value for the field instead of an array.
+> However, if all the values in the `pricescale` array are the same, you can specify a single value for the field instead of an array.
 
 Consider the following example.
-If you specify three symbols in the object, 
+If you specify three symbols in the object,
 then you also need to specify three descriptions, three price scales, and three currencies (which can be empty) for each symbol.
 
 ```json
