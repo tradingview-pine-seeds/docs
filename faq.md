@@ -9,7 +9,7 @@ __A:__ Use plain-text files to store your data:
 - Store the price data in CSV files in the `data/` directory. Create a separate file for each symbol.
 - Store additional symbol information in a JSON file in the `symbol_info/` directory. Describe all symbol settings in one file.
 
-See the [Data structure](data.md) article for more information.
+Refer to [Data structure](data.md) for more information.
 
 #### Q: What if I store data in a file with a different extension (not CSV)?
 
@@ -38,7 +38,7 @@ __A:__ Your EOD data is checked and uploaded to our storage several times a day.
 On the chart you will see the values for the previous day and earlier.
 If the data needs to be updated more frequently, you can connect the integration via [REST API][rest_api], but this option is only available for the brokerage integration.
 
-#### Q: How often do I update data from the source?
+#### Q: How often do I need to update data from the source?
 
 __A:__ TradingView allows you to watch and analyze the data for any period.
 If data is not updated, it is no longer useful.
