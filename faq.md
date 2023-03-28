@@ -105,7 +105,7 @@ To rerun the action:
 __A:__ Your GitHub repository has a __Check data__ action set-up.
 Validation warnings and errors can be found in its logs.
 
-#### Q: What if the Check data action in my repository failed after adding a symbol description?
+#### Q: What if the Check data action has failed in my repository after adding a symbol description?
 
 __A:__ Check that the JSON file in the `symbol_info/` directory has a valid format.
 Refer to [Symbol info format] for more information.
