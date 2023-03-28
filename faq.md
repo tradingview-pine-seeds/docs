@@ -68,14 +68,14 @@ For more information, refer to the [How to add symbols to the chart and remove t
 > __Note__
 >
 > The steps above only work for the symbols that have just been added.
-> For those symbols, whose data is already shown on the chart,
+> For those symbols whose data is already shown on the chart,
 you can change the CSV files without waiting for `No data here` to appear on the chart.
 Your data will be updated.
 
 #### Q: What if the maximum amount of time required for the symbol to appear on the chart has passed, but I still do not see it?
 
 __A:__ The maximum time for a symbol to appear on the chart is one hour.
-If it hasn't appear during this time, check that JSON file in the `symbol_info/` directory has a valid format.
+If it has not appear during this time, check that the JSON file in the `symbol_info/` directory has a valid format.
 Refer to [Symbol info format] for more information.
 
 #### Q: Would a candlestick chart be informative?
@@ -107,23 +107,23 @@ Validation warnings and errors can be found in its logs.
 
 #### Q: What if the Check data action in my repository failed after adding a symbol description?
 
-__A:__ Check that JSON file in the `symbol_info/` directory has a valid format.
+__A:__ Check that the JSON file in the `symbol_info/` directory has a valid format.
 Refer to [Symbol info format] for more information.
 
-#### Q: What if the Check data action in my repository has failed after adding the symbol data?
+#### Q: What if the Check data action has failed in my repository after adding the symbol data?
 
 A: Check that CSV files in the `data/` directory have valid formats.
 Refer to [Data format][data_format] for more information.
 
-#### Q: What if the Upload data action in the main repository failed?
+#### Q: What if the Upload data action has failed in the main repository?
 
 __A:__  Check that you have not exceeded the [daily number of pull requests].
 If not, contact us at pine.seeds@tradingview.com.
 
-#### Q: What if my pull request wasn’t merged automatically?
+#### Q: What if my pull request was not merged automatically?
 
 __A:__ Check the action logs for validation warnings and errors.
-If you can't fix the problem, contact us at pine.seeds@tradingview.com.
+If you cannot fix the problem, contact us at pine.seeds@tradingview.com.
 
 [data_format]: data.md#data-format
 [daily number of pull requests]: #q-what-if-i-make-more-than-5-pull-request-during-the-day
