@@ -88,6 +88,18 @@ __A:__ Anyone who knows the full symbol names can access your symbols' EOD data 
 
 ## GitHub
 
+#### Q: What if I made more than 5 pull requests in a day?
+
+__A:__ Only 5 pull requests (PR) per day can be merged from your personal repository into the main one.
+If you create more than 5 PRs, the __Upload data__ action will not run until the next day.
+You will be able to rerun the action 24 hours after the first PR made the day before.
+
+To rerun the action:
+
+1. Go to _Actions_ in your repository.
+2. Open the last run action.
+3. Click _Re-run all jobs_.
+
 #### Q: How to catch errors?
 
 __A:__ Your GitHub repository has a __Check data__ action set-up.
