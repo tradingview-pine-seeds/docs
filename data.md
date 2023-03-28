@@ -72,9 +72,9 @@ The object consists of the following required fields:
 
 | Field | Type | Description | Note |
 |-|-|-|-|
-| `symbol` | String | Symbol name used in TradingView. | Cannot be empty. Validation rule: `^[A-Z0-9._]+$`. |
-| `description` | String | Symbol description. | Cannot be empty. |
-| `pricescale` | Integer | Indicates how many decimal places the price has. | The value format is `10^n`, where *n* is the number of decimal places. For example, if the price has two decimal places `300.01`, set `pricescale` to `100`. If it has three decimal places `300.001`, set `pricescale` to `1000`, etc. If the price doesn't have decimals, set `pricescale` to `1`. |
+| `symbol` | String | Symbol name used in TradingView. | Cannot be empty. Validation rule: `^[A-Z0-9._]+$`. The maximum number of characters in the symbol must be 42. |
+| `description` | String | Symbol description. | Cannot be empty. The maximum number of characters in the description must be 128. |
+| `pricescale` | Integer | Indicates how many decimal places the price has. | The value format is `10^n`, where *n* is the number of decimal places. For example, if the price has two decimal places `300.01`, set `pricescale` to `100`. If it has three decimal places `300.001`, set `pricescale` to `1000`, etc. If the price doesn't have decimals, set `pricescale` to `1`. The maximum value of the pricescale must be 10000000000000000000000 (22 zeroes). |
 
 > __Note__
 > 
