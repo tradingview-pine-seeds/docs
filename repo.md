@@ -18,7 +18,7 @@ The results of the data checks will be available in the action logs.
 
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
 Specify your GitHub username and the desired repository suffix.
-Note that the maximum number of characters in the suffix must be 16.
+Note that the maximum number of characters in the suffix is 16 and in the whole repository name is 64.
 The repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
 
 > __Note__
