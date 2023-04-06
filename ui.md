@@ -79,13 +79,13 @@ Unlike the symbol search, which changes the main symbol on the chart, indicators
 You can request custom data with the [`request.seed()`][request_seed] built-in function:
 
 ```js
-request.seed(source, group, symbol, expression, gaps)
+request.seed(source, suffix, symbol, expression, gaps)
 ```
 
 When you call the function, the first three parameters define the data source:
 
 - `source` — the source name, the same as the GitHub username
-- `group` — a group of symbols, coincides with the GitHub repository name
+- `suffix` — repository suffix that you provided during the repository creation `seed_<your_github_username>_<suffix_you_provided>`
 - `symbol` — the name of the symbol in the group that corresponds to a specific data file
 
 These parameters uniquely determine the requested series so they can't be empty strings.
@@ -93,25 +93,20 @@ These parameters uniquely determine the requested series so they can't be empty 
 The `expression` parameter specifies what data series you request from the specified symbol, 
 and the optional `gaps` argument controls whether the gaps between data values should be filled.
 
-For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine Script™ as:
+For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` close values can be requested in Pine Script™ as:
 
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, group, symbol, expression[, gaps])
+//request.seed(source, suffix, symbol, expression[, gaps])
 activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity)
 ```
 
 ![ui_pine]
 
-The source contains 6 values in each data row.
+The custom data contains 5 values in each data row.
 
-```csv
-20210101T,0.1,0.1,0.1,0.1,0
-```
-
-- `date` — data capture day
 - `open` — price of the first tick of the day
 - `close` — price of the last tick of the day
 - `high` — the highest value of the tick price
@@ -125,7 +120,7 @@ like `ta.sma(close, 10)`, or even a tuple of several different values (enclosed 
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, group, symbol, expression)
+//request.seed(source, suffix, symbol, expression)
 [activity, activitySMA] = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", [close, ta.sma(close, 10)])
 plot(activity, "BTC Dev Activity")
 plot(activitySMA, "BTC Dev Activity, SMA10", color=color.green)
