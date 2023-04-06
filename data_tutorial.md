@@ -13,7 +13,7 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 
 1. Add your symbol description to the [JSON file](data.md#symbol_info-format) in the `symbol_info/repo_name.json` directory.
 2. In your repository, open *Actions* and check if the *Check data* action finished successfully.
-3. In the main repository, open *Actions* and check if the *Upload data* action finished successfully. Go to *Pull requests* and check that the pull request was merged automatically.
+3. In the main repository, open *Actions* and check if the *Upload data* action finished successfully. Go to *Pull requests* and check that the pull request was merged automatically. It the *Pull requests* was not merged automatically check [FAQ](/faq.md#q-what-if-my-pull-request-was-not-merged-automatically)
 4. Open the [TradingView chart][tv-chart] and enter your symbol full name in [*Symbol Search*](ui.md#symbol-search).
     On the chart, you will see `No data here` for your symbol.
     If you see `Invalid symbol`, it means that the symbol has not been uploaded into the TradingView storage yet.
@@ -30,7 +30,7 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 
 1. Create a [CSV](data.md#data-format) file in the `data/` directory.
 2. In your repository, open *Actions* and check if the *Check data* action finished successfully.
-3. In the main repository, open *Actions* and check if the *Upload data* action finished successfully. Go to *Pull requests* and check that the pull request was merged automatically.
+3. In the main repository, open *Actions* and check if the *Upload data* action finished successfully. Go to *Pull requests* and check that the pull request was merged automatically. It the *Pull requests* was not merged automatically check [FAQ](/faq.md#q-what-if-my-pull-request-was-not-merged-automatically)
 4. Open your symbol on the chart. Note that it can take a while before data can be displayed.
 
 ## Remove symbol and data
@@ -43,5 +43,7 @@ If you need to remove a symbol and its data, you should follow the steps below:
 4. Delete a CSV file with symbol data from the `data/` directory.
 5. In your repository, open *Actions* and check if the *Check data* action finished successfully.
 6. In the main repository, open *Actions* and check if the *Upload data* action finished successfully. Go to *Pull requests* and check that the pull request was merged automatically.
+
+>If you have any questions or problems that you can't handle, you can contact us at pine.seeds@tradingview.com.
 
 [tv-chart]: https://www.tradingview.com/chart/

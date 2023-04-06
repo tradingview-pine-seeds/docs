@@ -93,3 +93,5 @@ After updating the data files and completing the relevant actions, examine the l
 It may take some time for the initial upload to be visible on the TradingView chart.
 
 The [data requirements][data] are listed in the tables. We indicate which field failed the check in the log and explain why.
+
+>If you have any questions or problems that you can't handle, you can contact us at pine.seeds@tradingview.com.
