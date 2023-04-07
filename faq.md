@@ -112,13 +112,16 @@ Refer to [Symbol info format] for more information.
 
 #### Q: What if the Check data action has failed in my repository after adding the symbol data?
 
-A: Check that CSV files in the `data/` directory have valid formats.
+__A:__ Check that CSV files in the `data/` directory have valid formats.
 Refer to [Data format][data_format] for more information.
 
 #### Q: What if the Upload data action has failed in the main repository?
 
 __A:__  Check that you have not exceeded the [daily number of pull requests].
 If not, contact us at pine.seeds@tradingview.com.
+
+#### Q: What if I see the error "The pull request cannot be merged. There is probably a data conflict". 
+__A:__ Most likely you made several consecutive commits too quickly. You need to make a new commit and all previous data changes will be pulled up.
 
 #### Q: What if my pull request was not merged automatically?
 
