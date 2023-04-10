@@ -120,6 +120,9 @@ Refer to [Data format][data_format] for more information.
 __A:__  Check that you have not exceeded the [daily number of pull requests].
 If not, contact us at pine.seeds@tradingview.com.
 
+#### Q: What if I see the error "The pull request cannot be merged. There is probably a data conflict"?
+__A:__ Most likely you made several consecutive commits too quickly. You need to make a new commit and all previous data changes will be pulled up.
+
 #### Q: What if my pull request was not merged automatically?
 
 __A:__ Check the action logs for validation warnings and errors.
