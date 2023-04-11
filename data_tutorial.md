@@ -19,7 +19,7 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 2. In your repository, open *Actions* and check if the *Check data* action finished successfully.
 3. In the main repository, open *Actions* and check if the *Upload data* action finished successfully.
 4. In the main repository, go to *Pull requests* and check that the pull request was merged automatically.
-    If the it was not merged automatically check the action logs for validation warnings and errors.
+    If it was not merged automatically, check the *Conversation* tab in your pull request for validation warnings or errors.
 5. Open the [TradingView chart][tv-chart] and enter your symbol full name in [*Symbol Search*](ui.md#symbol-search).
     On the chart, you will see `No data here` for your symbol.
     If you see `Invalid symbol`, it means that the symbol has not been uploaded into the TradingView storage yet.
@@ -38,7 +38,7 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 2. In your repository, open *Actions* and check if the *Check data* action finished successfully.
 3. In the main repository, open *Actions* and check if the *Upload data* action finished successfully.
 4. In the main repository, go to *Pull requests* and check that the pull request was merged automatically.
-    If it was not merged automatically check the action logs for validation warnings and errors.
+    If it was not merged automatically, check the *Conversation* tab in your pull request for validation warnings or errors.
 5. Open your symbol on the chart. Note that it can take a while before data can be displayed.
 
 ## Remove symbol and data
@@ -52,6 +52,6 @@ If you need to remove a symbol and its data, you should follow the steps below:
 5. In your repository, open *Actions* and check if the *Check data* action finished successfully.
 6. In the main repository, open *Actions* and check if the *Upload data* action finished successfully.
 7. In the main repository, Go to *Pull requests* and check that the pull request was merged automatically.
-    If it was not merged automatically check the action logs for validation warnings and errors.
+    If it was not merged automatically, check the *Conversation* tab in your pull request for validation warnings or errors.
 
 [tv-chart]: https://www.tradingview.com/chart/
