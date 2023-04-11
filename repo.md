@@ -94,4 +94,6 @@ It may take some time for the initial upload to be visible on the TradingView ch
 
 The [data requirements][data] are listed in the tables. We indicate which field failed the check in the log and explain why.
 
->If you have any questions or problems that you can't handle, you can contact us at pine.seeds@tradingview.com.
+> __Note__
+>
+> If you have any questions or problems that you are unable to handle, please contact us at pine.seeds@tradingview.com.

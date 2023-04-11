@@ -112,16 +112,18 @@ Refer to [Symbol info format] for more information.
 
 #### Q: What if the Check data action has failed in my repository after adding the symbol data?
 
-A: Check that CSV files in the `data/` directory have valid formats.
+__A:__ Check that CSV files in the `data/` directory have valid formats.
 Refer to [Data format][data_format] for more information.
 
 #### Q: What if the Upload data action has failed in the main repository?
 
-__A:__  Check that you have not exceeded the [daily number of pull requests].
+__A:__ Check that you have not exceeded the [daily number of pull requests].
 If not, contact us at pine.seeds@tradingview.com.
 
-#### Q: What if I see the error "The pull request cannot be merged. There is probably a data conflict"?
-__A:__ Most likely you made several consecutive commits too quickly. You need to make a new commit and all previous data changes will be pulled up.
+#### Q: What should I do if I see an error "The pull request cannot be merged. There is probably a data conflict."?
+
+__A:__ Most likely, you made several consecutive commits too quickly.
+You need to make a new commit, and all previous data changes will be pulled.
 
 #### Q: What if my pull request was not merged automatically?
 
@@ -129,7 +131,7 @@ __A:__ Check the action logs for validation warnings and errors.
 If you cannot fix the problem, contact us at pine.seeds@tradingview.com.
 
 [data_format]: data.md#data-format
-[daily number of pull requests]: #q-what-if-i-make-more-than-5-pull-request-during-the-day
+[daily number of pull requests]: #q-what-if-i-made-more-than-5-pull-requests-in-a-day
 [rest_api]: https://www.tradingview.com/brokerage-integration/
 [Symbol info format]: data.md#symbol-info-format
 [tutorial]: data_tutorial.md
