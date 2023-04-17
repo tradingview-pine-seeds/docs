@@ -93,7 +93,7 @@ These parameters uniquely determine the requested series so they can't be empty 
 The `expression` parameter specifies what data series you request from the specified symbol, 
 and the optional `gaps` argument controls whether the gaps between data values should be filled.
 
-For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` series data can be requested in Pine Script™ as:
+For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` close values can be requested in Pine Script™ as:
 
 ```js
 //@version=5
@@ -105,13 +105,8 @@ plot(activity)
 
 ![ui_pine]
 
-The source contains 6 values in each data row.
+The custom data contains 5 values in each data row.
 
-```csv
-20210101T,0.1,0.1,0.1,0.1,0
-```
-
-- `date` — data capture day
 - `open` — price of the first tick of the day
 - `close` — price of the last tick of the day
 - `high` — the highest value of the tick price
