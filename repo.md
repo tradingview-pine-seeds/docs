@@ -97,3 +97,4 @@ The [data requirements][data] are listed in the tables. We indicate which field 
 > __Note__
 >
 > If you have any questions or problems that you are unable to handle, please contact us at pine.seeds@tradingview.com.
+> Our support team is available on weekdays from 7 AM to 4 PM UTC.

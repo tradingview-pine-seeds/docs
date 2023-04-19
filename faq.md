@@ -118,7 +118,7 @@ Refer to [Data format][data_format] for more information.
 #### Q: What if the Upload data action has failed in the main repository?
 
 __A:__ Check that you have not exceeded the [daily number of pull requests].
-If not, contact us at pine.seeds@tradingview.com.
+If not, contact us at pine.seeds@tradingview.com. Our support team is available on weekdays from 7 AM to 4 PM UTC.
 
 #### Q: What should I do if I see an error "The pull request cannot be merged. There is probably a data conflict."?
 
@@ -128,7 +128,7 @@ You need to make a new commit, and all previous data changes will be pulled.
 #### Q: What if my pull request was not merged automatically?
 
 __A:__ Check the action logs for validation warnings and errors.
-If you cannot fix the problem, contact us at pine.seeds@tradingview.com.
+If you cannot fix the problem, contact us at pine.seeds@tradingview.com. Our support team is available on weekdays from 7 AM to 4 PM UTC.
 
 [data_format]: data.md#data-format
 [daily number of pull requests]: #q-what-if-i-made-more-than-5-pull-requests-in-a-day

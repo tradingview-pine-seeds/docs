@@ -12,6 +12,7 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 > __Note__
 >
 > If you have any questions or problems that you are unable to handle, please contact us at pine.seeds@tradingview.com.
+> Our support team is available on weekdays from 7 AM to 4 PM UTC.
 
 ### Step 1. Add symbol description
 
