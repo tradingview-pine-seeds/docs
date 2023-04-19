@@ -97,7 +97,7 @@ For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` close values can be re
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, symbol, expression[, gaps])
+//request.seed(source, symbol, expression)
 activity = request.seed("seed_crypto_santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity)
 ```
