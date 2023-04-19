@@ -84,8 +84,7 @@ request.seed(source, group, symbol, expression, gaps)
 
 When you call the function, the first three parameters define the data source:
 
-- `source` — the source name, the same as the GitHub username
-- `group` — a group of symbols, coincides with the GitHub repository name
+- `source` — a group of symbols, coincides with the GitHub repository name
 - `symbol` — the name of the symbol in the group that corresponds to a specific data file
 
 These parameters uniquely determine the requested series so they can't be empty strings.
@@ -98,8 +97,8 @@ For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` close values can be re
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, group, symbol, expression[, gaps])
-activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
+//request.seed(source, symbol, expression[, gaps])
+activity = request.seed("seed_crypto_santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity)
 ```
 
@@ -120,8 +119,8 @@ like `ta.sma(close, 10)`, or even a tuple of several different values (enclosed 
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, group, symbol, expression)
-[activity, activitySMA] = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", [close, ta.sma(close, 10)])
+//request.seed(source, symbol, expression)
+[activity, activitySMA] = request.seed("seed_crypto_santiment", "BTC_DEV_ACTIVITY", [close, ta.sma(close, 10)])
 plot(activity, "BTC Dev Activity")
 plot(activitySMA, "BTC Dev Activity, SMA10", color=color.green)
 ```
