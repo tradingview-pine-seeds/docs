@@ -31,9 +31,9 @@ Symbol search is the first entry point to access the data on the TradingView cha
 The symbol name on the TradingView chart is uniquely determined by the Github parameters:
 
 - `SEED` is a mandatory prefix for data of this type
-- the name of the data source (we use the GitHub account name)
-- the group of data within the source (we use the GitHub repository name)
-- the name of the symbol (we use the name of the data file)
+- the GitHub account name
+- the suffix for the GitHub repository name
+- the name of the symbol, coincides with the name of the data file
 
 |![Symbol Search][ui_search]|
 |-|
@@ -41,8 +41,8 @@ The symbol name on the TradingView chart is uniquely determined by the Github pa
 For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbol is obtained as follows:
 
 - `SEED` — prefix
-- `CRYPTO` — `github.com/crypto` account name
-- `SANTIMENT` — `github.com/crypto/santiment` repository name
+- `CRYPTO` — the account name `github.com/crypto`
+- `SANTIMENT` — the suffix of the repository name `github.com/crypto/seed_crypto_santiment` 
 - `BTC_DEV_ACTIVITY` — the name of the `BTC_DEV_ACTIVITY.CSV` data file
 
 > __Note__

@@ -46,10 +46,13 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 
 If you need to remove a symbol and its data, you should follow the steps below:
 
-1. Remove the information about a symbol from the JSON file in the `symbol_info/repo_name.json` directory
+1. Delete a CSV file with symbol data from the `data/` directory.
 2. In your repository, open *Actions* and check if the *Check data* action finished successfully.
 3. In the main repository, open *Actions* and check if the *Upload data* action finished successfully.
-4. Delete a CSV file with symbol data from the `data/` directory.
+4. Remove the information about a symbol from the JSON file in the `symbol_info/repo_name.json` directory
+>NOTE
+>
+>You can remove both data file and symbol from symbol_info at once in one PR. If you do so check 5-7
 5. In your repository, open *Actions* and check if the *Check data* action finished successfully.
 6. In the main repository, open *Actions* and check if the *Upload data* action finished successfully.
 7. In the main repository, Go to *Pull requests* and check that the pull request was merged automatically.
