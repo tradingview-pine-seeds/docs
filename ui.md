@@ -24,31 +24,30 @@ __[Pine editor](#pine-editor)__
 An editor for the Pine Script™ scripting language. The data can be accessed with a couple of lines of code.
 A flexible and convenient tool for displaying data on the chart.
 
-## Symbol search
+## Symbol Search
 
-Symbol search is the first entry point to access the data on the TradingView chart.
+_Symbol Search_ is the entry point to access symbol data on the TradingView chart.
+To switch between symbols, type a symbol name in the _Symbol Search_ box and press <kbd>Enter</kbd>.
 
-The symbol name on the TradingView chart is uniquely determined by the Github parameters:
+Note that symbols will not appear in the _Symbol Search_ suggestion field.
+Hence, you need to know the full symbol name to open it on the chart.
 
-- `SEED` is a mandatory prefix for data of this type
-- the GitHub account name
-- the suffix for the GitHub repository name
-- the name of the symbol, coincides with the name of the data file
+The symbol name on the TradingView chart is uniquely determined by the GitHub parameters:
+
+- The required `SEED` prefix.
+- The GitHub account name.
+- The suffix of the GitHub repository name.
+- A symbol name that matches the name of the data file.
 
 |![Symbol Search][ui_search]|
 |-|
 
 For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbol is obtained as follows:
 
-- `SEED` — prefix
-- `CRYPTO` — the account name `github.com/crypto`
-- `SANTIMENT` — the suffix of the repository name `github.com/crypto/seed_crypto_santiment` 
-- `BTC_DEV_ACTIVITY` — the name of the `BTC_DEV_ACTIVITY.CSV` data file
-
-> __Note__
->
-> EOD symbols will not appear in the symbol search suggestion field. 
-> Type the full symbol name and press _Enter_ in order for it to appear on the chart.
+- `SEED` — the required prefix.
+- `CRYPTO` — the account name `github.com/crypto`.
+- `SANTIMENT` — the suffix of the repository name `github.com/crypto/seed_crypto_santiment`.
+- `BTC_DEV_ACTIVITY` — the symbol name that matches the name of the `BTC_DEV_ACTIVITY.CSV` data file.
 
 ## Chart
 
@@ -73,23 +72,22 @@ In this case the _Candles_ chart type will be more useful, as it displays all fo
 
 ## Pine Editor
 
-Pine Script™ is one more tool for working with your custom data on TradingView. 
-Unlike the symbol search, which changes the main symbol on the chart, indicators written in Pine Script™ are an addition to the currently open symbol.
-
-You can request custom data with the [`request.seed()`][request_seed] built-in function:
+[Pine Script™] is another tool for working with your custom data on TradingView.
+It allows you to write your own indicators for a symbol to make data easier to analyze.
+For example, you can request custom data with the [`request.seed()`][request_seed] built-in function:
 
 ```js
-request.seed(source, group, symbol, expression, gaps)
+request.seed(source, symbol, expression, gaps)
 ```
 
-When you call the function, the first three parameters define the data source:
+When you call the function, the first two parameters define the data source:
 
-- `source` — a group of symbols, coincides with the GitHub repository name
-- `symbol` — the name of the symbol in the group that corresponds to a specific data file
+- `source` — a group of symbols whose name matches the GitHub repository name.
+- `symbol` — a name of the symbol in the group that corresponds to a specific data file.
 
-These parameters uniquely determine the requested series so they can't be empty strings.
+Note that these parameters uniquely determine the requested series so they can't be empty strings.
 
-The `expression` parameter specifies what data series you request from the specified symbol, 
+The `expression` parameter specifies what data series you request from the specified symbol,
 and the optional `gaps` argument controls whether the gaps between data values should be filled.
 
 For example, the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` close values can be requested in Pine Script™ as:
@@ -130,3 +128,5 @@ from the EOD source on your chart and its 10-day average without changing the sy
 
 |![ui_pine_btc]|
 |-|
+
+[Pine Script™]: https://www.tradingview.com/pine-script-docs/en/v5/index.html
