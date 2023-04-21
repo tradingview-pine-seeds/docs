@@ -34,9 +34,9 @@ You can also open symbols from [seed_crypto_santiment] on the [TradingView chart
 For example, `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` is an example of custom data integration.
 The symbol name is uniquely determined by the GitHub settings.
 
-- `SEED` is a mandatory prefix for this type of data.
-- `CRYPTO` is the name of the `github.com/crypto` GitHub account.
-- `SANTIMENT` is the suffix for the repository name `github.com/crypto/seed_crypto_santiment`.
+- `SEED` is a required prefix.
+- `CRYPTO` is the account name `github.com/crypto`.
+- `SANTIMENT` is the suffix of the GitHib repository name `github.com/crypto/seed_crypto_santiment`.
     The suffix is needed so that you can use several repositories for different data groups,
     e.g., `seed_<username>_<suffix1>`, `seed_<username>_<suffix2>`.
 - `BTC_DEV_ACTIVITY` is the `BTC_DEV_ACTIVITY.CSV` data file name.
@@ -46,8 +46,8 @@ Using the built-in [`request.seed()`][pine_refs] function from the [Pine Scriptâ
 ```js
 //@version=5
 indicator("BTC Dev Activity", format=format.volume)
-//request.seed(source, group, symbol, expression[, gaps])
-activity = request.seed("crypto", "santiment", "BTC_DEV_ACTIVITY", close)
+//request.seed(source, symbol, expression[, gaps])
+activity = request.seed("seed_crypto_santiment", "BTC_DEV_ACTIVITY", close)
 plot(activity, "BTC Dev Activity")
 ```
 

@@ -46,7 +46,7 @@ For example, the full name of the `SEED_CRYPTO_SANTIMENT:BTC_DEV_ACTIVITY` symbo
 
 - `SEED` — the required prefix.
 - `CRYPTO` — the account name `github.com/crypto`.
-- `SANTIMENT` — the suffix of the repository name `github.com/crypto/seed_crypto_santiment`.
+- `SANTIMENT` — the suffix of the GitHub repository name `github.com/crypto/seed_crypto_santiment`.
 - `BTC_DEV_ACTIVITY` — the symbol name that matches the name of the `BTC_DEV_ACTIVITY.CSV` data file.
 
 ## Chart
