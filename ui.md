@@ -82,8 +82,8 @@ request.seed(source, symbol, expression, gaps)
 
 When you call the function, the first two parameters define the data source:
 
-- `source` — a group of symbols whose name matches the GitHub repository name.
-- `symbol` — a name of the symbol in the group that corresponds to a specific data file.
+- `source` — the data source name, it matches your GitHub repository name.
+- `symbol` — the symbol name that refers to a specific data file.
 
 Note that these parameters uniquely determine the requested series so they can't be empty strings.
 
