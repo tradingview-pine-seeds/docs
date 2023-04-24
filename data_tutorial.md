@@ -12,6 +12,7 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 > __Note__
 >
 > If you have any questions or problems that you are unable to handle, please contact us at pine.seeds@tradingview.com.
+> Our support team is available on weekdays from 7 AM to 4 PM UTC.
 
 ### Step 1. Add symbol description
 
@@ -26,8 +27,8 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 
 >__Important__
 >
-> 1. Symbols are uploaded into the TradingView storage every 10 minute.
-> Hence, the maximum time for symbols to appear on the chart is 10 minute.
+> 1. Symbols are uploaded into the TradingView storage every 10 minutes.
+> Hence, the maximum time for symbols to appear on the chart is 10 minutes.
 >
 > 2. Do not [add symbol data](#step-2-add-symbol-data) before `No data here` appears on the chart.
 > Otherwise, there may be problems with displaying data on the chart.
@@ -43,15 +44,23 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 
 ## Remove symbol and data
 
-If you need to remove a symbol and its data, you should follow the steps below:
+If you need to remove a symbol and its data, follow the steps below:
 
-1. Remove the information about a symbol from the JSON file in the `symbol_info/repo_name.json` directory
+1. Delete a CSV file with symbol data from the `data/` directory.
 2. In your repository, open *Actions* and check if the *Check data* action finished successfully.
 3. In the main repository, open *Actions* and check if the *Upload data* action finished successfully.
-4. Delete a CSV file with symbol data from the `data/` directory.
+4. Remove the information about a symbol from the JSON file in the `symbol_info/repo_name.json` directory.
 5. In your repository, open *Actions* and check if the *Check data* action finished successfully.
 6. In the main repository, open *Actions* and check if the *Upload data* action finished successfully.
-7. In the main repository, Go to *Pull requests* and check that the pull request was merged automatically.
+7. In the main repository, go to *Pull requests* and check that the pull request was merged automatically.
     If it was not merged automatically, check the *Conversation* tab in your pull request for validation warnings or errors.
 
+> __Note__
+>
+> You can remove both a data file from `data/` and a symbol from `symbol_info/repo_name.json` at once.
+> To do this, you need to make changes in one [commit] and [push] it to your main branch.
+> After that, you will only need to follow the 5−7 steps from the instructions above.
+
+[commit]: https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/about-commits
+[push]: https://github.com/git-guides/git-push
 [tv-chart]: https://www.tradingview.com/chart/
