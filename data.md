@@ -11,53 +11,6 @@ To do this, provide two directories and add your data files.
 - Create a [JSON file](#symbol-info-format) with symbol descriptions in the `symbol_info/` directory.
 - For each symbol, create a [CSV file](#data-format) with daily data in the `data/` directory.
 
-## Data format
-
-Each symbol and its daily data must be placed into a separate CSV file in the `data/` directory.
-Daily data represents the symbol's OHLCV (open-high-low-close-volume) prices on charts.
-
-> __Note__
->
-> The EOD (End-of-Day) feed has a limit of 1,000 symbols per repository. Keep this in mind when adding data files.
-> To connect more symbols, you can create another data repository.
-
-Follow these requirements when creating a file:
-
-- File names must be equal to symbol names, capitalized, and [URL encoded][url_encode].
-- File extension must be `.csv`.
-- Values must be comma-separated.
-- Do not use headers, blank lines, and spaces.
-- The lines of the file must be sorted by `date` in ascending order.
-- The lines should not contain duplicates by `date`.  
-
-| Field    | Description                                        | Sample      |
-|----------|----------------------------------------------------|-------------|
-| `date`   | Date in YYYYMMDDT format.                          | `20210101T` |
-| `open`   | First tick price.                                  | `0.1`       |
-| `high`   | Maximum tick price.                                | `0.1`       |
-| `low`    | Minimum tick price.                                | `0.1`       |
-| `close`  | Last tick price.                                   | `0.1`       |
-| `volume` | Total number of shares traded. Cannot be negative. | `0.0`       |
-
-> __Note__
->
-> If your data series has a single value only, fill the `open`, `close`, `high`, and `low` fields with the same value and `volume` with `0`.
-
-CSV file example:
-
-```csv
-20210101T,0.1,0.1,0.1,0.1,0
-```
-
-### Data update
-
-Your EOD data is checked and uploaded to the TradingView repository daily.
-You can see the data for all previous days on the [chart][tv_chart].
-The data checked and uploaded today will appear on the chart the next day.
-If you don't update the data for three months, it will be removed from the TradingView storage.
-
-Intraday data and real-time updates are possible using a REST protocol, but this option is only available for [brokerage integration][brokerage_integration].
-
 ## Symbol info format
 
 Symbol information must be placed into a single JSON file in the `symbol_info/` directory.
@@ -121,6 +74,53 @@ However, if all added symbols have the same price scale, you can only specify a 
 ```
 
 Both examples above are equivalent and will not cause a validation error.
+
+## Data format
+
+Each symbol and its daily data must be placed into a separate CSV file in the `data/` directory.
+Daily data represents the symbol's OHLCV (open-high-low-close-volume) prices on charts.
+
+> __Note__
+>
+> The EOD (End-of-Day) feed has a limit of 1,000 symbols per repository. Keep this in mind when adding data files.
+> To connect more symbols, you can create another data repository.
+
+Follow these requirements when creating a file:
+
+- File names must be equal to symbol names, capitalized, and [URL encoded][url_encode].
+- File extension must be `.csv`.
+- Values must be comma-separated.
+- Do not use headers, blank lines, and spaces.
+- The lines of the file must be sorted by `date` in ascending order.
+- The lines should not contain duplicates by `date`.  
+
+| Field    | Description                                        | Sample      |
+|----------|----------------------------------------------------|-------------|
+| `date`   | Date in YYYYMMDDT format.                          | `20210101T` |
+| `open`   | First tick price.                                  | `0.1`       |
+| `high`   | Maximum tick price.                                | `0.1`       |
+| `low`    | Minimum tick price.                                | `0.1`       |
+| `close`  | Last tick price.                                   | `0.1`       |
+| `volume` | Total number of shares traded. Cannot be negative. | `0.0`       |
+
+> __Note__
+>
+> If your data series has a single value only, fill the `open`, `close`, `high`, and `low` fields with the same value and `volume` with `0`.
+
+CSV file example:
+
+```csv
+20210101T,0.1,0.1,0.1,0.1,0
+```
+
+### Data update
+
+Your EOD data is checked and uploaded to the TradingView repository daily.
+You can see the data for all previous days on the [chart][tv_chart].
+The data checked and uploaded today will appear on the chart the next day.
+If you don't update the data for three months, it will be removed from the TradingView storage.
+
+Intraday data and real-time updates are possible using a REST protocol, but this option is only available for [brokerage integration][brokerage_integration].
 
 ## Data validation
 
