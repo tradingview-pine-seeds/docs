@@ -1,5 +1,4 @@
 [brokerage_integration]: https://www.tradingview.com/brokerage-integration/
-[iso_4217]: https://en.wikipedia.org/wiki/ISO_4217
 [tv_chart]: [https://tradingview.com/chart]
 [url_encode]: https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier
 
@@ -8,8 +7,12 @@
 You need to store all symbol data and its description in a repository.
 To do this, provide two directories and add your data files.
 
-- Create a [JSON file](#symbol-info-format) with symbol descriptions in the `symbol_info/` directory.
-- For each symbol, create a [CSV file](#data-format) with daily data in the `data/` directory.
+1. Create a [JSON file](#symbol-info-format) with symbol descriptions in the `symbol_info/` directory.
+2. For each symbol, create a [CSV file](#data-format) with daily data in the `data/` directory.
+
+> __Tip__
+>
+> We recommend that you check out a step-by-step guide on [how to add symbols to the TradingView chart](data_tutorial.md).
 
 ## Symbol info format
 
@@ -29,7 +32,7 @@ The object consists of the following required fields:
 | `pricescale` | Integer | Indicates how many decimal places the price has. | The maximum value of `pricescale` is `10000000000000000000000` (22 zeroes). | The value format is `10^n`, where *n* is the number of decimal places. For example, if the price has two decimal places `300.01`, set `pricescale` to `100`. If it has three decimal places `300.001`, set `pricescale` to `1000`, etc. If the price doesn't have decimals, set `pricescale` to `1`. |
 
 > __Note__
-> 
+>
 > Each object field is an array with values.
 > For all fields, the length of these arrays must match.
 > However, if all the values in the `pricescale` array are the same, you can specify a single value for the field instead of an array.
@@ -92,7 +95,7 @@ Follow these requirements when creating a file:
 - Values must be comma-separated.
 - Do not use headers, blank lines, and spaces.
 - The lines of the file must be sorted by `date` in ascending order.
-- The lines should not contain duplicates by `date`.  
+- The lines should not contain duplicates by `date`.
 
 | Field    | Description                                        | Sample      |
 |----------|----------------------------------------------------|-------------|
