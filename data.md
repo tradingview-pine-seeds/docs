@@ -1,5 +1,4 @@
 [brokerage_integration]: https://www.tradingview.com/brokerage-integration/
-[iso_4217]: https://en.wikipedia.org/wiki/ISO_4217
 [tv_chart]: [https://tradingview.com/chart]
 [url_encode]: https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier
 
@@ -8,55 +7,12 @@
 You need to store all symbol data and its description in a repository.
 To do this, provide two directories and add your data files.
 
-- Create a [JSON file](#symbol-info-format) with symbol descriptions in the `symbol_info/` directory.
-- For each symbol, create a [CSV file](#data-format) with daily data in the `data/` directory.
+1. Create a [JSON file](#symbol-info-format) with symbol descriptions in the `symbol_info/` directory.
+2. For each symbol, create a [CSV file](#data-format) with daily data in the `data/` directory.
 
-## Data format
-
-Each symbol and its daily data must be placed into a separate CSV file in the `data/` directory.
-Daily data represents the symbol's OHLCV (open-high-low-close-volume) prices on charts.
-
-> __Note__
+> __Tip__
 >
-> The EOD (End-of-Day) feed has a limit of 1,000 symbols per repository. Keep this in mind when adding data files.
-> To connect more symbols, you can create another data repository.
-
-Follow these requirements when creating a file:
-
-- File names must be equal to symbol names, capitalized, and [URL encoded][url_encode].
-- File extension must be `.csv`.
-- Values must be comma-separated.
-- Do not use headers, blank lines, and spaces.
-- The lines of the file must be sorted by `date` in ascending order.
-- The lines should not contain duplicates by `date`.  
-
-| Field    | Description                                        | Sample      |
-|----------|----------------------------------------------------|-------------|
-| `date`   | Date in YYYYMMDDT format.                          | `20210101T` |
-| `open`   | First tick price.                                  | `0.1`       |
-| `high`   | Maximum tick price.                                | `0.1`       |
-| `low`    | Minimum tick price.                                | `0.1`       |
-| `close`  | Last tick price.                                   | `0.1`       |
-| `volume` | Total number of shares traded. Cannot be negative. | `0.0`       |
-
-> __Note__
->
-> If your data series has a single value only, fill the `open`, `close`, `high`, and `low` fields with the same value and `volume` with `0`.
-
-CSV file example:
-
-```csv
-20210101T,0.1,0.1,0.1,0.1,0
-```
-
-### Data update
-
-Your EOD data is checked and uploaded to the TradingView repository daily.
-You can see the data for all previous days on the [chart][tv_chart].
-The data checked and uploaded today will appear on the chart the next day.
-If you don't update the data for three months, it will be removed from the TradingView storage.
-
-Intraday data and real-time updates are possible using a REST protocol, but this option is only available for [brokerage integration][brokerage_integration].
+> We recommend that you check out a step-by-step guide on [how to add symbols to the TradingView chart](data_tutorial.md).
 
 ## Symbol info format
 
@@ -76,7 +32,7 @@ The object consists of the following required fields:
 | `pricescale` | Integer | Indicates how many decimal places the price has. | The maximum value of `pricescale` is `10000000000000000000000` (22 zeroes). | The value format is `10^n`, where *n* is the number of decimal places. For example, if the price has two decimal places `300.01`, set `pricescale` to `100`. If it has three decimal places `300.001`, set `pricescale` to `1000`, etc. If the price doesn't have decimals, set `pricescale` to `1`. |
 
 > __Note__
-> 
+>
 > Each object field is an array with values.
 > For all fields, the length of these arrays must match.
 > However, if all the values in the `pricescale` array are the same, you can specify a single value for the field instead of an array.
@@ -121,6 +77,53 @@ However, if all added symbols have the same price scale, you can only specify a 
 ```
 
 Both examples above are equivalent and will not cause a validation error.
+
+## Data format
+
+Each symbol and its daily data must be placed into a separate CSV file in the `data/` directory.
+Daily data represents the symbol's OHLCV (open-high-low-close-volume) prices on charts.
+
+> __Note__
+>
+> The EOD (End-of-Day) feed has a limit of 1,000 symbols per repository. Keep this in mind when adding data files.
+> To connect more symbols, you can create another data repository.
+
+Follow these requirements when creating a file:
+
+- File names must be equal to symbol names, capitalized, and [URL encoded][url_encode].
+- File extension must be `.csv`.
+- Values must be comma-separated.
+- Do not use headers, blank lines, and spaces.
+- The lines of the file must be sorted by `date` in ascending order.
+- The lines should not contain duplicates by `date`.
+
+| Field    | Description                                        | Sample      |
+|----------|----------------------------------------------------|-------------|
+| `date`   | Date in YYYYMMDDT format.                          | `20210101T` |
+| `open`   | First tick price.                                  | `0.1`       |
+| `high`   | Maximum tick price.                                | `0.1`       |
+| `low`    | Minimum tick price.                                | `0.1`       |
+| `close`  | Last tick price.                                   | `0.1`       |
+| `volume` | Total number of shares traded. Cannot be negative. | `0.0`       |
+
+> __Note__
+>
+> If your data series has a single value only, fill the `open`, `close`, `high`, and `low` fields with the same value and `volume` with `0`.
+
+CSV file example:
+
+```csv
+20210101T,0.1,0.1,0.1,0.1,0
+```
+
+### Data update
+
+Your EOD data is checked and uploaded to the TradingView repository daily.
+You can see the data for all previous days on the [chart][tv_chart].
+The data checked and uploaded today will appear on the chart the next day.
+If you don't update the data for three months, it will be removed from the TradingView storage.
+
+Intraday data and real-time updates are possible using a REST protocol, but this option is only available for [brokerage integration][brokerage_integration].
 
 ## Data validation
 
