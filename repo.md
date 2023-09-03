@@ -10,8 +10,8 @@ Use GitHub as your backend: TradingView will provide you with a repository that 
 Then you can store your data and update it.
 
 In the repository, GitHub actions are already configured.
-Actions check data after changes in forked repository and creates _Pull Requests_ to the main TradingView repository.
-From the main repository, data uploads to the TradingView storage so data can be viewed on the TradingView charts.
+Actions check data after changes in the forked repository and create _Pull Requests_ to the main TradingView repository.
+From the main repository, data is uploaded to the TradingView storage so it can be viewed on the TradingView charts.
 The results of the data checks will be available in the action logs.
 
 ## Get access to a repository
@@ -19,7 +19,9 @@ The results of the data checks will be available in the action logs.
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
 Specify your GitHub username and the desired repository suffix.
 Note that the maximum number of characters in the suffix is 16 and in the whole repository name is 64.
+Please al
 The repository name will be `seed_<your_github_username>_<suffix_you_provided>`.
+In your message please also describe how you intend to use Pine Seeds and how did you find out about it.
 
 > __Note__
 >
