@@ -16,7 +16,7 @@ Keep in mind that such data (we call them EOD data, short for End-of-Day) has ce
 
 - the data can only be updated 5 times per day
 - only daily-based timeframes (1D and above) can be applied to such data
-- the number of data elements (symbols) is [limited][data_limits] to 1000
+- the number of data elements (symbols) is [limited][data_limits] to 6000
 - such data [will not appear][ui_symbol_search] in the symbol search box
 
 Setting up the service includes several steps:
