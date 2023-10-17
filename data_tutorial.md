@@ -28,7 +28,7 @@ This tutorial describes the steps to add symbols to the TradingView chart at onc
 >__Important__
 >
 > 1. Symbols are uploaded into the TradingView storage every 10 minutes.
-> Hence, the time of appearance of symbols on the chart is about 15 minutes.
+> Hence, symbols appear on the chart within 15 minutes.
 >
 > 2. Do not [add symbol data](#step-2-add-symbol-data) before `No data here` appears on the chart.
 > Otherwise, there may be problems with displaying data on the chart.
