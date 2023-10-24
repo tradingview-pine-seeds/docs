@@ -7,7 +7,7 @@
 # GitHub repository settings
 
 Use GitHub as your backend: TradingView will provide you with a repository that you need to fork.
-Then you can store your data and update it.
+Then you can store your data and update it. Please note that the name of forked repository should be the same as the initial one.
 
 In the repository, GitHub actions are already configured.
 Actions check data after changes in forked repository and creates _Pull Requests_ to the main TradingView repository.
@@ -35,6 +35,7 @@ This information will be valuable to us in our efforts to enhance the product.
 Your request processing may take up to one day.
 As a result, you will get a link to the repository you need to fork.
 Note that the repository will be private, so your fork can only be private.
+Please also note that the name of forked repository should be the same as the initial one.
 
 ## Pre-setup
 
