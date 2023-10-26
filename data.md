@@ -85,7 +85,7 @@ Daily data represents the symbol's OHLCV (open-high-low-close-volume) prices on 
 
 > __Note__
 >
-> The EOD (End-of-Day) feed has a limit of 1,000 symbols per repository. Keep this in mind when adding data files.
+> The EOD (End-of-Day) feed has a limit of 6,000 symbols per repository. Keep this in mind when adding data files.
 > To connect more symbols, you can create another data repository.
 
 Follow these requirements when creating a file:
