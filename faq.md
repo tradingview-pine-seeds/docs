@@ -131,6 +131,10 @@ __A:__ Check the action logs for validation warnings and errors.
 If you cannot fix the problem, contact us at pine.seeds@tradingview.com.
 Our support team is available on weekdays from 7 AM to 4 PM UTC.
 
+#### Q: Why is it not possible to load more than 3000 of .csv data files in one commit?
+
+__A:__ Due to technical reasons, we have uploaded such restrictions to checker from our side. So, please load no more than 3000 data files in one commit.
+
 [data_format]: data.md#data-format
 [daily number of pull requests]: #q-what-if-i-made-more-than-5-pull-requests-in-a-day
 [rest_api]: https://www.tradingview.com/brokerage-integration/
