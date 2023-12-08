@@ -74,13 +74,12 @@ Your data will be updated.
 
 #### Q: What if the maximum amount of time required for the symbol to appear on the chart has passed, but I still do not see it?
 
-__A:__ The maximum time for a symbol to appear on the chart is one hour.
-If it has not appear during this time, check that the JSON file in the `symbol_info/` directory has a valid format.
-Refer to [Symbol info format] for more information.
+__A:__ The maximum time for a symbol to appear on the chart is 30 minutes.
+If it has not appear during this time, check the action logs for validation warnings and errors. If you cannot fix the problem, contact us at pine.seeds@tradingview.com. Our support team is available on weekdays from 6 AM to 3 PM UTC.
 
 #### Q: Would a candlestick chart be informative?
 
-__A:__ For economic data, which commonly only has a single data source, a _Line_ graph is suitable, as it only shows `close` values. The data that has different OHLC values will be better represented with the _Candles_ chart, which displays each four of these values separately.
+__A:__ A _Line_ chart is suitable for economic data, which commonly only has a single data source, as it only shows `close` values. The data that has different OHLC values will be better represented with the _Candles_ chart, which displays each four of these values separately.
 
 #### Q: Who can use my symbols in the UI?
 
@@ -118,7 +117,7 @@ Refer to [Data format][data_format] for more information.
 #### Q: What if the Upload data action has failed in the main repository?
 
 __A:__ Check that you have not exceeded the [daily number of pull requests].
-If not, contact us at pine.seeds@tradingview.com. Our support team is available on weekdays from 7 AM to 4 PM UTC.
+If not, contact us at pine.seeds@tradingview.com. Our support team is available on weekdays from 6 AM to 3 PM UTC.
 
 #### Q: What should I do if I see an error "The pull request cannot be merged. There is probably a data conflict."?
 
@@ -129,7 +128,7 @@ You need to make a new commit, and all previous data changes will be pulled.
 
 __A:__ Check the action logs for validation warnings and errors.
 If you cannot fix the problem, contact us at pine.seeds@tradingview.com.
-Our support team is available on weekdays from 7 AM to 4 PM UTC.
+Our support team is available on weekdays from 6 AM to 3 PM UTC.
 
 #### Q: Why is it not possible to load more than 3000 of .csv data files in one commit?
 
