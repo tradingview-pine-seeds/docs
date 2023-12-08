@@ -127,7 +127,7 @@ You need to make a new commit, and all previous data changes will be pulled.
 #### Q: What if my pull request was not merged automatically?
 
 __A:__ Check the action logs for validation warnings and errors.
-If you cannot fix the problem, contact us at pine.seeds@tradingview.com.
+If you cannot fix the issue, contact us at pine.seeds@tradingview.com.
 Our support team is available on weekdays from 6 AM to 3 PM UTC.
 
 #### Q: Why is it not possible to load more than 3000 of .csv data files in one commit?
