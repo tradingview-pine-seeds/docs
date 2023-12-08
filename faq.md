@@ -75,7 +75,7 @@ Your data will be updated.
 #### Q: What if the maximum amount of time required for the symbol to appear on the chart has passed, but I still do not see it?
 
 __A:__ The maximum time for a symbol to appear on the chart is 30 minutes.
-If it has not appear during this time, check the action logs for validation warnings and errors. If you cannot fix the problem, contact us at pine.seeds@tradingview.com. Our support team is available on weekdays from 6 AM to 3 PM UTC.
+If it has not appeared during this time, check the action logs for validation warnings and errors. If you cannot fix the issue, contact us at pine.seeds@tradingview.com. Our support team is available on weekdays from 6 AM to 3 PM UTC.
 
 #### Q: Would a candlestick chart be informative?
 
