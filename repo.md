@@ -17,11 +17,19 @@ The results of the data checks will be available in the action logs.
 ## Get access to a repository
 
 Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
-Specify your GitHub username and the desired repository suffix.
-Note that the maximum number of characters allowed for the suffix is 16, and the overall repository name should not exceed 64 characters.
-The repository name format should be `seed_<your_github_username>_<suffix_you_provided>`.
+In the email, specify the following information:
 
-Additionally, describe in your email how you plan to use Pine Seeds and how you came across it.
+- Your TradingView username
+- Your GitHub username
+- The desired repository suffix
+
+The GitHub username and repository suffix will be used in the repository name that has the `seed_<your_github_username>_<suffix_you_provided>` format. Note that the maximum number of characters allowed for the suffix is 16, and the overall repository name should not exceed 64 characters.
+
+Additionally, kindly address the following questions in your email:
+
+- How do you plan to use Pine Seeds?
+- How have you come across it?
+
 This information will be valuable to us in our efforts to enhance the product.
 
 > __Note__
