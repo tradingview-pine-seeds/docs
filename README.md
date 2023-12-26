@@ -1,3 +1,6 @@
+## *Merry Christmas and Happy New Year!*
+## *Just wanted to let you know that our support team will be partially available during the Christmas holidays from December 30th to January 8th.*
+
 # Pine Seeds documentation
 
 ## Overview
