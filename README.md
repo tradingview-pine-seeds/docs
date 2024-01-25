@@ -1,7 +1,7 @@
 # Pine Seeds documentation
 
 > [!WARNING]
-> The creation of new repositories has been suspended. We will continue to support the existing repositories. If you have questions or need assistance with your current repositories, contact us at
+> __The creation of new repositories has been suspended__. We will continue to support the existing repositories. If you have questions or need assistance with your current repositories, contact us at
 > pine.seeds@tradingview.com.
 
 ## Overview
