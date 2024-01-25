@@ -7,7 +7,7 @@
 # GitHub repository settings
 
 > [!WARNING]
-> **The creation of new repositories has been suspended**. We will continue to support the existing repositories. If you have questions or need assistance with your current repositories, contact us at
+> __The creation of new repositories has been suspended__. We will continue to support the existing repositories. If you have questions or need assistance with your current repositories, contact us at
 > pine.seeds@tradingview.com.
 
 Use GitHub as your backend: TradingView will provide you with a repository that you need to fork.
