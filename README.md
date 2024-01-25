@@ -1,5 +1,12 @@
 # Pine Seeds documentation
 
+> [!WARNING]
+> **Please be informed that creation of new repositories has been suspended.**
+> 
+> We will continue to provide support for the existing repositories. You can also email us to pine.seeds@tradingview.com if you have questions about your repositories.
+> 
+> We are sorry for any inconvenience this may cause.   
+
 ## Overview
 
 __Pine Seeds__ is a service to import your custom data and access it via [TradingView](https://tradingview.com).
