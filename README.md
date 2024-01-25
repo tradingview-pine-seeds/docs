@@ -1,11 +1,8 @@
 # Pine Seeds documentation
 
 > [!WARNING]
-> **Please be informed that creation of new repositories has been suspended.**
-> 
-> We will continue to provide support for the existing repositories. You can also email us to pine.seeds@tradingview.com if you have questions about your repositories.
-> 
-> We are sorry for any inconvenience this may cause.   
+> The creation of new repositories has been suspended. We will continue to support the existing repositories. If you have questions or need assistance with your current repositories, contact us at
+> pine.seeds@tradingview.com.
 
 ## Overview
 
