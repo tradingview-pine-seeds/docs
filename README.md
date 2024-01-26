@@ -1,5 +1,9 @@
 # Pine Seeds documentation
 
+> [!WARNING]
+> __The creation of new repositories has been suspended__. We will continue to support the existing repositories. If you have questions or need assistance with your current repositories, contact us at
+> pine.seeds@tradingview.com. You can expect a response within one business day after submitting your request. Additionally, if you are interested in having Pine Seeds back, please fill out this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSd8j8TOPLwaaPOBuF8a_P_QIYMrIGMbiInYo9iXazUqioM25Q/viewform?usp=sf_link) to leave your contact details and feedback. We appreciate your input and will consider it in our future developments.
+
 ## Overview
 
 __Pine Seeds__ is a service to import your custom data and access it via [TradingView](https://tradingview.com).

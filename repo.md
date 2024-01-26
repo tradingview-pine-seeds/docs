@@ -6,6 +6,10 @@
 
 # GitHub repository settings
 
+> [!WARNING]
+> __The creation of new repositories has been suspended__. We will continue to support the existing repositories. If you have questions or need assistance with your current repositories, contact us at
+> pine.seeds@tradingview.com. You can expect a response within one business day after submitting your request. Additionally, if you are interested in having Pine Seeds back, please fill out this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSd8j8TOPLwaaPOBuF8a_P_QIYMrIGMbiInYo9iXazUqioM25Q/viewform?usp=sf_link) to leave your contact details and feedback. We appreciate your input and will consider it in our future developments.
+
 Use GitHub as your backend: TradingView will provide you with a repository that you need to fork.
 Then you can store your data and update it. Please note that the name of forked repository should be the same as the initial one.
 
@@ -13,37 +17,6 @@ In the repository, GitHub actions are already configured.
 Actions check data after changes in forked repository and creates _Pull Requests_ to the main TradingView repository.
 From the main repository, data uploads to the TradingView storage so data can be viewed on the TradingView charts.
 The results of the data checks will be available in the action logs.
-
-## Get access to a repository
-
-Send us an email to pine.seeds@tradingview.com with the subject __Pine Seeds Request__.
-In the email, specify the following information:
-
-- Your TradingView username
-- Your GitHub username
-- The desired repository suffix
-
-The GitHub username and repository suffix will be used in the repository name that has the `seed_<your_github_username>_<suffix_you_provided>` format. Note that the maximum number of characters allowed for the suffix is 16, and the overall repository name should not exceed 64 characters.
-
-Additionally, kindly address the following questions in your email:
-
-- How do you plan to use Pine Seeds?
-- How have you come across it?
-
-This information will be valuable to us in our efforts to enhance the product.
-
-> __Note__
->
-> Your username and suffix will be used as [parts](README.md#Example) of the unique suffix for your data.
->
-> If your GitHub username contains capital letters or hyphens,
-> it will be automatically converted to lowercase or replaced with underscores.
-> For example, the `Crypto-TV` account name will be changed to `crypto_tv`.
-
-Your request processing may take up to one day.
-As a result, you will get a link to the repository you need to fork.
-Note that the repository will be private, so your fork can only be private.
-Please also note that the name of forked repository should be the same as the initial one.
 
 ## Pre-setup
 
