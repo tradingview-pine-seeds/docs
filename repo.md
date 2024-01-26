@@ -8,7 +8,7 @@
 
 > [!WARNING]
 > __The creation of new repositories has been suspended__. We will continue to support the existing repositories. If you have questions or need assistance with your current repositories, contact us at
-> pine.seeds@tradingview.com.
+> pine.seeds@tradingview.com. You can expect a response within one business day after submitting your request
 
 Use GitHub as your backend: TradingView will provide you with a repository that you need to fork.
 Then you can store your data and update it. Please note that the name of forked repository should be the same as the initial one.
