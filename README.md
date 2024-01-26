@@ -2,7 +2,7 @@
 
 > [!WARNING]
 > __The creation of new repositories has been suspended__. We will continue to support the existing repositories. If you have questions or need assistance with your current repositories, contact us at
-> pine.seeds@tradingview.com. You can expect a response within one business day after submitting your request
+> pine.seeds@tradingview.com. You can expect a response within one business day after submitting your request. Additionally, if you are interested in having Pine Seeds back, please fill out this [Google Form](https://docs.google.com/forms/d/1qj6dVQdK3pPiTAd8CSi0jeE8DvhJbr-yfs061loAnxo) to leave your contact details and feedback. We appreciate your input and will consider it in our future developments.
 
 ## Overview
 
